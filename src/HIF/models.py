@@ -29,8 +29,8 @@ class DataLink(models.Model):
         self.send_request()
         self.handle_error()
         self.continue_request()
+        self.store_response()
         self.extract_results()
-        self.store_results()
         return self._results
 
     def prepare_link(self):
@@ -44,9 +44,12 @@ class DataLink(models.Model):
             self._link = self._link[:-1] # strips '&' from the end
 
     def send_request(self):
-        connection = httplib2.Http()
-        response, content = connection.request(self._link)
-        self._results = content
+        self._results = '{"query":{"pages":{"9292":{"pageid":9292,"ns":0,"title":"Einstein"}}}}'
+        return True
+
+#        connection = httplib2.Http()
+#        response, content = connection.request(self._link)
+#        self._results = content
 
     def handle_error(self):
         pass
@@ -54,9 +57,10 @@ class DataLink(models.Model):
     def continue_request(self):
         pass
 
+    def store_response(self):
+        pass
+    
     def extract_results(self):
         pass
 
-    def store_results(self):
-        pass
 
