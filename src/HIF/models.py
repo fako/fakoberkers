@@ -1,3 +1,5 @@
+import httplib2
+
 from django.db import models
 
 # Create your models here.
@@ -15,7 +17,8 @@ class DataLink(models.Model):
     def __unicode__(self):
         return self.processor
 
-    def __init__(self,link):
+    def __init__(self,link, *args, **kwargs):
+        super(DataLink, self).__init__(*args, **kwargs)
         self._raw_link = link
 
 
@@ -37,4 +40,23 @@ class DataLink(models.Model):
             for k,v in self._parameters.iteritems():
                 if callable(v):
                     v = v()
-                self._link += k + '=' + v
+                self._link += k + '=' + v + '&'
+            self._link = self._link[:-1] # strips '&' from the end
+
+    def send_request(self):
+        connection = httplib2.Http()
+        response, content = connection.request(self._link)
+        self._results = content
+
+    def handle_error(self):
+        pass
+
+    def continue_request(self):
+        pass
+
+    def extract_results(self):
+        pass
+
+    def store_results(self):
+        pass
+
