@@ -19,23 +19,22 @@ class DataLink(models.Model):
     _parameters = {}
     _objectives = [{'pageid':None,'title':None}]
 
-
     def __unicode__(self):
-        return self.processor
+        return self.link + ' | ' + self.processor
 
     def __init__(self, *args, **kwargs):
         super(DataLink, self).__init__(*args, **kwargs)
-
-    def __iter__(self):
-        rsl = self.get()
-        return iter(self.results)
+        # Set dynamic values
+        self.processor = self.__class__.__name__
 
     # Abstract interface
 
+    # Main function.
+    # Returns an iterator with results coming from DataLink
     def get(self, refresh=False):
         # Early exit if results are already there.
         if self.results and not refresh:
-            return self.results
+            return iter(self.results)
 
         # Get recipe
         self.prepare_link()
@@ -45,7 +44,7 @@ class DataLink(models.Model):
         self.store_response()
         self.extract_results()
 
-        return self.results
+        return iter(self.results)
 
     def prepare_link(self):
         self.link = self._link

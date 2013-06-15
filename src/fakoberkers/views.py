@@ -6,6 +6,7 @@ from HIF.models import DataLink
 def home(request):
     dl = DataLink('...')
     response = ''
-    for r in dl:
+    for r in dl.get():
         response += r['title']
-    return HttpResponse(response)
+    dl.get()
+    return HttpResponse(dl.processor())
