@@ -5,5 +5,7 @@ from HIF.models import DataLink
 
 def home(request):
     dl = DataLink('...')
-    dl.get()
-    return HttpResponse('success')
+    response = ''
+    for r in dl:
+        response += r['title']
+    return HttpResponse(response)

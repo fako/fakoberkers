@@ -4,34 +4,48 @@ from django.db import models
 
 # Create your models here.
 class DataLink(models.Model):
+
+    # Django fields
     link = models.URLField()
     processor = models.CharField(max_length=256)
     response = models.TextField()
 
+    # Public attributes
     cache = False
+    results = []
+
+    # HIF interface attributes
     _link = ''
     _parameters = {}
     _objectives = [{'pageid':None,'title':None}]
-    _results = []
+
 
     def __unicode__(self):
         return self.processor
 
-    def __init__(self,link, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         super(DataLink, self).__init__(*args, **kwargs)
-        self._link = link
 
+    def __iter__(self):
+        rsl = self.get()
+        return iter(self.results)
 
     # Abstract interface
 
-    def get(self):
+    def get(self, refresh=False):
+        # Early exit if results are already there.
+        if self.results and not refresh:
+            return self.results
+
+        # Get recipe
         self.prepare_link()
         self.send_request()
         self.handle_error()
         self.continue_request()
         self.store_response()
         self.extract_results()
-        return self._results
+
+        return self.results
 
     def prepare_link(self):
         self.link = self._link
@@ -91,7 +105,7 @@ class DataLink(models.Model):
                     else:
                         extract(target[k])
                 if result:
-                    self._results.append(result)
+                    self.results.append(result)
             # Only return the value when not dealing with lists or dicts.
             else:
                 return target
