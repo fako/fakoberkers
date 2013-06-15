@@ -1,0 +1,2 @@
+class CacheResult(Exception):
+    pass
