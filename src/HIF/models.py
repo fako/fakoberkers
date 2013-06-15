@@ -87,6 +87,7 @@ class DataLink(models.Model):
     def extract_results(self):
         pass
 
+
 class DataLinkMixin(object):
     class Meta:
         proxy = True

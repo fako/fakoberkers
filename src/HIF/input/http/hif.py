@@ -1,9 +1,9 @@
 import httplib2
 
-from HIF.models import DataLink
+from HIF.models import DataLink, DataLinkMixin
 
 
-class HTTPLink(DataLink):
+class HTTPLink(DataLink, DataLinkMixin):
 
     _parameters = {}
 
@@ -30,9 +30,6 @@ class HTTPLink(DataLink):
         print meta
         print content
         self.response = content
-
-    class Meta:
-        proxy = True
 
 
 
