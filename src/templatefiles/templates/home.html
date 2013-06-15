@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>Translation for: {{ term }}</title>
+</head>
+
+<body>
+    <p>Below are the translations for: {{ term }}</p>
+    <ul>
+        {% for result in results %}
+            <li><a href="{{ result.url }}">{{ result.translation }}</a></li>
+        {% empty %}
+            <li>No results found.</li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
