@@ -38,6 +38,7 @@ class QueryLink(HTTPLink):
 
     def get(self, query, refresh=False, *args, **kwargs):
         if isinstance(query,list):
+            #TODO: make multi term queries work
             for q in query:
                 self._query = q # included through prepare_link()
                 super(QueryLink, self).get(*args, **kwargs)
