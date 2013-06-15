@@ -22,7 +22,6 @@ class HTTPLink(DataLink, DataLinkMixin):
     def send_request(self):
         super(HTTPLink, self).send_request() # may fetch cache result by throwing CacheResult
 
-    #        self.response = '{"query":{"pages":{"9292":{"pageid":9292,"ns":0,"title":"Einstein"}}}}'
         print "HTTPLink.send_request is being executed."
         print "With: %s" % self.link
         connection = httplib2.Http()
@@ -32,55 +31,25 @@ class HTTPLink(DataLink, DataLinkMixin):
         self.response = content
 
 
-
-
-
-
-
-
-
 class QueryLink(HTTPLink):
 
     _query_parameter = ''
     _query = ''
 
-    def get(self, refresh=False):
+    def get(self, query, refresh=False, *args, **kwargs):
+        if isinstance(query,list):
+            for q in query:
+                self._query = q # included through prepare_link()
+                super(QueryLink, self).get(*args, **kwargs)
+        else:
+            self._query = query # included through prepare_link()
+            super(QueryLink, self).get(*args, **kwargs)
 
 
 
         return iter(self.results)
 
-    def prepare_link(self):
-        self.link = self._link
-        if self._parameters:
-            self.link += '?'
-            for k,v in self._parameters.iteritems():
-                if callable(v):
-                    v = v()
-                self.link += k + '=' + v + '&'
-            self.link = self.link[:-1] # strips '&' from the end
+    def prepare_link(self, *args, **kwargs):
+        self._parameters[self._query_parameter] = self._query
+        super(QueryLink, self).prepare_link(*args, **kwargs)
 
-    def send_request(self):
-        if self.cache:
-            try:
-                cache_result = DataLink.objects.get(link=self._link)
-                self.response = cache_result.response
-                print "DataLink: Response taken from cache."
-                raise CacheResult
-            except DataLink.DoesNotExist:
-                print "DataLink: No cache response found."
-                return False
-        else:
-            return True
-
-            #        self.response = '{"query":{"pages":{"9292":{"pageid":9292,"ns":0,"title":"Einstein"}}}}'
-
-            #        connection = httplib2.Http()
-            #        meta, content = connection.request(self._link)
-            #        self.response = content
-
-    def handle_error(self):
-        pass
-
-    def continue_request(self):
-        pass

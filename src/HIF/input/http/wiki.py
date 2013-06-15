@@ -1,8 +1,8 @@
 from HIF.models import DataLinkMixin
-from HIF.input.http.hif import HTTPLink
+from HIF.input.http.hif import QueryLink
 from HIF.processors.extractors import json_extractor
 
-class WikiTranslate(HTTPLink, DataLinkMixin):
+class WikiTranslate(QueryLink, DataLinkMixin):
 
     _link = 'http://%s.wiktionary.org/w/api.php' # updated at runtime
     _parameters = {
@@ -11,12 +11,12 @@ class WikiTranslate(HTTPLink, DataLinkMixin):
         'prop':'iwlinks',
         'iwurl':1,
         'iwprefix': None, # set at runtime
-        'titles':'queen',
     }
     _objectives = [{
         "url": None,
         "*": None,
     }]
+    _query_parameter = 'titles'
 
     def __init__(self, source, destination, *args, **kwargs):
         super(WikiTranslate, self).__init__(*args,**kwargs)
@@ -31,3 +31,9 @@ class WikiTranslate(HTTPLink, DataLinkMixin):
         for r in self.results:
             r["translation"] = r["*"]
             del(r["*"])
+
+    def handle_error(self):
+        pass
+
+    def continue_request(self):
+        pass
