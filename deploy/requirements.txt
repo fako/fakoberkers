@@ -1,0 +1,4 @@
+Django==1.5.1
+httplib2==0.8
+ipython==0.13.2
+wsgiref==0.1.2
