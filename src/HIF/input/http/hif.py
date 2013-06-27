@@ -11,11 +11,11 @@ class HTTPLink(DataLink, DataLinkMixin):
     def prepare_link(self):
         self.link = self._link
         if self._parameters:
-            self.link += '?'
+            self.link += u'?'
             for k,v in self._parameters.iteritems():
                 if callable(v):
                     v = v()
-                self.link += k + '=' + str(v) + '&'
+                self.link += k + u'=' + unicode(v) + u'&'
             self.link = self.link[:-1] # strips '&' from the end
 
     # Make connection and do request
