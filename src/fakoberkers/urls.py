@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'fakoberkers.views.home', name='home'),
     url(r'^translate/?$', 'fakoberkers.views.translate', name='translate'),
+    url(r'^image/?$', 'fakoberkers.views.image', name='image'),
     # url(r'^fakoberkers/', include('fakoberkers.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

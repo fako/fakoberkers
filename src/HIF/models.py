@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.db import models
 
-from .exceptions import CacheResult
+from .exceptions import CacheResult, WaitingForResult
 
 # Create your models here.
 class DataLink(models.Model):
@@ -12,7 +12,9 @@ class DataLink(models.Model):
     response = models.TextField()
 
     # Public attributes
+    auth_link = ''
     cache = False
+    pool = False
     results = []
 
     # HIF interface attributes
@@ -46,6 +48,7 @@ class DataLink(models.Model):
 
             # Get recipe
             self.prepare_link()
+            self.enable_auth()
             self.send_request()
             self.handle_error()
             self.continue_request()
@@ -60,6 +63,9 @@ class DataLink(models.Model):
 
     def prepare_link(self):
         pass
+
+    def enable_auth(self):
+        self.auth_link = self.link
 
     def send_request(self):
         if self.cache:
@@ -91,3 +97,29 @@ class DataLink(models.Model):
 class DataLinkMixin(object):
     class Meta:
         proxy = True
+
+class PoolLink(models.Model):
+    link = 'DataLink'
+    ready = False
+
+class DataProcess(models.Model):
+
+    memory = {
+
+    }
+
+    def hibernate(self):
+        pass
+
+    def wakeup(self):
+        pass
+
+    def process(self):
+        pass
+
+    def execute(self):
+        self.wakeup()
+        try:
+            self.process()
+        except WaitingForResult:
+            self.hibernate()

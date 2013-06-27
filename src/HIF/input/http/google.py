@@ -10,8 +10,8 @@ class GoogleImage(QueryLink, DataLinkMixin):
         'searchType':'image',
     }
     _objectives = [{
-        "url": None,
-        "*": None,
+        "contextLink": None,
+        "thumbnailLink": None,
     }]
     _query_parameter = 'q'
     _key = ''
@@ -22,10 +22,8 @@ class GoogleImage(QueryLink, DataLinkMixin):
         self._cx = cx
         super(GoogleImage, self).__init__(*args,**kwargs)
 
-    def prepare_link(self, *args, **kwargs):
-        self._parameters['key'] = self._key
-        self._parameters['cx'] = self._cx
-        super(QueryLink, self).prepare_link(*args, **kwargs)
+    def enable_auth(self):
+        self.auth_link = self.link + ('&key=%s&cx=%s' % (self._key, self._cx))
 
     # KNOWN LIMITATIONS: This function can't handle multiple objectives that share a key
     def extract_results(self):

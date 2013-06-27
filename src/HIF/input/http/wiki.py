@@ -2,7 +2,20 @@ from HIF.models import DataLinkMixin
 from HIF.input.http.hif import QueryLink
 from HIF.processors.extractors import json_extractor
 
-class WikiTranslate(QueryLink, DataLinkMixin):
+class WikiLink(QueryLink, DataLinkMixin):
+
+    # KNOWN LIMITATIONS: This function can't handle multiple objectives that share a key
+    def extract_results(self):
+        self.results = json_extractor(self.response, self._objectives)
+
+    def handle_error(self):
+        pass
+
+    def continue_request(self):
+        pass
+
+
+class WikiTranslate(WikiLink, DataLinkMixin):
 
     _link = 'http://%s.wiktionary.org/w/api.php' # updated at runtime
     _parameters = {
@@ -23,17 +36,10 @@ class WikiTranslate(QueryLink, DataLinkMixin):
         self._link = self._link % source
         self._parameters['iwprefix'] = destination
 
-    # KNOWN LIMITATIONS: This function can't handle multiple objectives that share a key
-    def extract_results(self):
-        # Extract
-        self.results = json_extractor(self.response, self._objectives)
+    def extract_results(self, *args, **kwargs):
+        # Standard wiki extract
+        super(WikiTranslate, self).extract_results(*args,**kwargs)
         # Replace * for translation for usability of the results
         for r in self.results:
             r["translation"] = r["*"]
             del(r["*"])
-
-    def handle_error(self):
-        pass
-
-    def continue_request(self):
-        pass

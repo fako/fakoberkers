@@ -7,7 +7,7 @@
     <p>Below are the translations for: {{ term }}</p>
     <ul>
         {% for result in results %}
-            <li><a href="{{ result.url }}">{{ result.translation }}</a></li>
+            {% include "google-image-list.html" %}
         {% empty %}
             <li>No results found.</li>
         {% endfor %}

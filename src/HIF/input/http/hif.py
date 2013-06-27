@@ -23,9 +23,9 @@ class HTTPLink(DataLink, DataLinkMixin):
         super(HTTPLink, self).send_request() # may fetch cache result by throwing CacheResult
 
         print "HTTPLink.send_request is being executed."
-        print "With: %s" % self.link
+        print "With: %s" % self.auth_link
         connection = httplib2.Http()
-        meta, content = connection.request(self.link)
+        meta, content = connection.request(self.auth_link)
         print meta
         print content
         self.response = content
