@@ -1,3 +1,5 @@
+import math
+
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 
@@ -6,14 +8,16 @@ from HIF.input.http.google import GoogleImage
 
 
 def home(request):
+    # Get term
     term = request.GET.get('q','queen')
+    # Get results
     wiki_translate = WikiTranslate('en','pt')
     wiki_translate.get(term)
     results = {}
     for wt in wiki_translate:
         gi = GoogleImage()
-        gi.get(wt.translation)
-        results[wt.translation] = gi.results
+        gi.get(wt["translation"])
+        results[wt["translation"]] = gi.results
 
     template_context = {
         'term': term,

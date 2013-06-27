@@ -1,10 +1,6 @@
-<html>
-<head>
-    <title>Translation for: {{ term }}</title>
-</head>
+{% extends "base.html" %}
 
-<body>
-    <p>Below are the translations for: {{ term }}</p>
+{% block results %}
     <ul>
         {% for result in results %}
             {% include subtemplate %}
@@ -12,6 +8,4 @@
             <li>No results found.</li>
         {% endfor %}
     </ul>
-</body>
-
-</html>
+{% endblock %}

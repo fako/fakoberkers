@@ -1,17 +1,17 @@
-<html>
-<head>
-    <title>Translation for: {{ term }}</title>
-</head>
+{% extends "base.html" %}
 
-<body>
-    <p>Below are the translations for: {{ term }}</p>
-    <ul>
-        {% for result in results %}
-            {% include "google-image-list.html" %}
-        {% empty %}
-            <li>No results found.</li>
-        {% endfor %}
-    </ul>
-</body>
-
-</html>
+{% block results %}
+    <div class="container-fluid">
+        <div class="row-fluid">
+            {% for translation,images in results.iteritems %}
+                <div id="{{ translation }}" class="span10 offset1">
+                    {% for image in images %}
+                        <a href="{{ image.contextLink }}"><img src="{{ image.thumbnailLink }}" /></a>
+                    {% endfor %}
+                </div>
+            {% empty %}
+                <div class="span12">No results found.</div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
