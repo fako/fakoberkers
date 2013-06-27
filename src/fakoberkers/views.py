@@ -6,16 +6,21 @@ from HIF.input.http.google import GoogleImage
 
 
 def home(request):
-    gi = GoogleImage()
     term = request.GET.get('q','queen')
-    gi.get(term)
+    wiki_translate = WikiTranslate('en','pt')
+    wiki_translate.get(term)
+    results = {}
+    for wt in wiki_translate:
+        gi = GoogleImage()
+        gi.get(wt.translation)
+        results[wt.translation] = gi.results
 
     template_context = {
         'term': term,
-        'results': gi.results
+        'results': results
     }
 
-    return render_to_response('home.html',template_context,RequestContext(request))
+    return render_to_response('double.html',template_context,RequestContext(request))
 
 
 def image(request):
@@ -25,10 +30,11 @@ def image(request):
 
     template_context = {
         'term': term,
+        'subtemplate': "google-image-list.html",
         'results': gi.results
     }
 
-    return render_to_response('home.html',template_context,RequestContext(request))
+    return render_to_response('single.html',template_context,RequestContext(request))
 
 
 def translate(request):
@@ -38,7 +44,8 @@ def translate(request):
 
     template_context = {
         'term': term,
+        'subtemplate': "wiki-translate-list.html",
         'results': wt.results
     }
 
-    return render_to_response('home.html',template_context,RequestContext(request))
+    return render_to_response('single.html',template_context,RequestContext(request))
