@@ -1,0 +1,10 @@
+.result-cell {
+    margin: 0 auto;
+    text-align: center;
+}
+.result-column {
+    border-left: 1px solid black;
+}
+.result-column:first-child {
+    border-left: none;
+}

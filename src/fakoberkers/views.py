@@ -18,8 +18,11 @@ def home(request):
         gi = GoogleImage()
         gi.get(wt["translation"])
         results[wt["translation"]] = gi.results
+    # Calculate span
+    span = int(math.floor(12/len(results)))
 
     template_context = {
+        'span': span,
         'term': term,
         'results': results
     }

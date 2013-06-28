@@ -4,9 +4,9 @@
     <div class="container-fluid">
         <div class="row-fluid">
             {% for translation,images in results.iteritems %}
-                <div id="{{ translation }}" class="span10 offset1">
+                <div id="{{ translation }}" class="result-column span{{ span }}">
                     {% for image in images %}
-                        <a href="{{ image.contextLink }}"><img src="{{ image.thumbnailLink }}" /></a>
+                        <div class="result-cell"><a href="{{ image.contextLink }}"><img src="{{ image.thumbnailLink }}" /></a></div>
                     {% endfor %}
                 </div>
             {% empty %}
