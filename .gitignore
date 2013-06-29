@@ -4,5 +4,7 @@
 *.pyc
 *.db
 
+static/
+
 secrets.py
 server.py
