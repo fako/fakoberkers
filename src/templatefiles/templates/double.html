@@ -5,6 +5,7 @@
         <div class="row-fluid">
             {% for translation,images in results.iteritems %}
                 <div id="{{ translation }}" class="result-column span{{ span }}">
+                    <div class="result-cell"><h2>{{ translation }}</h2></div>
                     {% for image in images %}
                         <div class="result-cell"><a href="{{ image.contextLink }}"><img src="{{ image.thumbnailLink }}" /></a></div>
                     {% endfor %}
