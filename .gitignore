@@ -5,3 +5,4 @@
 *.db
 
 secrets.py
+server.py

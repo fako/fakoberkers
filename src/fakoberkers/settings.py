@@ -1,6 +1,5 @@
-# Custom variables
-PATH_TO_PROJECT = '/Users/fako/Sites/fakoberkers/'
-URL_TO_PROJECT = '/'
+# Custom variables import
+from server import *
 
 # Django settings for fakoberkers project.
 
