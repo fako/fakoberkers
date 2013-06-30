@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 
+{% block title %}Results for: {{ term }}{% endblock %}
+
 {% block results %}
+    <h2>Below are the results for: {{ term }}</h2>
     <ul>
         {% for result in results %}
             {% include subtemplate %}

@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 
+{% block title %}Results for: {{ term }}{% endblock %}
+
 {% block results %}
+    <h2>Below are the results for: {{ term }}</h2>
     <div class="container-fluid">
         <div class="row-fluid">
             {% for translation,images in results.iteritems %}
                 <div id="{{ translation }}" class="result-column span{{ span }}">
-                    <div class="result-cell"><h2>{{ translation }}</h2></div>
+                    <div class="result-cell"><h3>{{ translation }}</h3></div>
                     {% for image in images %}
                         <div class="result-cell"><a href="{{ image.contextLink }}"><img src="{{ image.thumbnailLink }}" /></a></div>
                     {% endfor %}

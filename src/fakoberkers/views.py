@@ -7,52 +7,67 @@ from HIF.input.http.wiki import WikiTranslate
 from HIF.input.http.google import GoogleImage
 
 
+def search_box_response(request):
+    return render_to_response('base.html',{},RequestContext(request))
+
+
 def home(request):
     # Get term
-    term = request.GET.get('q','queen')
-    # Get results
-    wiki_translate = WikiTranslate('en','pt')
-    wiki_translate.get(term)
-    results = {}
-    for wt in wiki_translate:
-        gi = GoogleImage()
-        gi.get(wt["translation"])
-        results[wt["translation"]] = gi.results
-    # Calculate span
-    span = int(math.floor(12/len(results)))
+    term = request.GET.get('q',False)
 
-    template_context = {
-        'span': span,
-        'term': term,
-        'results': results
-    }
+    if term:
+        # Get results
+        wiki_translate = WikiTranslate('en','pt')
+        wiki_translate.get(term)
+        results = {}
+        for wt in wiki_translate:
+            gi = GoogleImage()
+            gi.get(wt["translation"])
+            results[wt["translation"]] = gi.results
+        # Calculate span
+        span = int(math.floor(12/len(results)))
 
-    return render_to_response('double.html',template_context,RequestContext(request))
+        template_context = {
+            'span': span,
+            'term': term,
+            'results': results
+        }
+        return render_to_response('double.html',template_context,RequestContext(request))
+    else:
+        return search_box_response(request)
 
 
 def image(request):
-    gi = GoogleImage()
-    term = request.GET.get('q','queen')
-    gi.get(term)
+    term = request.GET.get('q',False)
 
-    template_context = {
-        'term': term,
-        'subtemplate': "google-image-list.html",
-        'results': gi.results
-    }
+    if term:
+        gi = GoogleImage()
+        gi.get(term)
 
-    return render_to_response('single.html',template_context,RequestContext(request))
+        template_context = {
+            'term': term,
+            'subtemplate': "google-image-list.html",
+            'results': gi.results
+        }
+
+        return render_to_response('single.html',template_context,RequestContext(request))
+    else:
+        return search_box_response(request)
 
 
 def translate(request):
-    wt = WikiTranslate('en','pt')
-    term = request.GET.get('q','queen')
-    wt.get(term)
+    term = request.GET.get('q',False)
 
-    template_context = {
-        'term': term,
-        'subtemplate': "wiki-translate-list.html",
-        'results': wt.results
-    }
+    if term:
+        wt = WikiTranslate('en','pt')
+        wt.get(term)
 
-    return render_to_response('single.html',template_context,RequestContext(request))
+        template_context = {
+            'term': term,
+            'subtemplate': "wiki-translate-list.html",
+            'results': wt.results
+        }
+
+        return render_to_response('single.html',template_context,RequestContext(request))
+    else:
+        return search_box_response(request)
