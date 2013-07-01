@@ -23,7 +23,7 @@ class GoogleImage(QueryLink, DataLinkMixin):
         super(GoogleImage, self).__init__(*args,**kwargs)
 
     def enable_auth(self):
-        self.auth_link = self.link + ('&key=%s&cx=%s' % (self._key, self._cx))
+        self.auth_link = self.link + unicode(('&key=%s&cx=%s' % (self._key, self._cx)))
 
     # KNOWN LIMITATIONS: This function can't handle multiple objectives that share a key
     def extract_results(self):
