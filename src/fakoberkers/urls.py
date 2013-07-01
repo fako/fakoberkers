@@ -5,7 +5,6 @@ from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
 
-print settings.PATH_TO_PROJECT+'src/fakoberkers/static/'
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'fakoberkers.views.home', name='home'),
@@ -20,5 +19,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     # Static files for development only
-    # url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.PATH_TO_PROJECT+'src/fakoberkers/static/', 'show_indexes': True}),
+    url(r'^static/%s/(?P<path>.*)$' % settings.PROJECT_NAME, 'django.views.static.serve', {'document_root': settings.PATH_TO_PROJECT+'src/fakoberkers/static/', 'show_indexes': True}),
 )

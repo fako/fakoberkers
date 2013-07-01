@@ -52,26 +52,26 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = PATH_TO_PROJECT+'media/'
+MEDIA_ROOT = SERVER_ROOT+'media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = ''
+MEDIA_URL = '/media/' + PROJECT_NAME + '/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = PATH_TO_PROJECT+'static/'
+STATIC_ROOT = SERVER_ROOT+'static/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
+STATIC_URL = '/static/' + PROJECT_NAME + '/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    PATH_TO_PROJECT+'src/fakoberkers/static',
+    # PATH_TO_PROJECT+'src/fakoberkers/static',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -127,6 +127,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    # Main app
+    'fakoberkers',
     # Framework apps
     'HIF',
     # FakoBerkers apps
