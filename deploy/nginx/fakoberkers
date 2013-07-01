@@ -17,10 +17,10 @@ server {
 
     # Django media
     location /media  {
-        alias /home/fako/django-1.5/fakoberkers/media;      # your Django project's media files
+        alias /srv/media;      # your Django project's media files
     }
     location /static {
-        alias /home/fako/django-1.5/fakoberkers/static;  # your Django project's static files   
+        alias /srv/static;  # your Django project's static files
     }
 
     # Finally, send all non-media requests to the Django server.
