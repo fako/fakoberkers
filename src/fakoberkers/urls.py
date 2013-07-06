@@ -5,12 +5,9 @@ from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
-    # Examples:
-    url(r'^$', 'fakoberkers.views.home', name='home'),
-    url(r'^translate/?$', 'fakoberkers.views.translate', name='translate'),
-    url(r'^image/?$', 'fakoberkers.views.image', name='image'),
-    # url(r'^fakoberkers/', include('fakoberkers.foo.urls')),
+urlpatterns = patterns('fakoberkers.views',
+    url(r'^$', 'home', name='fakoberkers'),
+    url(r'^digita-senscia/', include('digitasenscia.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
