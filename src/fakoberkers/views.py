@@ -1,6 +1,6 @@
-from django.http import HttpResponse
-
+from django.shortcuts import render_to_response
+from django.template.context import RequestContext
 
 def home(request):
     # Get term
-    return HttpResponse('Hello World!')
+    return render_to_response('projects.html',{},RequestContext(request))
