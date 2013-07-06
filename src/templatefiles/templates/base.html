@@ -8,7 +8,7 @@
 
 <body>
     <div id="search-container">
-        <form method="GET" action=".">
+        <form method="GET" action="{{ request.path }}">
             <p><input type="text" name="q"/></p>
             <p><input type="submit" name="submit" value="search"/></p>
         </form>
