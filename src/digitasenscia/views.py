@@ -8,7 +8,7 @@ from HIF.input.http.google import GoogleImage
 
 
 def search_box_response(request):
-    return render_to_response('base.html',{},RequestContext(request))
+    return render_to_response('search.html',{},RequestContext(request))
 
 
 def home(request):

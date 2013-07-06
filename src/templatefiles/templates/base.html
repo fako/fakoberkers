@@ -1,22 +1,13 @@
 {% load staticfiles %}
 <html>
 <head>
-    <title>{% block title %}fakoberkers{% endblock %}</title>
+    <title>{% block title %}Fako Berkers{% endblock %}</title>
     <link href="{% static "css/bootstrap.css" %}" rel="stylesheet" />
     <link href="{% static "css/style.css" %}" rel="stylesheet" />
 </head>
 
 <body>
-    <div id="search-container">
-        <form method="GET" action="{{ request.path }}">
-            <p><input type="text" name="q"/></p>
-            <p><input type="submit" name="submit" value="search"/></p>
-        </form>
-    </div>
-
-    <div id="results-container">
-        {% block results %}{% endblock %}
-    </div>
+    {% block body %}{% endblock %}
 </body>
 
 </html>

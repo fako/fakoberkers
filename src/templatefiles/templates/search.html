@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <div id="search-container">
+        <form method="GET" action="{{ request.path }}">
+            <p><input type="text" name="q"/></p>
+            <p><input type="button" name="submit" value="search" onclick="document.forms[0].submit()"/></p>
+        </form>
+    </div>
+
+    <div id="results-container">
+        {% block results %}{% endblock %}
+    </div>
+{% endblock %}
