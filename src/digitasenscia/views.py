@@ -37,6 +37,32 @@ def home(request):
         return search_box_response(request)
 
 
+def portuguese_images(request):
+    # Get term
+    term = request.GET.get('q',False)
+
+    if term:
+        # Get results
+        wiki_translate = WikiTranslate('en','pt')
+        wiki_translate.get(term)
+        results = {}
+        for wt in wiki_translate:
+            gi = GoogleImage()
+            gi.get(wt["translation"])
+            results[wt["translation"]] = gi.results
+            # Calculate span
+        span = int(math.floor(12/len(results)))
+
+        template_context = {
+            'span': span,
+            'term': term,
+            'results': results
+        }
+        return render_to_response('double.html',template_context,RequestContext(request))
+    else:
+        return search_box_response(request)
+
+
 def image(request):
     term = request.GET.get('q',False)
 
