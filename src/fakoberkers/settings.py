@@ -1,5 +1,6 @@
 # Custom variables import
 from server import *
+from secrets import *
 
 # Django settings for fakoberkers project.
 
@@ -85,16 +86,12 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = 't9cyoh@hbvvj3x&amp;iu*l!ifqic2bzgic^r6xmocassx%or53erb'
-
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 #     'django.template.loaders.eggs.Loader',
 )
-
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.auth.context_processors.auth",
