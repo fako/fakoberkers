@@ -1,0 +1,31 @@
+{% extends "search.html" %}
+
+{% block title %}Results for: {{ term }}{% endblock %}
+
+{% block results %}
+    <h2>Below are the results for: {{ term }}</h2>
+    <hr/>
+    <div class="container-fluid">
+        {% for language,rsl in results.iteritems %}
+
+            <div class="row-fluid">
+                <h2>{{ language }}</h2>
+                {% for translation,images in rsl.iteritems %}
+                    <div id="{{ translation }}" class="result-column span{{ span }}">
+                        <div class="result-cell"><h3>{{ translation }}</h3></div>
+                        {% for image in images %}
+                            <div class="result-cell"><a href="{{ image.contextLink }}"><img src="{{ image.thumbnailLink }}" /></a></div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+
+        {% empty %}
+
+            <div class="row-fluid">
+                <div class="span12">No results found.</div>
+            </div>
+
+        {% endfor %}
+    </div>
+{% endblock %}

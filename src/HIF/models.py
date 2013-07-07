@@ -1,3 +1,5 @@
+import json
+
 from django.conf import settings
 from django.db import models
 
@@ -98,15 +100,20 @@ class DataLinkMixin(object):
     class Meta:
         proxy = True
 
+
 class PoolLink(models.Model):
     link = 'DataLink'
     ready = False
 
+
 class DataProcess(models.Model):
 
-    memory = {
+    args = models.CharField(max_length=256)
+    kwargs = models.CharField(max_length=256)
+    results = models.TextField(null=True,default='')
+    ready = models.BooleanField(default=False)
 
-    }
+    link_pool = []
 
     def hibernate(self):
         pass
@@ -117,8 +124,11 @@ class DataProcess(models.Model):
     def process(self):
         pass
 
-    def execute(self):
-        self.wakeup()
+    def execute(self, *args, **kwargs):
+        # Set arguments in model
+        self.args = json.dumps(*args)
+        self.kwargs = json.dumps(**kwargs)
+        self.wakeup() # checks whether
         try:
             self.process()
         except WaitingForResult:
