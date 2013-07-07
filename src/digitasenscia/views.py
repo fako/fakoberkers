@@ -17,7 +17,7 @@ def home(request):
 
     if term:
         # Get results
-        results = {}
+        results = []
         for lang in ['pt','nl','fr','de','es']:
             wiki_translate = WikiTranslate('en',lang)
             wiki_translate.get(term)
@@ -26,13 +26,13 @@ def home(request):
                 gi = GoogleImage()
                 gi.get(wt["translation"])
                 rsl[wt["translation"]] = gi.results
-            results[lang] = rsl
+            # Calculate span
+            span = int(math.floor(12/len(rsl)))
+            # Save results
+            results.append((lang, span, rsl))
 
-        # Calculate span
-        span = int(math.floor(12/len(results)))
 
         template_context = {
-            'span': span,
             'term': term,
             'results': results
         }

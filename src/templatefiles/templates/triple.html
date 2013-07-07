@@ -4,12 +4,13 @@
 
 {% block results %}
     <h2>Below are the results for: {{ term }}</h2>
-    <hr/>
     <div class="container-fluid">
-        {% for language,rsl in results.iteritems %}
-
+        {% for language,span,rsl in results %}
+            <hr/>
             <div class="row-fluid">
                 <h2>{{ language }}</h2>
+            </div>
+            <div class="row-fluid">
                 {% for translation,images in rsl.iteritems %}
                     <div id="{{ translation }}" class="result-column span{{ span }}">
                         <div class="result-cell"><h3>{{ translation }}</h3></div>
