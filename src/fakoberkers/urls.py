@@ -16,5 +16,5 @@ urlpatterns = patterns('fakoberkers.views',
     url(r'^admin/', include(admin.site.urls)),
 
     # Static files for development only
-    url(r'^static/%s/(?P<path>.*)$' % settings.PROJECT_NAME, 'django.views.static.serve', {'document_root': settings.PATH_TO_PROJECT+'src/fakoberkers/static/', 'show_indexes': True}),
+    # url(r'^static/%s/(?P<path>.*)$' % settings.PROJECT_NAME, 'django.views.static.serve', {'document_root': settings.PATH_TO_PROJECT+'src/fakoberkers/static/', 'show_indexes': True}),
 )

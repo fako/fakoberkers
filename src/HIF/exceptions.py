@@ -1,5 +1,8 @@
-class CacheResult(Exception):
+class DbResponse(Exception):
     pass
 
-class WaitingForResult(Exception):
+class WaitingForAPIResponse(Exception):
+    pass
+
+class WarningImproperlyUsageLinkPool(Exception):
     pass
