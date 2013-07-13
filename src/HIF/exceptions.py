@@ -4,5 +4,8 @@ class DbResponse(Exception):
 class WaitingForAPIResponse(Exception):
     pass
 
-class WarningImproperlyUsageLinkPool(Exception):
+class WarningImproperUsageLinkPool(Exception):
+    pass
+
+class DataProcessCompleted(Exception):
     pass
