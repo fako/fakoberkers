@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-14 14:16+0200\n"
+"POT-Creation-Date: 2013-09-14 15:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Fako Berkers <email@fakoberkers.nl>\n"
 "Language-Team: Dutch <LL@li.org>\n"
@@ -52,10 +52,14 @@ msgid "Below are the results for"
 msgstr "Beneden staan de resultaten voor"
 
 #: templatefiles/templates/double.html:18
+#: templatefiles/templates/no-results.html:3
 #: templatefiles/templates/single.html:12
-#: templatefiles/templates/triple.html:28
 msgid "No results found"
 msgstr "Geen resultaten gevonden"
+
+#: templatefiles/templates/no-results.html:3
+msgid "Did you mean to search in another language"
+msgstr "Was je bedoeling om in een andere taal te zoeken"
 
 #: templatefiles/templates/projects.html:5
 msgid "Projects available on this site"

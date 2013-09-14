@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-14 14:16+0200\n"
+"POT-Creation-Date: 2013-09-14 15:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,9 +52,13 @@ msgid "Below are the results for"
 msgstr ""
 
 #: templatefiles/templates/double.html:18
+#: templatefiles/templates/no-results.html:3
 #: templatefiles/templates/single.html:12
-#: templatefiles/templates/triple.html:28
 msgid "No results found"
+msgstr ""
+
+#: templatefiles/templates/no-results.html:3
+msgid "Did you mean to search in another language"
 msgstr ""
 
 #: templatefiles/templates/projects.html:5

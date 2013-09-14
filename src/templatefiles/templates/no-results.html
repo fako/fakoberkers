@@ -1,0 +1,11 @@
+{% load i18n %}
+
+<p>{% trans "No results found" %}. {% trans "Did you mean to search in another language" %}?</p>
+<ul>
+    {% get_available_languages as languages %}
+    {% for lang_code, lang_name in languages %}
+        {% language lang_code %}
+            <li><a href="{% url 'digitasenscia' %}?q={{ term }}">{{ lang_name }}</a></li>
+        {% endlanguage %}
+    {% endfor %}
+</ul>
