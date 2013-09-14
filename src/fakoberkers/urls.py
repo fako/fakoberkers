@@ -1,11 +1,12 @@
 from django.conf.urls import patterns, include, url
+from django.conf.urls.i18n import i18n_patterns
 from django.conf import settings
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('fakoberkers.views',
+urlpatterns = i18n_patterns('fakoberkers.views',
     url(r'^$', 'home', name='fakoberkers'),
     url(r'^digita-senscia/', include('digitasenscia.urls')),
 

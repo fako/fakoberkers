@@ -1,6 +1,7 @@
 # Custom variables import
 from server import *
 from secrets import *
+from projects import *
 
 # Django settings for fakoberkers project.
 
@@ -32,7 +33,7 @@ ALLOWED_HOSTS = []
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Europe/Amsterdam'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -50,6 +51,21 @@ USE_L10N = True
 
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
+
+# Available languages for all projects
+ugettext = lambda s: s # a dummy ugettext to prevent circular import
+LANGUAGES = (
+    ('en', ugettext('English')),
+    ('pt', ugettext('Portuguese')),
+    ('nl', ugettext('Dutch')),
+    ('de', ugettext('German')),
+    ('es', ugettext('Spanish')),
+    ('fr', ugettext('French')),
+)
+
+LOCALE_PATHS = (
+    PATH_TO_PROJECT + 'src/locale/',
+)
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
@@ -105,8 +121,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
+
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',

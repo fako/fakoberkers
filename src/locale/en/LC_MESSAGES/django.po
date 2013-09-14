@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-14 14:16+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: fakoberkers/settings.py:58
+msgid "English"
+msgstr ""
+
+#: fakoberkers/settings.py:59
+msgid "Portuguese"
+msgstr ""
+
+#: fakoberkers/settings.py:60
+msgid "Dutch"
+msgstr ""
+
+#: fakoberkers/settings.py:61
+msgid "German"
+msgstr ""
+
+#: fakoberkers/settings.py:62
+msgid "Spanish"
+msgstr ""
+
+#: fakoberkers/settings.py:63
+msgid "French"
+msgstr ""
+
+#: templatefiles/templates/double.html:4 templatefiles/templates/single.html:4
+#: templatefiles/templates/triple.html:4
+msgid "Results for"
+msgstr ""
+
+#: templatefiles/templates/double.html:7 templatefiles/templates/single.html:7
+#: templatefiles/templates/triple.html:7
+msgid "Below are the results for"
+msgstr ""
+
+#: templatefiles/templates/double.html:18
+#: templatefiles/templates/single.html:12
+#: templatefiles/templates/triple.html:28
+msgid "No results found"
+msgstr ""
+
+#: templatefiles/templates/projects.html:5
+msgid "Projects available on this site"
+msgstr ""
+
+#: templatefiles/templates/projects.html:11
+msgid "And more to come"
+msgstr ""
+
+#: templatefiles/templates/search.html:10
+msgid "search"
+msgstr ""

@@ -1,15 +1,16 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block body %}
-    <h3>Projects available on this site:</h3>
+    <h3>{% trans "Projects available on this site" %}:</h3>
     <ul>
         <li><a href="http://www.onopo.ly/">WWW.onopo.ly</a></li>
         <li><a href="http://onopo.ly/digita-senscia/">Digita Senscia</a></li>
+        <li><a href="http://onopo.ly/how-bieber-is-your-hero/">How Bieber Is Your Hero</a></li>
     </ul>
-    <h3>And more to come ...</h3>
+    <h3>{% trans "And more to come" %} ...</h3>
     <ul>
         <li>Wicked Wiki</li>
-        <li>Bieberearcher</li>
         <li>Er Zit Een Ik In Ons</li>
     </ul>
 {% endblock %}

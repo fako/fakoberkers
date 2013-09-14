@@ -1,14 +1,15 @@
 {% extends "search.html" %}
+{% load i18n %}
 
-{% block title %}Results for: {{ term }}{% endblock %}
+{% block title %}{% trans "Results for" %}: {{ term }}{% endblock %}
 
 {% block results %}
-    <h2>Below are the results for: {{ term }}</h2>
+    <h2>{%  trans "Below are the results for" %}: {{ term }}</h2>
     <ul>
         {% for result in results %}
             {% include subtemplate %}
         {% empty %}
-            <li>No results found.</li>
+            <li>{% trans "No results found" %}.</li>
         {% endfor %}
     </ul>
 {% endblock %}

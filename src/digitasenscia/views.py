@@ -2,6 +2,7 @@ import math
 
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
+from django.conf import settings
 
 from HIF.input.http.wiki import WikiTranslate
 from HIF.input.http.google import GoogleImage
@@ -12,15 +13,21 @@ def search_box_response(request):
 
 
 def home(request):
-    # Get term
+    # Get term and source language
     term = request.GET.get('q',False)
+    source_language = request.LANGUAGE_CODE[:2]
 
     if term:
         # Get results
         results = []
-        for lang in ['pt','nl','fr','de','es']:
-            wiki_translate = WikiTranslate('en',lang)
+        for target_language in settings.DS_SUPPORTED_LANGUAGES:
+            # Skip results for source language
+            if source_language == target_language: continue
+            # Create translations
+            wiki_translate = WikiTranslate(source_language, target_language)
             wiki_translate.get(term)
+            if not wiki_translate.results: continue
+            # Get images
             rsl = {}
             for wt in wiki_translate:
                 gi = GoogleImage()
@@ -29,9 +36,9 @@ def home(request):
             # Calculate span
             span = int(math.floor(12/len(rsl)))
             # Save results
-            results.append((lang, span, rsl))
+            results.append((target_language, span, rsl))
 
-
+        # Return results in template.
         template_context = {
             'term': term,
             'results': results

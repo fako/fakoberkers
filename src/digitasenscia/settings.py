@@ -1,0 +1,1 @@
+DS_SUPPORTED_LANGUAGES = ['en','pt','nl','fr','de','es']
