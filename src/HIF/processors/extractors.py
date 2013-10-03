@@ -23,6 +23,7 @@ def extractor(target, objective):
                 # Recursively use self when confronted with something else then an objective
                 else:
                     extract(target[k])
+            # Append extracted result to the results
             if result:
                 results.append(result)
         # Only return the value when not dealing with lists or dicts.
@@ -32,6 +33,6 @@ def extractor(target, objective):
     extract(target)
     return results
 
-def json_extractor(json_string,objective):
+def json_extractor(json_string, objective):
     target_dict = json.loads(json_string)
-    return extractor(target_dict,objective)
+    return extractor(target_dict, objective)
