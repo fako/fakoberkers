@@ -154,10 +154,13 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    # 3rd party
+    'djcelery',
     # Main app
     'fakoberkers',
     # Framework apps
     'HIF',
+
     # FakoBerkers apps
     'templatefiles',
 )
@@ -190,3 +193,8 @@ LOGGING = {
         },
     }
 }
+
+# Celery settings
+import djcelery
+djcelery.setup_loader()
+BROKER_URL = 'amqp://guest:guest@localhost:5672/'

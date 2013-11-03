@@ -1,4 +1,0 @@
-HIF
-===
-
-Hyper Information Framework
