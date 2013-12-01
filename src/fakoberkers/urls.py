@@ -8,7 +8,10 @@ admin.autodiscover()
 
 urlpatterns = i18n_patterns('fakoberkers.views',
     url(r'^$', 'home', name='fakoberkers'),
+    url(r'^kiosk/$', 'kiosk', name='kiosk'),
     url(r'^digita-senscia/', include('digitasenscia.urls')),
+
+    url(r'^hif/', include('HIF.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

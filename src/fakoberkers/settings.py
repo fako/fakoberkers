@@ -160,6 +160,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     # 3rd party
     'djcelery',
+    'rest_framework',
     # Main app
     'fakoberkers',
     # Framework apps
