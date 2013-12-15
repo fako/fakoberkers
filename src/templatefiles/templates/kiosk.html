@@ -1,1 +1,23 @@
-HEE!
+{% extends "base.html" %}
+
+{% block scripts %}
+<script type="text/javascript">
+    $(document).ready(function() {
+        window.$window = $('window');
+        window.$kiosk = $('#kiosk');
+
+        $window.resize(function() {
+            // Lock the kiosk
+            // (Re)set unlock timer
+
+            if($window.width() >= $window.height()) {
+                $kiosk.width($window.width());
+                // calculate kiosk height
+            } else {
+                $kiosk.height(window.height());
+                // calculate kiosk width
+            }
+        });
+    });
+</script>
+{% endblock %}
