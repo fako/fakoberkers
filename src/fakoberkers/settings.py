@@ -88,6 +88,7 @@ STATIC_URL = '/static/' + PROJECT_NAME + '/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
+    PATH_TO_PROJECT + 'src/HIF/output/http/static',
     # PATH_TO_PROJECT+'src/fakoberkers/static',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
