@@ -9,4 +9,4 @@ static/
 secrets.py
 server.py
 
-HIF/
+#HIF/
