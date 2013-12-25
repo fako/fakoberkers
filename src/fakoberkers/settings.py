@@ -1,6 +1,6 @@
 # Custom variables import
-from server import *
 from secrets import *
+from server import *
 from projects import *
 
 # Django settings for fakoberkers project.
