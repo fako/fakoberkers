@@ -3,7 +3,7 @@
 #CELERYD_NODES="worker1"
 #   but you can also start multiple and configure settings
 #   for each in CELERYD_OPTS (see `celery multi --help` for examples).
-CELERYD_NODES="worker1"
+CELERYD_NODES="worker1 worker2 worker3"
 
 # Absolute or relative path to the 'celery' command:
 CELERY_BIN="/srv/django-1.6/django-1.6/bin/celery"
@@ -11,9 +11,7 @@ CELERY_BIN="/srv/django-1.6/django-1.6/bin/celery"
 
 # App instance to use
 # comment out this line if you don't use an app
-#CELERY_APP="fakoberkers"
-# or fully qualified:
-#CELERY_APP="proj.tasks:app"
+CELERY_APP="fakoberkers.celery:app"
 
 # Where to chdir at start.
 CELERYD_CHDIR="/srv/django-1.6/fakoberkers/src/"
