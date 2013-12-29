@@ -5,6 +5,7 @@
 *.db
 
 static/
+fixtures/
 
 secrets.py
 server.py
