@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-14 15:37+0200\n"
+"POT-Creation-Date: 2013-12-29 17:08+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,51 +18,65 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: fakoberkers/settings.py:58
-msgid "English"
+#: HIF/output/http/html/components/search.html:7
+msgid "search"
 msgstr ""
 
-#: fakoberkers/settings.py:59
-msgid "Portuguese"
+#: HIF/output/http/html/image-translations/accepted.html:11
+msgid "Your query is being processed. Please wait."
 msgstr ""
 
-#: fakoberkers/settings.py:60
-msgid "Dutch"
+#: HIF/output/http/html/image-translations/index.html:5
+#: HIF/output/http/html/image-translations/ok.html:5
+msgid ""
+"Search for a single word and see the canonical images for that word in five "
+"different languages."
 msgstr ""
 
-#: fakoberkers/settings.py:61
-msgid "German"
-msgstr ""
-
-#: fakoberkers/settings.py:62
-msgid "Spanish"
-msgstr ""
-
-#: fakoberkers/settings.py:63
-msgid "French"
-msgstr ""
-
-#: templatefiles/templates/double.html:4 templatefiles/templates/single.html:4
-#: templatefiles/templates/triple.html:4
-msgid "Results for"
-msgstr ""
-
-#: templatefiles/templates/double.html:7 templatefiles/templates/single.html:7
-#: templatefiles/templates/triple.html:7
-msgid "Below are the results for"
-msgstr ""
-
-#: templatefiles/templates/double.html:18
-#: templatefiles/templates/single.html:12
-msgid "No results found"
-msgstr ""
-
-#: templatefiles/templates/no-results.html:5
+#: HIF/output/http/html/image-translations/no-content.html:9
 msgid "No results found in"
 msgstr ""
 
-#: templatefiles/templates/no-results.html:5
+#: HIF/output/http/html/image-translations/no-content.html:9
 msgid "Did you mean to search in another language"
+msgstr ""
+
+#: HIF/output/http/html/image-translations/no-content.html:22
+msgid "Or search again for another word."
+msgstr ""
+
+#: HIF/output/http/services/manifests.py:46
+msgid "No input provided"
+msgstr ""
+
+#: HIF/output/http/services/manifests.py:48
+msgid ""
+"We're sorry, we can't take more than one word as a query. Please try with "
+"one word at a time."
+msgstr ""
+
+#: fakoberkers/settings.py:47
+msgid "English"
+msgstr ""
+
+#: fakoberkers/settings.py:48
+msgid "Portuguese"
+msgstr ""
+
+#: fakoberkers/settings.py:49
+msgid "Dutch"
+msgstr ""
+
+#: fakoberkers/settings.py:50
+msgid "German"
+msgstr ""
+
+#: fakoberkers/settings.py:51
+msgid "Spanish"
+msgstr ""
+
+#: fakoberkers/settings.py:52
+msgid "French"
 msgstr ""
 
 #: templatefiles/templates/projects.html:5
@@ -71,8 +85,4 @@ msgstr ""
 
 #: templatefiles/templates/projects.html:11
 msgid "And more to come"
-msgstr ""
-
-#: templatefiles/templates/search.html:10
-msgid "search"
 msgstr ""
