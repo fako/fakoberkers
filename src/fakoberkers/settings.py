@@ -1,11 +1,15 @@
+# Mode specific defaults
+DEBUG = True
+
+
 # Custom variables import
 from secrets import *
 from server import *
 from projects import *
 
+
 # Django settings for fakoberkers project.
 
-DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
