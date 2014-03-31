@@ -11,7 +11,11 @@ urlpatterns = i18n_patterns('fakoberkers.views',
     url(r'^kiosk/$', 'kiosk', name='kiosk'),
     url(r'^digita-senscia/', include('digitasenscia.urls')),
 
+    # HIF related (will get moved to own project probably)
     url(r'^hif/', include('HIF.urls')),
+
+    # Plain sites
+    url(r'^dnd/', include('plainsite.urls'), {"site":"dnd"}),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

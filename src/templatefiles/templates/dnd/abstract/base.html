@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+<link href="{% static "css/bootstrap.css" %}" type="text/css" rel="stylesheet"/>
+<link href="{% static css %}" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<div class="content-container">
+
+    {% block content %}
+
+        <div class="row-fluid">
+            <div class="span12">
+                <h2>{% block title %}{% endblock %}</h2>
+                <p class="summary">{% block summary %}{% endblock %}</p>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+
+            <div class="span4">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h3>Events</h3>
+                    </div>
+                    <div class="span12">
+                        {% block events %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="span4">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h3>Locations</h3>
+                    </div>
+                    <div class="span12">
+                        {% block locations %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="span4">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h3>Achievements</h3>
+                    </div>
+                    <div class="span12">
+                        {% block achievements %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row-fluid">
+
+            <div class="span4">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h3>Creatures</h3>
+                    </div>
+                    <div class="span12">
+                        {% block creatures %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="span4">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h3>Traps</h3>
+                    </div>
+                    <div class="span12">
+                        {% block traps %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="span4">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h3>Conditions</h3>
+                    </div>
+                    <div class="span12">
+                        {% block conditions %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row-fluid">
+
+            <div class="span4">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h3>Knowledges</h3>
+                    </div>
+                    <div class="span12">
+                        {% block knowledges %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="span4">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h3>Items</h3>
+                    </div>
+                    <div class="span12">
+                        {% block items %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="span4">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h3>Misc</h3>
+                    </div>
+                    <div class="span12">
+                        {% block misc %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row-fluid">
+            <div class="span12">
+                {% block footer %}{% endblock %}
+            </div>
+        </div>
+
+    {% endblock content %}
+
+</div>
+</body>
+
+
+</html>

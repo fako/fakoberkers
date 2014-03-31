@@ -1,0 +1,15 @@
+{% extends "dnd/abstract/base.html" %}
+
+{% block content %}
+
+    <div class="row-fluid">
+        <div class="span12">
+            <ul>
+                {% for item in listdir %}
+                    <li><a href="{{ item }}">{{ item }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}
