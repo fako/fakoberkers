@@ -1,1 +1,25 @@
 {% extends "dnd/abstract/obstacle.html" %}
+
+{% block todo %}How much gold can they earn? Fill out blanks in Kadunkle handout!{% endblock %}
+
+{% block title %}Kadunkle comes to visit{% endblock %}
+{% block summary %}Kadunkle introduces the quest.{% endblock %}
+
+{% block misc %}
+<p>Handout info[0] to Kadunkle as preparation.</p>
+{% endblock %}
+
+{% block events %}
+<ol>
+    <li>Message that Kadunkle will be arriving</li>
+    <li>Kadunkle arrives</li>
+</ol>
+{% endblock %}
+
+{% block achievements %}
+<p>Party goes to sleep. Proceed to <a href="01-the-funeral.html">the funeral</a></p>
+{% endblock %}
+
+{% block locations %}
+<p>Trippleton and the castle. No extra information.</p>
+{% endblock %}

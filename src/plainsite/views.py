@@ -17,5 +17,11 @@ def page(request, site, path, ext):
 
 def index(request, site, path):
     directory = '{}src/templatefiles/templates/{}/concrete/{}'.format(settings.PATH_TO_PROJECT, site, path)
-    listdir = [elem if not os.path.isdir(directory+'/'+elem) else elem + "/" for elem in os.listdir(directory)]
+
+    listdir = []
+    for elem in os.listdir(directory):
+        if not elem == "index.html":
+            listdir.append(elem if not os.path.isdir(directory+'/'+elem) else elem + "/")
+        else:
+            return render_to_response("{}/concrete/{}/index.html".format(site, path), {}, RequestContext(request))
     return render_to_response("{}/index.html".format(site),{"listdir": listdir}, RequestContext(request))
