@@ -10,134 +10,25 @@
 
 <div class="content-container">
 
+    <div class="row-fluid">
+        <div class="span12">
+            <h2>{% block title %}{% endblock %}</h2>
+            <h4 style="color:red">{% block todo%}{% endblock %}</h4>
+            <p class="summary">{% block summary %}{% endblock %}</p>
+        </div>
+    </div>
+
     {% block content %}
 
-        <div class="row-fluid">
-            <div class="span12">
-                <h2>{% block title %}{% endblock %}</h2>
-                <h4 style="color:red">{% block todo%}{% endblock %}</h4>
-                <p class="summary">{% block summary %}{% endblock %}</p>
-            </div>
-        </div>
-
-        <div class="row-fluid">
-
-            <div class="span4">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h3>Events</h3>
-                    </div>
-                    <div class="span12">
-                        {% block events %}{% endblock %}
-                    </div>
-                </div>
-            </div>
-
-            <div class="span4">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h3>Locations</h3>
-                    </div>
-                    <div class="span12">
-                        {% block locations %}{% endblock %}
-                    </div>
-                </div>
-            </div>
-
-            <div class="span4">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h3>Achievements</h3>
-                    </div>
-                    <div class="span12">
-                        {% block achievements %}{% endblock %}
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row-fluid">
-
-            <div class="span4">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h3>Creatures</h3>
-                    </div>
-                    <div class="span12">
-                        {% block creatures %}{% endblock %}
-                    </div>
-                </div>
-            </div>
-
-            <div class="span4">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h3>Traps</h3>
-                    </div>
-                    <div class="span12">
-                        {% block traps %}{% endblock %}
-                    </div>
-                </div>
-            </div>
-
-            <div class="span4">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h3>Conditions</h3>
-                    </div>
-                    <div class="span12">
-                        {% block conditions %}{% endblock %}
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row-fluid">
-
-            <div class="span4">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h3>Knowledges</h3>
-                    </div>
-                    <div class="span12">
-                        {% block knowledges %}{% endblock %}
-                    </div>
-                </div>
-            </div>
-
-            <div class="span4">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h3>Items</h3>
-                    </div>
-                    <div class="span12">
-                        {% block items %}{% endblock %}
-                    </div>
-                </div>
-            </div>
-
-            <div class="span4">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h3>Misc</h3>
-                    </div>
-                    <div class="span12">
-                        {% block misc %}{% endblock %}
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row-fluid">
-            <div class="span12">
-                {% block footer %}{% endblock %}
-            </div>
-        </div>
 
     {% endblock content %}
+
+    <div class="row-fluid">
+        <div class="span12">
+            {% block footer %}{% endblock %}
+        </div>
+    </div>
+
 
 </div>
 </body>

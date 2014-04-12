@@ -1,42 +1,118 @@
 {% extends "dnd/abstract/base.html" %}
 
-{% block title %}No Title{% endblock %}
-{% block summary %}No summary{% endblock %}
+{% block content %}
 
-{% block events %}
-    <p>no events</p>
-{% endblock %}
+    <div class="row-fluid">
 
-{% block locations %}
-    <p>no locations</p>
-{% endblock %}
+        <div class="span4">
+            <div class="row-fluid">
+                <div class="span12">
+                    <h3>Events</h3>
+                </div>
+                <div class="span12">
+                    {% block events %}{% endblock %}
+                </div>
+            </div>
+        </div>
 
-{% block achievements %}
-    <p>no achievements</p>
-{% endblock %}
+        <div class="span4">
+            <div class="row-fluid">
+                <div class="span12">
+                    <h3>Locations</h3>
+                </div>
+                <div class="span12">
+                    {% block locations %}{% endblock %}
+                </div>
+            </div>
+        </div>
 
-{% block creatures %}
-    <p>no creatures</p>
-{% endblock %}
+        <div class="span4">
+            <div class="row-fluid">
+                <div class="span12">
+                    <h3>Achievements</h3>
+                </div>
+                <div class="span12">
+                    {% block achievements %}{% endblock %}
+                </div>
+            </div>
+        </div>
 
-{% block traps %}
-    <p>no traps</p>
-{% endblock %}
+    </div>
 
-{% block conditions %}
-    <p>no conditions</p>
-{% endblock %}
+    <div class="row-fluid">
 
-{% block knowledges %}
-    <p>no knowledges</p>
-{% endblock %}
+        <div class="span4">
+            <div class="row-fluid">
+                <div class="span12">
+                    <h3>Creatures</h3>
+                </div>
+                <div class="span12">
+                    {% block creatures %}{% endblock %}
+                </div>
+            </div>
+        </div>
 
-{% block items %}
-    <p>no items</p>
-{% endblock %}
+        <div class="span4">
+            <div class="row-fluid">
+                <div class="span12">
+                    <h3>Traps</h3>
+                </div>
+                <div class="span12">
+                    {% block traps %}{% endblock %}
+                </div>
+            </div>
+        </div>
 
-{% block misc %}
-    <p>no misc</p>
+        <div class="span4">
+            <div class="row-fluid">
+                <div class="span12">
+                    <h3>Conditions</h3>
+                </div>
+                <div class="span12">
+                    {% block conditions %}{% endblock %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row-fluid">
+
+        <div class="span4">
+            <div class="row-fluid">
+                <div class="span12">
+                    <h3>Knowledges</h3>
+                </div>
+                <div class="span12">
+                    {% block knowledges %}{% endblock %}
+                </div>
+            </div>
+        </div>
+
+        <div class="span4">
+            <div class="row-fluid">
+                <div class="span12">
+                    <h3>Items</h3>
+                </div>
+                <div class="span12">
+                    {% block items %}{% endblock %}
+                </div>
+            </div>
+        </div>
+
+        <div class="span4">
+            <div class="row-fluid">
+                <div class="span12">
+                    <h3>Misc</h3>
+                </div>
+                <div class="span12">
+                    {% block misc %}{% endblock %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 {% endblock %}
 
 {% block footer %}{% endblock %}
