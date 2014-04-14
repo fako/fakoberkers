@@ -7,6 +7,16 @@
 
     <div class="row-fluid">
         <div class="span12">
+            {% block motivation %}
+                <p style="color: red;">no motivation!</p>
+            {% endblock %}
+        </div>
+    </div>
+
+    <hr/>
+
+    <div class="row-fluid">
+        <div class="span12">
             {% block story %}No story{% endblock %}
         </div>
     </div>

@@ -1,9 +1,9 @@
 {% extends "dnd/abstract/place.html" %}
 
 {% block title %}Cave Market{% endblock %}
-{% block summary %}No summary{% endblock %}
+{% block summary %}The cave market is a central meeting place for the humans and Locathah living in the slums as secondary citizens{% endblock %}
 
-{% block todo %}Knowledges, conditions, achievements, creatures{% endblock %}
+{% block todo %}Knowledges, conditions{% endblock %}
 
 {% block locations %}
     <p>Places of interest in this area</p>
@@ -19,17 +19,17 @@
     <ul>
         <li>A shrine with secret entrance to <a href="the-church-of-Talos.html">church of Talos</a></li>
         <li>In the back of brewery a stinking passage (FortDC12: nauseated) to <a href="cave-slums.html">cave slums</a></li>
-        <li>Towards the light, outside to <a href="fish-market.html">fish market</a></li>
+        <li>Towards the light, outside to <a href="fisher-boats.html">fisher boats</a></li>
     </ul>
 {% endblock %}
 
 {% block achievements %}
-    <p>no achievements</p>
+    <p>Bring Mirika to Lokahmee or Lokahmee to Mirika. If she is still insane at that point, Lokahmee will cure her with a wish and after a talk Lokahmee's love for Denise will be broken.</p>
 {% endblock %}
 
 {% block creatures %}
 
-    <h4>Mirika - insane half-elf girl</h4>
+    <h4><a href="/dnd/characters/Mirika.html">Mirika</a> - insane half-elf girl</h4>
     <p>Roll random on locations to determine whereabouts.</p>
     <dl class="dc">
         <dt>WisdomDC:</dt>
@@ -38,13 +38,14 @@
     </dl>
     <dl class="dc">
        <dt>KnowledgeLocalDC:</dt>
-       <dd> >= 10 Clothing seem noble elven from Dalelands</dd>
+       <dd> >= 14 Clothing seem noble elven from Dalelands</dd>
     </dl>
 
-    <h4>Blacksmith</h4>
-    <p></p>
+    <h4><a href="/dnd/characters/Gorakesh.html">Gorakesh</a> - blacksmith (Talos devotee)</h4>
+    <p>A strong guy who makes more than fishing spears as a hobby</p>
 
-    <h4>Sea weed lady</h4>
+    <h4><a href="/dnd/characters/Nimry.html">Nimry</a> - sea weed lady</h4>
+    <p>An old woman schooled in the powers of sea weeds</p>
 
 {% endblock %}
 

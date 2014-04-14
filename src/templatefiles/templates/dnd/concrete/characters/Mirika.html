@@ -1,8 +1,24 @@
 {% extends "dnd/abstract/character.html" %}
 
+{% block todo %}
+stats!
+{% endblock %}
+
 {% block name %}Mirika{% endblock %}
-{% block summary %}No summary yet{% endblock %}
-{% block story %}No story{% endblock %}
+{% block summary %}Rogue, Sorcerer, Arcane Trickster. Initially insane and needs to be cured so that her father will stop being in love with Denise.{% endblock %}
+
+{% block story %}
+    <p>Mirika has her arcane powers from the human sorceress her father fell for. She's very rebellious and learned to evade her fathers magic from childhood</p>
+    <p>When her father went missing she started to look for him and came very close. Denise was told to kill the half elf girl with too many questions, but she made Mirika insane instead, thinking that it is effectively the same. Denise assumes Mirika is somewhere raped and dead in the country side. Instead she lives in the slums in Yauhnn</p>
+{% endblock %}
+
+{% block motivation %}
+    <ul>
+        <li>Wants to find her father <a href="Lokahmee.html">Lokahmee</a> and be with him</li>
+        <li>Is insane due to <a href="Denise.html">Denise</a></li>
+    </ul>
+{% endblock %}
+
 
 {% block hit-dice %}0{% endblock %}
 {% block initiative %}+0{% endblock %}
