@@ -16,6 +16,8 @@ def page(request, site, path, ext):
 
 
 def index(request, site, path):
+
+    # TODO: write logic that searches for the target directory in all template directories
     directory = '{}src/templatefiles/templates/{}/concrete/{}'.format(settings.PATH_TO_PROJECT, site, path)
 
     listdir = []
