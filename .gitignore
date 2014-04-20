@@ -6,6 +6,7 @@
 
 static/
 fixtures/
+logs/
 
 secrets.py
 server.py
