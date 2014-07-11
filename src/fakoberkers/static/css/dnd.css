@@ -1,0 +1,19 @@
+.daughter-unlocked {
+    color: yellow;
+    /*display: none;*/
+}
+
+.major-unlocked {
+    color: green;
+    /*display: none;*/
+}
+
+.plan-unlocked {
+    color: blue;
+    /*display: none;*/
+}
+
+dt {
+    font-weight: normal;
+    font-style: italic;
+}
