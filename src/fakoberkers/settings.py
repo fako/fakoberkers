@@ -83,6 +83,7 @@ STATIC_URL = '/static/' + PROJECT_NAME + '/'
 STATICFILES_DIRS = (
     PATH_TO_PROJECT + 'src/HIF/output/http/static',
     PATH_TO_PROJECT + 'src/digitasenscia/static',
+    PATH_TO_PROJECT + 'src/globescope/static',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
