@@ -1,0 +1,3 @@
+{% verbatim %}
+<div id="kiosk" ng-style="kioskStyle" ng-class="kioskClass"><div ng-repeat="language in languages"><div class="forth" ng-repeat="iteration in [0,1,2,3]"><iframe ng-src="{{ language | word_video:iteration }}" width="{{ elementWidth }}" height="{{ elementHeight }}"></iframe></div></div></div>
+{% endverbatim %}

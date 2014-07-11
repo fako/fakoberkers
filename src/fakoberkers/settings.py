@@ -166,6 +166,7 @@ INSTALLED_APPS = (
     # FakoBerkers apps
     'templatefiles',
     'digitasenscia',
+    'globescope',
 )
 
 # A sample logging configuration. The only tangible logging

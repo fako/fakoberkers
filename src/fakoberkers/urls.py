@@ -6,13 +6,14 @@ from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = i18n_patterns('fakoberkers.views',
-    url(r'^$', 'home', name='fakoberkers'),
+urlpatterns = i18n_patterns('',
+    url(r'^$', 'globescope.views.home', name='fakoberkers'),
     url(r'^kiosk/$', 'kiosk', name='kiosk'),
     url(r'^digita-senscia/', include('digitasenscia.urls')),
 
     # HIF related (will get moved to own project probably)
     url(r'^hif/', include('HIF.urls')),
+    url(r'^question/', 'question', name='question'),
 
     # Plain sites
     url(r'^dnd/', include('plainsite.urls'), {"site":"dnd"}),
@@ -22,4 +23,6 @@ urlpatterns = i18n_patterns('fakoberkers.views',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+
+    url(r'^(?P<partial>.*)$', 'globescope.views.partials', name='partials')
 )
