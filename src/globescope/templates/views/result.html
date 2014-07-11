@@ -1,3 +1,49 @@
-{% verbatim %}
-<div id="kiosk" ng-style="kioskStyle" ng-class="kioskClass"><div ng-repeat="language in languages"><div class="forth" ng-repeat="iteration in [0,1,2,3]"><iframe ng-src="{{ language | word_video:iteration }}" width="{{ elementWidth }}" height="{{ elementHeight }}"></iframe></div></div></div>
-{% endverbatim %}
+<div class="nav-bar-whitespace"></div>
+
+<nav id="main-navigation">
+    <div class="nav-bar" ng-class="{'out-of-sight': hidden}">
+        <div class="search-container"
+             ng-include="'views/search-form.html'"
+             ng-controller="SearchCtrl"
+             ng-init="placeholder = 'Scroll down or search again'">
+        </div>
+        <div class="options-container">
+            <!--<input type="checkbox" ng-model="hidden">-->
+            <input class="language-button" type="button" ng-class="language.language" ng-repeat="language in languages" ng-click="goTo(language.language)">
+        </div>
+    </div>
+</nav>
+
+<div ng-if="languages">
+    <a class="language-anchor" id="{{ language.language }}" ng-repeat-start="language in languages"></a>
+    <div class="language-container" ng-repeat-end ng-class="animationClass">
+
+        <div class="language-flag-banner" ng-class="language.language"></div>
+        <div class="language-content" ng-style="languageContentStyle">
+            <div class="word"
+                 ng-repeat="iteration in [0,1,2,3,4,5,6,7,8,9,10,11]"
+                 ng-include="'views/word.html'"
+                 ng-init="translation = language.translations[iteration]; flagWord = iteration == 3"
+            >
+            </div>
+        </div>
+
+    </div>
+
+    <div ng-style="footerWhitespaceStyle" class="footer central-box-content">
+        <h2>Thanks for watching</h2>
+        <div ng-include="'views/question-form.html'"
+             ng-init="question = 'I hope you enjoyed the experience. Could you give some feedback to help me improve the work?'; submit = 'Send feedback'">
+        </div>
+    </div>
+</div>
+
+<div class="counter-conditional" ng-if="!languages">
+    <div class="central-box-outer">
+        <div class="central-box-inner">
+            <div class="central-box-content">
+                <h2>Loading images ... {{ images.loaded}} / {{ images.needed }}</h2>
+            </div>
+        </div>
+    </div>
+</div>

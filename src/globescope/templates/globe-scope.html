@@ -1,41 +1,66 @@
 {% load static %}
-<!doctype html><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]--><head><!--
+<!doctype html>
+<!--[if lte IE 8]><html class="no-js ie lt-ie9"><![endif]-->
+<!--[if IE 9]><html class="no-js ie ie9"><![endif]-->
+<!--[if gt IE 9]><html class="no-js ie"><![endif]-->
+<html class="no-js">
 
-	  Navigation bar (new style)
-	  Images instead of videos
-	  Email form for features/bugs
-	  Handle network errors
-	  Handle processing errors
+<head>
 
-	  --><meta charset="utf-8"><title>Translate To Visuals</title><meta name="description" content=""><meta name="viewport" content="width=device-width"><meta name="google" value="notranslate"><!-- Place favicon.ico and apple-touch-icon.png in the root directory --><link rel="stylesheet" href="{% static "css/3dd0922a.main.css" %}"></head><body ng-app="digitaSensciaApp"><!--[if lt IE 7]>
-	  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-	<![endif]--><!-- Add your site or application content here --><div id="view" ng-view=""><p>To use this website you need to have Javascript enabled.</p></div>
+    <title>Globe Scope</title>
 
+    <meta charset="utf-8">
+    <meta name="description" content=""> <!-- TODO: fill out-->
+    <meta name="viewport" content="width=device-width">
+    <meta name="google" value="notranslate">
+    <link rel="shortcut icon" href="/favicon.ico" />
 
+    <link rel="stylesheet" href="{% static 'css/vendor.css' %}"/>
 
-    <script src="{% static "js/00c23dcf.vendor.js" %}"></script>
-<script>
-            $window = $(window);
-            window.HIF = {
-                kioskSettings: { // should come from backend
-                    ratioWidth: 16,
-                    ratioHeight: 9,
-                    containerWidth: $window.width(),
-                    containerHeight: $window.height(),
-                    minimalWidth: 800,
-                    minimalHeight: 450
-                },
-                waitingSettings: { // should come from backend
-                    retry_speed: 1000,
-                    refresh_speed: 250,
-                    refresh_rate: 0.25,
-                    expected_duration: 5000,
-                    max_progress: 100
-                },
-                translationEndpoint: "http://onopo.ly/en/hif/video-translations/"
-            }
-        </script>
-    <script src="{% static "js/e73d1c9b.scripts.js" %}"></script>
+    <link rel="stylesheet" href="{% static 'css/772b7f4f.main.css' %}"/>
+
+</head>
+
+<body ng-app="globeScopeApp">
+
+    <div id="main" ui-view="main" ng-class="loadClass">
+
+        <div class="central-box-outer">
+            <div class="central-box-inner">
+                <div class="central-box-content">
+                    <!--[if lt IE 10]>
+                        <h2 class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</h2>
+                    <![endif]-->
+                    <noscript>
+                        <h2>To use this website you need to have Javascript enabled.</h2>
+                    </noscript>
+                    <h2 class="loading-screen">Loading ... please wait :)</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="load" ui-view="load" ng-class="loadClass"></div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID --> <!-- TODO: make this Piwik -->
+     <script>
+         /*(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+         ga('create', 'UA-XXXXX-X');
+         ga('send', 'pageview');*/
+    </script>
+
+    <script src="{% static 'js/d41d8cd9.vendor.js' %}"></script>
+
+    <script>
+{{ HIF_FRONTEND_SETTINGS }}
+</script>
+
+    <script src="{% static 'js/a2e8cea8.scripts.js' %}"></script>
 
 </body>
 </html>
