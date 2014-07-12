@@ -15,8 +15,6 @@
     <meta name="google" value="notranslate">
     <link rel="shortcut icon" href="{% static 'favicon.ico' %}" />
 
-    <link rel="stylesheet" href="{% static 'css/vendor.css' %}"/>
-
     <link rel="stylesheet" href="{% static 'css/e86d763b.main.css' %}"/>
 
 </head>
@@ -57,7 +55,7 @@
     <script src="{% static 'js/d41d8cd9.vendor.js' %}"></script>
 
     <script>
-{{ HIF_FRONTEND_SETTINGS }}
+{{ HIF_FRONTEND_SETTINGS | safe }}
 </script>
 
     <script src="{% static 'js/5468e033.scripts.js' %}"></script>
