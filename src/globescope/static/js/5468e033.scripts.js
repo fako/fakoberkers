@@ -1,1 +1,681 @@
-"use strict";angular.module("globeScopeApp",["ngSanitize","ngCookies","ui.router"]).config(["$stateProvider","$urlRouterProvider",function(a,b){a.state("main",{url:"/",onEnter:["$rootScope",function(a){a.loadClass=[]}],views:{main:{templateUrl:"views/main.html",controller:"MainCtrl"},load:{template:""}}}).state("translate",{url:"/result?q",onEnter:["$rootScope",function(a){a.loadClass=["loading"]}],views:{main:{templateUrl:"views/result.html",controller:"ResultCtrl"},load:{templateUrl:"views/waiting.html",controller:"WaitingCtrl"}}}).state("resize",{params:["referralState","referralQ"],onEnter:["$rootScope",function(a){a.loadClass=[]}],views:{main:{templateUrl:"views/resize.html",controller:"ResizeCtrl"},load:{template:""}}}).state("error",{onEnter:["$rootScope",function(a){a.loadClass=[]}],url:"/error",views:{main:{templateUrl:"views/error.html",controller:"ErrorCtrl"},load:{template:""}}}),b.otherwise("/")}]).run(["$rootScope","$state","$location","$http","$cookies",function(a,b,c,d,e){d.defaults.headers.post["X-CSRFToken"]=e.csrftoken}]),Array.prototype.randomize=function(){for(var a=this.length-1;a>0;a--){var b=Math.floor(Math.random()*(a+1)),c=this[a];this[a]=this[b],this[b]=c}},Array.prototype.pad=function(a){for(var b=0,c=this.length;this.length<a;++b)this.push($.extend(!0,{},this[b%c]))},angular.module("globeScopeApp").factory("imageService",["$q","$timeout",function(a,b){function c(b,c){this.propertySeed=c,this.width=b.width,this.height=b.height,this.link=b.link,this.timeoutPromise=null,this.deferred=a.defer();var d=this;this.deferred["finally"]=function(){d.timeoutPromise.cancel()},this.yproperties=["top","bottom"],this.noAnimationTreshold=57,this.viewPort=!1}return c.prototype.setViewport=function(){var a=HIF.resultSettings,b=$(window).width(),c=Math.floor(b/4),d=c/a.ratioWidth*a.ratioHeight;d=Math.round(d),a.imageWidth=c,a.imageHeight=d,this.viewPort={width:a.imageWidth,height:a.imageHeight}},c.prototype.load=function(c){if(this.viewPort||this.setViewport(),"undefined"!=typeof c&&this.link in c)return c[this.link]?this:a.reject(this);if(this.getActualHeightWhenFullWidth(this.viewPort)<this.viewPort.height||this.width<this.viewPort.width)return a.reject(this);var d=this;this.timeoutPromise=b(function(){d.deferred.reject(d)},1e3);var e=new Image;return $(e).load(function(){return this.height<d.height||this.width<d.width?void d.deferred.reject(d):(d.width=this.width,d.height=this.height,void d.deferred.resolve(d))}).error(function(){d.deferred.reject(d)}).prop("src",this.link),e.complete&&(this.width=e.width,this.height=e.height,b.cancel(this.timeoutPromise)),e.complete?this:this.deferred.promise},c.prototype.getOffsetProperty=function(){return this.yproperties[this.propertySeed%2]},c.prototype.getActualHeightWhenFullWidth=function(a){var b=this.width/a.width,c=this.height/b;return Math.round(c)},c.prototype.getOverflowPercentage=function(a){var b=this.getActualHeightWhenFullWidth(a)-a.height;return Math.ceil(b/a.height*100)},c.prototype.style=function(){this.viewPort||this.setViewport();var a=HIF.resultSettings.animationInterval,b={width:"100%",transition:"top "+a+"s linear, bottom "+a+"s linear"},c=this.getOverflowPercentage(this.viewPort),d=c>this.noAnimationTreshold;return b[this.getOffsetProperty()]=d?-1*c+"%":-1*(c/2)+"%",b},c.prototype.cssClass=function(){this.viewPort||this.setViewport();var a=this.getOverflowPercentage(this.viewPort)>this.noAnimationTreshold;return a?this.getOffsetProperty()+"-overflow":""},c}]),angular.module("globeScopeApp").factory("visualTranslationService",["$http","$q","imageService",function(a,b,c){var d={url:HIF.translationEndpoint,languages:[],query:"",deferred:!1,promise:!1,standby:!0,readyVisuals:0,reset:function(){console.log("Resetting $Translation");for(var a=0;a<this.languages.length;++a)for(var c=0;c<this.languages[a].translations.length;++c)for(var d=0;d<this.languages[a].translations[c].visuals.length;++d)delete this.languages[a].translations[c].visuals[d];this.languages=[],this.readyVisuals=0,this.query="",this.deferred=!1,this.imagesDeferred=!1,this.deferred=b.defer(),this.imagesDeferred=b.defer();var e=this;this.deferred.promise["finally"](function(){e.standby=!0})},forceResult:function(){},getExpectedImageCount:function(){return 12*this.languages.length},ready:function(){return this.getExpectedImageCount()===this.readyVisuals&&(console.log("ready"),this.imagesDeferred.resolve()),this.imagesDeferred.promise},getResourceUrl:function(){return this.url+"?format=json&q="+this.query},get:function(b){var c=this;return this.standby?(this.reset(),this.query=b,this.standby=!1):b&&b!=this.query&&(this.reset(),this.query=b,this.standby=!1),a({method:"GET",url:this.getResourceUrl()}).success(function(a,b){200==b?(c.process(a),c.deferred.resolve(b)):c.deferred.notify(b)}).error(function(a,b){c.deferred.reject(b)}),this.deferred.promise},process:function(a){this.languages=a,a.randomize();for(var b=0;b<a.length;++b)this.processLanguage(a[b])},processLanguage:function(a){a.translations.randomize(),a.translations.pad(12),a.translations.randomize();for(var b=0;b<a.translations.length;++b)this.processWord(a.translations[b])},processWord:function(a){function d(f){if(f>=a.images.length)return void(a.rejected=!0);var g=a.images[f];g.link in a.sources&&!a.sources[g.link]&&d(f+1);var h=new c(a.images[f],e.readyVisuals);b.when(h.load(a.sources)).then(function(b){a.visuals.push(b),a.sources[b.link]=!0,++e.readyVisuals,e.imagesDeferred.notify(e.readyVisuals),e.ready()},function(b){a.sources[b.link]=!1,d(f+1)})}var e=this;a.visuals=[],a.sources={},a.hasOwnProperty("videos")&&a.videos&&a.videos.randomize(),a.hasOwnProperty("images")&&a.images&&(a.images.randomize(),d(0))}};return d}]),angular.module("globeScopeApp").factory("kioskService",function(){var a={containerWidth:0,containerHeight:0,setKioskSettings:function(a){var b=a;if(this.containerWidth!=b.containerWidth||this.containerHeight!=b.containerHeight){if(b.containerWidth<b.minimalWidth||b.containerHeight<b.minimalHeight)return void(this.kioskStatus="no-fit");this.containerWidth=b.containerWidth,this.containerHeight=b.containerHeight,this.kioskWidth=b.containerWidth,this.kioskHeight=b.containerHeight,this.kioskTop=0,this.kioskLeft=0,this.kioskStatus="fit";var c=b.ratioWidth/b.ratioHeight,d=b.containerWidth/b.containerHeight;if(c>d){var e=b.containerWidth/b.ratioWidth*b.ratioHeight;e=Math.round(e);var f=Math.round((b.containerHeight-e)/2);this.kioskHeight=e,this.kioskTop=f,this.kioskStatus="mis-fit"}else if(d>c){var g=b.containerHeight/b.ratioHeight*b.ratioWidth;g=Math.round(g);var f=Math.round((b.containerWidth-g)/2);this.kioskWidth=g,this.kioskLeft=f,this.kioskStatus="mis-fit"}}},style:function(a){return this.setKioskSettings(a),this.kioskStyle={width:this.kioskWidth,height:this.kioskHeight,top:this.kioskTop,left:this.kioskLeft},this.kioskStyle},css_class:function(a){return this.setKioskSettings(a),this.kioskClass=this.kioskStatus,this.kioskClass}};return a}),angular.module("globeScopeApp").controller("MainCtrl",["$scope",function(){}]),angular.module("globeScopeApp").controller("SearchCtrl",["$scope","$state",function(a,b){a.translateToVisuals=function(a){b.go("translate",{q:a})}}]),angular.module("globeScopeApp").controller("ResultCtrl",["$scope","$rootScope","$state","$location","$timeout","$anchorScroll","visualTranslationService",function(a,b,c,d,e,f,g){function h(){q=!q,a.animationClass={active:q},p=e(h,1e3*HIF.resultSettings.animationInterval)}var i=$(window),j=c.current.name,k=d.search().q;if(i.width()<HIF.resultSettings.minimalWidth||i.height()<HIF.resultSettings.minimalHeight)return void c.go("resize",{referralState:j,referralQ:k},{location:"replace"});var l=HIF.resultSettings,m=i.width(),n=Math.floor(m/4),o=n/l.ratioWidth*l.ratioHeight;o=Math.round(o),l.imageWidth=n,l.imageHeight=o,a.languageContentStyle={height:3*o},a.footerWhitespaceStyle={height:i.height()-3*o-130},a.goTo=function(a){d.hash(a).replace(),f()},i.resize(function(){c.go("resize",{referralState:j,referralQ:k},{location:"replace"})});var p,q=!1,r=a.$on("results-received",function(){a.images={needed:g.getExpectedImageCount()},g.ready().then(function(){a.languages=g.languages,e(h,100)},function(){},function(b){a.images.loaded=b})});a.$on("$destroy",function(){$(window).unbind("resize"),r(),e.cancel(p)})}]).filter("word_video",["$sce",function(a){return function(b,c){for(var d="http://www.youtube.com/embed/",e=b.translations[c].videos,f=e[0].vid,g="",h=1;h<e.length;++h)g+=e[h].vid+",";var i="?autoplay=0&controls=0&showinfo=0&playlist="+g;return a.trustAsResourceUrl(d+f+i)}}]),angular.module("globeScopeApp").controller("ResizeCtrl",["$scope","$timeout","$state","$stateParams","kioskService",function(a,b,c,d,e){function f(){a.relocatePromise=b(function(){c.go(d.referralState,{q:d.referralQ},{location:"replace"})},1e3)}var g=HIF.resultSettings;f(),a.$on("resize",function(c){b.cancel(a.relocatePromise),f();var d=$(window);c.currentScope.width=g.containerWidth=d.width(),c.currentScope.height=g.containerHeight=d.height(),c.currentScope.minimalWidth=g.minimalWidth,c.currentScope.minimalHeight=g.minimalHeight,c.currentScope.sizeClass=e.css_class(g),"no-fit"==e.kioskStatus&&b.cancel(a.relocatePromise)}),a.$emit("resize"),$(window).resize(function(){a.$apply(function(){a.$emit("resize")})}),a.$on("$destroy",function(){$(window).unbind("resize"),b.cancel(a.relocatePromise)})}]),angular.module("globeScopeApp").controller("WaitingCtrl",["$scope","$rootScope","$state","$stateParams","$timeout","visualTranslationService",function(a,b,c,d,e,f){function g(){return a.progress+=n,a.progress>=a.max_progress?void(a.progress=a.max_progress-3):void(j=e(g,i.refresh_speed))}function h(){f.get(d.q).then(function(){b.$broadcast("results-received"),b.loadClass=["done"]},function(a){400===a?alert(data.detail):(console.log("going to error state"),c.go("error",{},{reload:!0}))},function(){k=e(h,i.retry_speed)})}d.q||c.go("main");var i=HIF.waitingSettings;a.max_progress=i.max_progress,a.progress=0;var j,k,l=Math.ceil(i.expected_duration/i.retry_speed),m=Math.ceil(i.max_progress/l),n=Math.floor(m*i.refresh_rate);h(),g(),a.$on("$destroy",function(){e.cancel(j),e.cancel(k)})}]),angular.module("globeScopeApp").controller("ErrorCtrl",["$scope",function(){}]),angular.module("globeScopeApp").controller("QuestionCtrl",["$scope","$http","$location",function(a,b,c){function d(b){return b.question=a.question,b.userAgent=navigator.userAgent,b.screen=c.absUrl(),b.referral=document.referrer,b.time=(new Date).toISOString(),b}a.send=function(){var c=d(a.questionForm);b.post(HIF.questionEndpoint,c).then(function(){alert("Thank you for your feedback")},function(){alert("I'm sorry, something went wrong with sending your feedback. Please try again.")})}}]);
+'use strict';
+angular.module('globeScopeApp', [
+  'ngSanitize',
+  'ngCookies',
+  'ui.router'
+]).config([
+  '$stateProvider',
+  '$urlRouterProvider',
+  function ($stateProvider, $urlRouterProvider) {
+    $stateProvider.state('main', {
+      url: '/',
+      onEnter: [
+        '$rootScope',
+        function ($rootScope) {
+          $rootScope.loadClass = [];
+        }
+      ],
+      views: {
+        main: {
+          templateUrl: 'views/main.html',
+          controller: 'MainCtrl'
+        },
+        load: { template: '' }
+      }
+    }).state('translate', {
+      url: '/result?q',
+      onEnter: [
+        '$rootScope',
+        function ($rootScope) {
+          $rootScope.loadClass = ['loading'];
+        }
+      ],
+      views: {
+        main: {
+          templateUrl: 'views/result.html',
+          controller: 'ResultCtrl'
+        },
+        load: {
+          templateUrl: 'views/waiting.html',
+          controller: 'WaitingCtrl'
+        }
+      }
+    }).state('resize', {
+      params: [
+        'referralState',
+        'referralQ'
+      ],
+      onEnter: [
+        '$rootScope',
+        function ($rootScope) {
+          $rootScope.loadClass = [];
+        }
+      ],
+      views: {
+        main: {
+          templateUrl: 'views/resize.html',
+          controller: 'ResizeCtrl'
+        },
+        load: { template: '' }
+      }
+    }).state('error', {
+      onEnter: [
+        '$rootScope',
+        function ($rootScope) {
+          $rootScope.loadClass = [];
+        }
+      ],
+      url: '/error',
+      views: {
+        main: {
+          templateUrl: 'views/error.html',
+          controller: 'ErrorCtrl'
+        },
+        load: { template: '' }
+      }
+    });
+    $urlRouterProvider.otherwise('/');
+  }
+]).run([
+  '$rootScope',
+  '$state',
+  '$location',
+  '$http',
+  '$cookies',
+  function ($rootScope, $state, $location, $http, $cookies) {
+    $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;  //$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
+  }
+]);
+Array.prototype.randomize = function () {
+  /**
+    * Randomize array element order in-place.
+    * Using Fisher-Yates shuffle algorithm.
+    *
+    *  http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+    */
+  for (var i = this.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = this[i];
+    this[i] = this[j];
+    this[j] = temp;
+  }
+};
+Array.prototype.pad = function (limit) {
+  /**
+	* Adds elements to the array until length of Array is equal to limit
+	* It deep copies elements from the beginning of the Array to pad the end.
+	* It repeats the same elements when needed padding is longer than Array.length
+	*/
+  for (var i = 0, length = this.length; this.length < limit; ++i) {
+    this.push($.extend(true, {}, this[i % length]));  // pushing a deep copy
+  }
+};
+'use strict';
+/* globals HIF, $ */
+angular.module('globeScopeApp').factory('imageService', [
+  '$q',
+  '$timeout',
+  function ($q, $timeout) {
+    function GSImage(data, propertySeed) {
+      this.propertySeed = propertySeed;
+      // an integer used to determine CSS property
+      this.width = data.width;
+      this.height = data.height;
+      this.link = data.link;
+      this.timeoutPromise = null;
+      // TODO: make timeout separate event
+      this.deferred = $q.defer();
+      var that = this;
+      this.deferred['finally'] = function () {
+        that.timeoutPromise.cancel();
+      };
+      this.yproperties = [
+        'top',
+        'bottom'
+      ];
+      this.noAnimationTreshold = 57;
+      this.viewPort = false;
+    }
+    GSImage.prototype.setViewport = function () {
+      // TODO: remove global dependencies
+      // TODO: duplicates code in ResultCtrl, move to separate service
+      // TODO: inject instead of ask for dependencies
+      // Some vars
+      var rs = HIF.resultSettings;
+      var windowWidth = $(window).width();
+      var imageWidth = Math.floor(windowWidth / 4);
+      // TODO: remove hard code
+      var imageHeight = imageWidth / rs.ratioWidth * rs.ratioHeight;
+      imageHeight = Math.round(imageHeight);
+      rs.imageWidth = imageWidth;
+      rs.imageHeight = imageHeight;
+      this.viewPort = {
+        width: rs.imageWidth,
+        height: rs.imageHeight
+      };
+    };
+    GSImage.prototype.load = function (sources) {
+      if (!this.viewPort) {
+        this.setViewport();
+      }
+      if (typeof sources != 'undefined') {
+        if (this.link in sources) {
+          if (sources[this.link]) {
+            return this;  // is already loaded we return this (which shall be wrapped in when())
+          } else {
+            return $q.reject(this);
+          }
+        }
+      }
+      // TODO: have a look at images that would be too small with width 100%
+      if (this.getActualHeightWhenFullWidth(this.viewPort) < this.viewPort.height || this.width < this.viewPort.width) {
+        return $q.reject(this);
+      }
+      var that = this;
+      this.timeoutPromise = $timeout(function () {
+        // cancelled in finally clause of image promise
+        that.deferred.reject(that);
+      }, 1000);
+      var img = new Image();
+      $(img).load(function (event) {
+        if (this.height < that.height || this.width < that.width) {
+          that.deferred.reject(that);
+          return;
+        }
+        that.width = this.width;
+        that.height = this.height;
+        that.deferred.resolve(that);
+      }).error(function (event) {
+        that.deferred.reject(that);
+      }).prop('src', this.link);
+      if (img.complete) {
+        this.width = img.width;
+        this.height = img.height;
+        $timeout.cancel(this.timeoutPromise);
+      }
+      return img.complete ? this : this.deferred.promise;
+    };
+    GSImage.prototype.getOffsetProperty = function () {
+      return this.yproperties[this.propertySeed % 2];
+    };
+    GSImage.prototype.getActualHeightWhenFullWidth = function (viewportDimensions) {
+      // We calculate the actual image size based on the assumptions:
+      // That width is as large as viewport width
+      // And that we keep the ratio
+      var widthRatio = this.width / viewportDimensions.width;
+      var actualImageHeight = this.height / widthRatio;
+      return Math.round(actualImageHeight);
+    };
+    GSImage.prototype.getOverflowPercentage = function (viewportDimensions) {
+      var overflowSize = this.getActualHeightWhenFullWidth(viewportDimensions) - viewportDimensions['height'];
+      return Math.ceil(overflowSize / viewportDimensions['height'] * 100);
+    };
+    GSImage.prototype.style = function () {
+      if (!this.viewPort) {
+        this.setViewport();
+      }
+      // Initial styling
+      var animationInterval = HIF.resultSettings.animationInterval;
+      // TODO: remove external dependency
+      var styles = {
+          width: '100%',
+          transition: 'top ' + animationInterval + 's linear, bottom ' + animationInterval + 's linear'
+        };
+      // Styling based on overflow
+      var overflowPercentage = this.getOverflowPercentage(this.viewPort);
+      var hasSignificantOverflow = overflowPercentage > this.noAnimationTreshold;
+      if (hasSignificantOverflow) {
+        styles[this.getOffsetProperty()] = -1 * overflowPercentage + '%';
+      } else {
+        styles[this.getOffsetProperty()] = -1 * (overflowPercentage / 2) + '%';
+      }
+      return styles;
+    };
+    GSImage.prototype.cssClass = function () {
+      if (!this.viewPort) {
+        this.setViewport();
+      }
+      var hasSignificantOverflow = this.getOverflowPercentage(this.viewPort) > this.noAnimationTreshold;
+      return hasSignificantOverflow ? this.getOffsetProperty() + '-overflow' : '';
+    };
+    return GSImage;
+  }
+]);
+'use strict';
+angular.module('globeScopeApp').factory('visualTranslationService', [
+  '$http',
+  '$q',
+  'imageService',
+  function ($http, $q, $Image) {
+    var visualTranslationService = {
+        url: HIF.translationEndpoint,
+        languages: [],
+        query: '',
+        deferred: false,
+        promise: false,
+        standby: true,
+        readyVisuals: 0,
+        reset: function () {
+          console.log('Resetting $Translation');
+          // TODO: Create map function for visuals
+          // A change to release what needs to be released
+          for (var i = 0; i < this.languages.length; ++i) {
+            for (var j = 0; j < this.languages[i].translations.length; ++j) {
+              for (var k = 0; k < this.languages[i].translations[j].visuals.length; ++k) {
+                delete this.languages[i].translations[j].visuals[k];
+              }
+            }
+          }
+          // Resetting the vars
+          this.languages = [];
+          this.readyVisuals = 0;
+          this.query = '';
+          this.deferred = false;
+          this.imagesDeferred = false;
+          // Prepare defer
+          this.deferred = $q.defer();
+          this.imagesDeferred = $q.defer();
+          // When we're done we're on standby
+          var that = this;
+          this.deferred.promise['finally'](function () {
+            that.standby = true;
+          });
+        },
+        forceResult: function () {
+        },
+        getExpectedImageCount: function () {
+          return this.languages.length * 12;
+        },
+        ready: function () {
+          // TODO: Ready per language
+          if (this.getExpectedImageCount() === this.readyVisuals) {
+            console.log('ready');
+            this.imagesDeferred.resolve();
+          }
+          return this.imagesDeferred.promise;
+        },
+        getResourceUrl: function () {
+          return this.url + '?format=json&q=' + this.query;
+        },
+        get: function (query) {
+          // Make service available to callbacks through that var
+          var that = this;
+          if (!this.standby) {
+            if (query && query != this.query) {
+              // The query is different than before
+              // So we reset and continue normal execution
+              this.reset();
+              this.query = query;
+              this.standby = false;
+            }
+          } else {
+            // We reset if service is standing by
+            // And claim it as
+            this.reset();
+            this.query = query;
+            this.standby = false;
+          }
+          $http({
+            method: 'GET',
+            url: this.getResourceUrl()
+          }).success(function (data, status, headers, config) {
+            if (status == 200) {
+              that.process(data);
+              that.deferred.resolve(status);
+            } else {
+              that.deferred.notify(status);  // 202, request accepted
+            }
+          }).error(function (data, status, headers, config) {
+            that.deferred.reject(status);
+          });
+          return this.deferred.promise;
+        },
+        process: function (data) {
+          this.languages = data;
+          data.randomize();
+          for (var i = 0; i < data.length; ++i) {
+            this.processLanguage(data[i]);
+          }
+        },
+        processLanguage: function (data) {
+          data.translations.randomize();
+          data.translations.pad(12);
+          // ensures length==12
+          data.translations.randomize();
+          for (var i = 0; i < data.translations.length; ++i) {
+            this.processWord(data.translations[i]);
+          }
+        },
+        processWord: function (data) {
+          var that = this;
+          data.visuals = [];
+          data.sources = {};
+          function getImage(index) {
+            if (index >= data.images.length) {
+              data.rejected = true;
+              return;
+            }
+            var candidate = data.images[index];
+            if (candidate.link in data.sources && !data.sources[candidate.link]) {
+              getImage(index + 1);
+            }
+            var image = new $Image(data.images[index], that.readyVisuals);
+            $q.when(image.load(data.sources)).then(function resolve(image) {
+              data.visuals.push(image);
+              data.sources[image.link] = true;
+              ++that.readyVisuals;
+              that.imagesDeferred.notify(that.readyVisuals);
+              that.ready();
+            }, function reject(image) {
+              data.sources[image.link] = false;
+              getImage(index + 1);
+            });
+          }
+          if (data.hasOwnProperty('videos') && data.videos) {
+            data.videos.randomize();
+          }
+          if (data.hasOwnProperty('images') && data.images) {
+            data.images.randomize();
+            getImage(0);
+          }
+        }
+      };
+    return visualTranslationService;
+  }
+]);
+'use strict';
+angular.module('globeScopeApp').factory('kioskService', function () {
+  var kioskService = {
+      containerWidth: 0,
+      containerHeight: 0,
+      setKioskSettings: function (kioskSettings) {
+        // Gateway
+        var ks = kioskSettings;
+        if (this.containerWidth == ks.containerWidth && this.containerHeight == ks.containerHeight) {
+          return;
+        }  // Some code to monitor quality
+        else if (ks.containerWidth < ks.minimalWidth || ks.containerHeight < ks.minimalHeight) {
+          this.kioskStatus = 'no-fit';
+          return;
+        } else {
+          this.containerWidth = ks.containerWidth;
+          this.containerHeight = ks.containerHeight;
+        }
+        // Default values
+        this.kioskWidth = ks.containerWidth;
+        this.kioskHeight = ks.containerHeight;
+        this.kioskTop = 0;
+        this.kioskLeft = 0;
+        this.kioskStatus = 'fit';
+        // Calculate ratios
+        var idealRatio = ks.ratioWidth / ks.ratioHeight;
+        var realRatio = ks.containerWidth / ks.containerHeight;
+        // height of viewport to large
+        // we need to restrict the height
+        // we get whitespace above and below kiosk
+        if (realRatio < idealRatio) {
+          var allowedHeight = ks.containerWidth / ks.ratioWidth * ks.ratioHeight;
+          allowedHeight = Math.round(allowedHeight);
+          var whiteSpace = Math.round((ks.containerHeight - allowedHeight) / 2);
+          this.kioskHeight = allowedHeight;
+          this.kioskTop = whiteSpace;
+          this.kioskStatus = 'mis-fit';  // width of viewport to large
+                                         // we need to restrict the width
+                                         // we get whitespace left and right of kiosk
+        } else if (realRatio > idealRatio) {
+          var allowedWidth = ks.containerHeight / ks.ratioHeight * ks.ratioWidth;
+          allowedWidth = Math.round(allowedWidth);
+          var whiteSpace = Math.round((ks.containerWidth - allowedWidth) / 2);
+          this.kioskWidth = allowedWidth;
+          this.kioskLeft = whiteSpace;
+          this.kioskStatus = 'mis-fit';
+        }
+      },
+      style: function (kioskSettings) {
+        this.setKioskSettings(kioskSettings);
+        this.kioskStyle = {
+          'width': this.kioskWidth,
+          'height': this.kioskHeight,
+          'top': this.kioskTop,
+          'left': this.kioskLeft
+        };
+        return this.kioskStyle;
+      },
+      css_class: function (kioskSettings) {
+        this.setKioskSettings(kioskSettings);
+        this.kioskClass = this.kioskStatus;
+        return this.kioskClass;
+      }
+    };
+  return kioskService;
+});
+'use strict';
+angular.module('globeScopeApp').controller('MainCtrl', [
+  '$scope',
+  function ($scope) {
+  }
+]);
+'use strict';
+angular.module('globeScopeApp').controller('SearchCtrl', [
+  '$scope',
+  '$state',
+  function ($scope, $state) {
+    $scope.translateToVisuals = function (query) {
+      $state.go('translate', { q: query });
+    };
+  }
+]);
+'use strict';
+/*global HIF, $ */
+angular.module('globeScopeApp').controller('ResultCtrl', [
+  '$scope',
+  '$rootScope',
+  '$state',
+  '$location',
+  '$timeout',
+  '$anchorScroll',
+  'visualTranslationService',
+  function ($scope, $rootScope, $state, $location, $timeout, $anchorScroll, $Translation) {
+    var $window = $(window);
+    var currentState = $state.current.name, currentQ = $location.search().q;
+    // Ensure minimal width and height when loading ...
+    if ($window.width() < HIF.resultSettings.minimalWidth || $window.height() < HIF.resultSettings.minimalHeight) {
+      $state.go('resize', {
+        referralState: currentState,
+        referralQ: currentQ
+      }, { location: 'replace' });
+      return;
+    }
+    var rs = HIF.resultSettings;
+    var windowWidth = $window.width();
+    var imageWidth = Math.floor(windowWidth / 4);
+    // TODO: remove hard code
+    var imageHeight = imageWidth / rs.ratioWidth * rs.ratioHeight;
+    imageHeight = Math.round(imageHeight);
+    rs.imageWidth = imageWidth;
+    rs.imageHeight = imageHeight;
+    $scope.languageContentStyle = { height: 3 * imageHeight };
+    $scope.footerWhitespaceStyle = { height: $window.height() - 3 * imageHeight - 2 * 65 };
+    $scope.goTo = function (anchor) {
+      $location.hash(anchor).replace();
+      $anchorScroll();
+    };
+    // TODO: move to kiosk service or resize service
+    $window.resize(function () {
+      $state.go('resize', {
+        referralState: currentState,
+        referralQ: currentQ
+      }, { location: 'replace' });
+    });
+    var active = false;
+    var animatePromise;
+    function animate() {
+      active = !active;
+      $scope.animationClass = { active: active };
+      animatePromise = $timeout(animate, HIF.resultSettings.animationInterval * 1000);
+    }
+    var resultsReceived = $scope.$on('results-received', function (event) {
+        $scope.images = { needed: $Translation.getExpectedImageCount() };
+        $Translation.ready().then(function resolve() {
+          $scope.languages = $Translation.languages;
+          $timeout(animate, 100);
+        }, function reject() {
+        }, function notify(images) {
+          $scope.images.loaded = images;
+        });
+      });
+    $scope.$on('$destroy', function () {
+      $(window).unbind('resize');
+      // don't use $window it's slower
+      resultsReceived();
+      // TODO: necessary or automatic?
+      $timeout.cancel(animatePromise);
+    });
+  }
+]).filter('word_video', [
+  '$sce',
+  function ($sce) {
+    // TODO: move to translation service
+    return function (language, index) {
+      var url = 'http://www.youtube.com/embed/';
+      var videos = language.translations[index].videos;
+      var startVid = videos[0].vid;
+      var vids = '';
+      for (var i = 1; i < videos.length; ++i) {
+        vids += videos[i].vid + ',';
+      }
+      var params = '?' + 'autoplay=0&controls=0&showinfo=0&playlist=' + vids;
+      return $sce.trustAsResourceUrl(url + startVid + params);
+    };
+  }
+]);
+'use strict';
+angular.module('globeScopeApp').controller('ResizeCtrl', [
+  '$scope',
+  '$timeout',
+  '$state',
+  '$stateParams',
+  'kioskService',
+  function ($scope, $timeout, $state, $stateParams, kiosk) {
+    var kioskSettings = HIF.resultSettings;
+    function relocate() {
+      $scope.relocatePromise = $timeout(function () {
+        $state.go($stateParams.referralState, { q: $stateParams.referralQ }, { location: 'replace' });
+      }, 1000);
+    }
+    relocate();
+    $scope.$on('resize', function (event) {
+      $timeout.cancel($scope.relocatePromise);
+      relocate();
+      var $window = $(window);
+      // do not make global, this is faster
+      event.currentScope.width = kioskSettings.containerWidth = $window.width();
+      event.currentScope.height = kioskSettings.containerHeight = $window.height();
+      event.currentScope.minimalWidth = kioskSettings.minimalWidth;
+      event.currentScope.minimalHeight = kioskSettings.minimalHeight;
+      // TODO: refactor the kiosk code
+      event.currentScope.sizeClass = kiosk.css_class(kioskSettings);
+      if (kiosk.kioskStatus == 'no-fit') {
+        $timeout.cancel($scope.relocatePromise);
+      }
+    });
+    // Initial values
+    $scope.$emit('resize');
+    // Act on browser resize
+    $(window).resize(function () {
+      $scope.$apply(function () {
+        $scope.$emit('resize');
+      });
+    });
+    $scope.$on('$destroy', function () {
+      $(window).unbind('resize');
+      $timeout.cancel($scope.relocatePromise);
+    });
+  }
+]);
+'use strict';
+angular.module('globeScopeApp').controller('WaitingCtrl', [
+  '$scope',
+  '$rootScope',
+  '$state',
+  '$stateParams',
+  '$timeout',
+  'visualTranslationService',
+  function ($scope, $rootScope, $state, $stateParams, $timeout, $Translation) {
+    if (!$stateParams.q) {
+      $state.go('main');
+    }
+    // Preparation
+    var ws = HIF.waitingSettings;
+    $scope.max_progress = ws.max_progress;
+    $scope.progress = 0;
+    // Refresh logic
+    var expected_attempts = Math.ceil(ws.expected_duration / ws.retry_speed);
+    var progress_per_attempt = Math.ceil(ws.max_progress / expected_attempts);
+    var progress_per_refresh = Math.floor(progress_per_attempt * ws.refresh_rate);
+    var refreshPromise;
+    function refresh() {
+      $scope.progress += progress_per_refresh;
+      if ($scope.progress >= $scope.max_progress) {
+        $scope.progress = $scope.max_progress - 3;
+        return;
+      }
+      refreshPromise = $timeout(refresh, ws.refresh_speed);
+    }
+    // Retrieve logic
+    var retryPromise;
+    function retrieve() {
+      $Translation.get($stateParams.q).then(function resolve(status) {
+        $rootScope.$broadcast('results-received');
+        $rootScope.loadClass = ['done'];
+      }, function reject(status) {
+        if (status === 400) {
+          alert(data.detail);
+        } else {
+          console.log('going to error state');
+          $state.go('error', {}, { reload: true });
+        }
+      }, function notify(status) {
+        retryPromise = $timeout(retrieve, ws.retry_speed);
+      });
+    }
+    // Fire off
+    retrieve();
+    refresh();
+    // Deconstructor
+    $scope.$on('$destroy', function () {
+      $timeout.cancel(refreshPromise);
+      $timeout.cancel(retryPromise);
+    });
+  }
+]);
+'use strict';
+angular.module('globeScopeApp').controller('ErrorCtrl', [
+  '$scope',
+  function ($scope) {
+  }
+]);
+'use strict';
+angular.module('globeScopeApp').controller('QuestionCtrl', [
+  '$scope',
+  '$http',
+  '$location',
+  function ($scope, $http, $location) {
+    function addContext(form) {
+      form['question'] = $scope.question;
+      form['userAgent'] = navigator.userAgent;
+      form['screen'] = $location.absUrl();
+      form['referral'] = document.referrer;
+      form['time'] = new Date().toISOString();
+      return form;
+    }
+    $scope.send = function () {
+      var data = addContext($scope.questionForm);
+      $http.post(HIF.questionEndpoint, data).then(function resolve(response) {
+        alert('Thank you for your feedback');
+      }, function reject(error) {
+        alert('I\'m sorry, something went wrong with sending your feedback. Please try again.');
+      });
+    };
+  }
+]);
