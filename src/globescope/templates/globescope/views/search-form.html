@@ -1,6 +1,6 @@
 <form class="search-box" ng-submit="translateToVisuals(query)">
     <fieldset class="query-input">
-        <input ng-model="query" type="text" placeholder="{{ placeholder }}">
+        <input ng-model="query" type="text" placeholder="{% verbatim %}{{ placeholder }}{% endverbatim %}">
     </fieldset>
     <fieldset class="search-button">
         <input type="submit" name="search" value="">

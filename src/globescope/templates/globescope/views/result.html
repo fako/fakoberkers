@@ -15,7 +15,7 @@
 </nav>
 
 <div ng-if="languages">
-    <a class="language-anchor" id="{{ language.language }}" ng-repeat-start="language in languages"></a>
+    <a class="language-anchor" id="{% verbatim %}{{ language.language }}{% endverbatim %}" ng-repeat-start="language in languages"></a>
     <div class="language-container" ng-repeat-end ng-class="animationClass">
 
         <div class="language-flag-banner" ng-class="language.language"></div>
@@ -42,7 +42,7 @@
     <div class="central-box-outer">
         <div class="central-box-inner">
             <div class="central-box-content">
-                <h2>Loading images ... {{ images.loaded}} / {{ images.needed }}</h2>
+                <h2>Loading images ... {{ images.loaded}} / {% verbatim %}{{ images.needed }}{% endverbatim %}</h2>
             </div>
         </div>
     </div>
