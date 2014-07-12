@@ -12,12 +12,6 @@ from projects import *
 
 TEMPLATE_DEBUG = DEBUG
 
-ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
-)
-
-MANAGERS = ADMINS
-
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.4/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = [
@@ -207,3 +201,7 @@ import djcelery
 djcelery.setup_loader()
 BROKER_URL = 'amqp://guest:guest@localhost:5672/'
 CELERY_RESULT_BACKEND = "djcelery.backends.database.DatabaseBackend"
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = "smtp.fakoberkers.nl"
+EMAIL_PORT = 587
