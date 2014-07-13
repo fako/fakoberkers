@@ -22,6 +22,7 @@ urlpatterns = i18n_patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^robots.txt$', 'fakoberkers.views.robots', name='robots'),
 
     url(r'^(?P<partial>.*)$', 'globescope.views.partials', name='partials')
 )

@@ -1,4 +1,6 @@
-from django.shortcuts import render_to_response, RequestContext
+from django.shortcuts import render_to_response, RequestContext, Http404
+from django.template import TemplateDoesNotExist
+
 
 def home(request):
 
@@ -28,5 +30,11 @@ def home(request):
 
     return render_to_response('globescope/globe-scope.html', {'HIF_FRONTEND_SETTINGS': context}, RequestContext(request))
 
+
+# TODO: this is now catch all, should be a little less generic perhaps
 def partials(request, partial):
-    return render_to_response('globescope/'+partial, {}, RequestContext(request))
+    try:
+        return render_to_response('globescope/'+partial, {}, RequestContext(request))
+    except TemplateDoesNotExist:
+        raise Http404
+

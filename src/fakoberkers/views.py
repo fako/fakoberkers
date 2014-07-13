@@ -15,6 +15,7 @@ def home(request):
 def kiosk(request):
     return render_to_response('kiosk.html', {}, RequestContext(request))
 
+
 @csrf_exempt  # TODO: patch this leak
 def question(request):
     if request.method == 'POST':  # TODO: wtf, ugly as hell
@@ -23,3 +24,7 @@ def question(request):
         mail_managers(data['question'], text)
         return HttpResponse('send')
     return HttpResponse('options')
+
+
+def robots(request):
+    return HttpResponse('User-agent: * \nDisallow: /')
