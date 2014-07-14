@@ -14,7 +14,8 @@ def home(request):
                 containerHeight: $window.height(),
                 minimalWidth: 800,
                 minimalHeight: 450,
-                animationInterval: 10
+                animationInterval: 10,
+                animationDelay: 100
             },
             waitingSettings: {
                 retry_speed: 1000,

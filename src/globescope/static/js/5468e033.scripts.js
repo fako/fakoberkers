@@ -10,6 +10,9 @@ angular.module('globeScopeApp', [
     if ($('html').hasClass('lte-ie9')) {
       return;
     }
+    if ($('html').hasClass('ie')) {
+      HIF.animationDelay = 3000;  // TODO: what is wrong with IE image loading?
+    }
     $stateProvider.state('main', {
       url: '/',
       onEnter: [
@@ -522,7 +525,7 @@ angular.module('globeScopeApp').controller('ResultCtrl', [
         $scope.images = { needed: $Translation.getExpectedImageCount() };
         $Translation.ready().then(function resolve() {
           $scope.languages = $Translation.languages;
-          $timeout(animate, 100);
+          $timeout(animate, HIF.animationDelay);
         }, function reject() {
         }, function notify(images) {
           $scope.images.loaded = images;
