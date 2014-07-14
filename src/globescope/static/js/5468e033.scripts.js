@@ -7,6 +7,9 @@ angular.module('globeScopeApp', [
   '$stateProvider',
   '$urlRouterProvider',
   function ($stateProvider, $urlRouterProvider) {
+    if ($('html').hasClass('lte-ie9')) {
+      return;
+    }
     $stateProvider.state('main', {
       url: '/',
       onEnter: [
@@ -83,6 +86,7 @@ angular.module('globeScopeApp', [
   '$http',
   '$cookies',
   function ($rootScope, $state, $location, $http, $cookies) {
+    return;
     $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;  //$http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
   }
 ]);
