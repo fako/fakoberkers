@@ -15,7 +15,7 @@ def home(request):
                 minimalWidth: 800,
                 minimalHeight: 450,
                 animationInterval: 10,
-                animationDelay: 100
+                animationDelay: 1000
             },
             waitingSettings: {
                 retry_speed: 1000,

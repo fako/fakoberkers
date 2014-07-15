@@ -43,6 +43,7 @@
         <div class="central-box-inner">
             <div class="central-box-content">
                 <h2>Loading images ... {% verbatim %}{{ images.loaded }}{% endverbatim %} / {% verbatim %}{{ images.needed }}{% endverbatim %}</h2>
+                <p ng-if="images.loaded >= 12">(if loading takes long you can try to <a onclick="location.reload()" href="">reload</a>)</p>
             </div>
         </div>
     </div>

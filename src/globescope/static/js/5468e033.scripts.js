@@ -522,7 +522,10 @@ angular.module('globeScopeApp').controller('ResultCtrl', [
       animatePromise = $timeout(animate, HIF.resultSettings.animationInterval * 1000);
     }
     var resultsReceived = $scope.$on('results-received', function (event) {
-        $scope.images = { needed: $Translation.getExpectedImageCount() };
+        $scope.images = {
+          needed: $Translation.getExpectedImageCount(),
+          loaded: 0
+        };
         $Translation.ready().then(function resolve() {
           $scope.languages = $Translation.languages;
           $timeout(animate, HIF.animationDelay);
