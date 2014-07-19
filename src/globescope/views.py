@@ -18,11 +18,11 @@ def home(request):
                 animationDelay: 1000
             },
             waitingSettings: {
-                retry_speed: 1000,
-                refresh_speed: 250,
-                refresh_rate: 0.25,
-                expected_duration: 5000,
-                max_progress: 100
+                retrySpeed: 1000,
+                refreshSpeed: 250,
+                refreshRate: 0.25,
+                expectedDuration: 5000,
+                maxProgress: 100
             },
             translationEndpoint: "http://{host}/en/hif/image-translations/",
             questionEndpoint: "http://{host}/en/question/"
