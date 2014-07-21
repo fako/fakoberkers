@@ -375,6 +375,7 @@ angular.module('globeScopeApp').factory('visualTranslationService', [
             var candidate = data.images[index];
             if (candidate.link in data.sources && !data.sources[candidate.link]) {
               getImage(index + 1);
+              return;
             }
             var image = new GSImage(data.images[index], that.readyVisuals);
             $q.when(image.load(data.sources)).then(function resolve(image) {
