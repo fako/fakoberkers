@@ -120,7 +120,7 @@ Array.prototype.pad = function (limit) {
 	* It repeats the same elements when needed padding is longer than Array.length
 	*/
   for (var i = 0, length = this.length; this.length < limit; ++i) {
-    this.push(angular.extend(true, {}, this[i % length]));  // pushing a deep copy
+    this.push(angular.copy(this[i % length]));
   }
 };
 'use strict';
