@@ -26,7 +26,11 @@ angular.module('globeScopeApp', [
           templateUrl: 'views/main.html',
           controller: 'MainCtrl'
         },
-        load: { template: '' }
+        load: {
+          template: '',
+          controller: function () {
+          }
+        }
       }
     }).state('translate', {
       url: '/result?q',
@@ -62,7 +66,11 @@ angular.module('globeScopeApp', [
           templateUrl: 'views/resize.html',
           controller: 'ResizeCtrl'
         },
-        load: { template: '' }
+        load: {
+          template: '',
+          controller: function () {
+          }
+        }
       }
     }).state('error', {
       onEnter: [
@@ -77,7 +85,11 @@ angular.module('globeScopeApp', [
           templateUrl: 'views/error.html',
           controller: 'ErrorCtrl'
         },
-        load: { template: '' }
+        load: {
+          template: '',
+          controller: function () {
+          }
+        }
       }
     }).state('no-results', {
       onEnter: [
@@ -92,7 +104,11 @@ angular.module('globeScopeApp', [
           templateUrl: 'views/no-results.html',
           controller: 'NoResultsCtrl'
         },
-        load: { template: '' }
+        load: {
+          template: '',
+          controller: function () {
+          }
+        }
       }
     });
     $urlRouterProvider.otherwise('/');
