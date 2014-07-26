@@ -201,6 +201,7 @@ import djcelery
 djcelery.setup_loader()
 BROKER_URL = 'amqp://guest:guest@localhost:5672/'
 CELERY_RESULT_BACKEND = "djcelery.backends.database.DatabaseBackend"
+CELERY_ACCEPT_CONTENT = ['json']
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = "smtp.fakoberkers.nl"
