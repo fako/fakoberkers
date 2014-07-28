@@ -9,22 +9,25 @@
     <p>Places of interest in this area</p>
     <ol>
         <li>Clothing</li>
-        <li>Blacksmith, Talos devotee, (sells up to masterwork cheap)</li>
+        <li>Blacksmith, Talos devotee, (sells up to masterwork -> 5gp)</li>
         <li>Brewery, partly scorned by Mirika attack</li>
-        <li>Sea weeds, Druid, (CLW, CMW, CSW cheap!)</li>
-        <li>Gear and tools</li>
+        <li>Sea weeds, Druid, (CLW -> 1sp, CMW -> 5sp, CSW -> 2gp)</li>
+        <li>Gear and tools -> cp prices</li>
         <li>Entertainment</li>
     </ol>
     <p>Neighbooring area's</p>
     <ul>
         <li>A shrine with secret entrance to <a href="the-church-of-Talos.html">church of Talos</a></li>
-        <li>In the back of brewery a stinking passage (FortDC12: nauseated) to <a href="cave-slums.html">cave slums</a></li>
+        <li>In the back of brewery a stinking passage (FortDC12: nauseated, see BreathDC) to <a href="cave-slums.html">cave slums</a></li>
         <li>Towards the light, outside to <a href="fisher-boats.html">fisher boats</a></li>
     </ul>
 {% endblock %}
 
 {% block achievements %}
-    <p>Bring Mirika to Lokahmee or Lokahmee to Mirika. If she is still insane at that point, Lokahmee will cure her with a wish and after a talk Lokahmee's love for Denise will be broken.</p>
+    <p>
+        Bring Mirika to Lokahmee or Lokahmee to Mirika. If she is still insane at that point,
+        Lokahmee will cure her with a wish and after a talk Lokahmee's love for Denise will be broken.
+    </p>
 {% endblock %}
 
 {% block creatures %}
@@ -57,7 +60,18 @@
 {% endblock %}
 
 {% block conditions %}
-    <p>no conditions</p>
+    <dl class="dc">
+       <dt>EatDC: 13</dt>
+       <dd>Can't resist to buy 2lb. of fish, without bargaining for 1sp</dd>
+    </dl>
+    <dl class="dc">
+       <dt>DrinkDC: 13</dt>
+       <dd>Can't resist to drink 3 pints for 1sp</dd>
+    </dl>
+    <dl class="dc">
+       <dt>BreathDC: 15</dt>
+       <dd>Can't go through passage to <a href="cave-slums.html">cave slums</a></dd>
+    </dl>
 {% endblock %}
 
 {% block knowledges %}

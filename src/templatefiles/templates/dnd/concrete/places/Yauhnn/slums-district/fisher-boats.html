@@ -39,8 +39,8 @@
         <dt>GatherInformationDC:</dt>
         <dd> >= 10 The men drinking are complaining about the little they earn with fish</dd>
         <dd>
-            >= 14 The men say that it is all <a href="/dnd/characters/Thekesh-Moltabar.html">Moltabar's</a>
-            fault and that they wish they worked for <a href="/dnd/characters/Otalan.html"></a>
+            >= 14 The men say that it is all <a href="/dnd/characters/Thekesh-Moltabar.html">Moltabar's</a> fault
+            and that they wish they worked for <a href="/dnd/characters/Otalan.html"></a>
         </dd>
         <dd> >= 18 The men drinking earn some money on the side at night</dd>
     </dl>
@@ -48,5 +48,16 @@
      <dl class="dc">
        <dt>SpotDC: 10</dt>
        <dd>There are guards watching out over the fishermen from food market. They wear an emblem (ReligionDC10: Waukeen emblem)</dd>
+    </dl>
+{% endblock %}
+
+{% block conditions %}
+    <dl class="dc">
+       <dt>BreathDC: 15</dt>
+       <dd>Can't resist to take a full</dd>
+    </dl>
+    <dl class="dc">
+       <dt>DrinkDC: 13</dt>
+       <dd>Can't resist to drink 3 pints for 1sp</dd>
     </dl>
 {% endblock %}
