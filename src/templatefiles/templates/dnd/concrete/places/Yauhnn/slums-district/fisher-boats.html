@@ -1,6 +1,6 @@
 {% extends "dnd/abstract/place.html" %}
 
-{% block todo %}Translations{% endblock %}
+{% block todo %}{% endblock %}
 
 {% block locations %}
     <p>Places of interest in this area</p>
@@ -19,8 +19,8 @@
     <p>View</p>
     <ul>
         <li>The docks</li>
-        <li>Massive building with a huge round window showing a face enprofile in glass and lead (ReligionDC10: Waukeen emblem)</li>
-        <li>Walls with a tower on sea side and some kind of fortress in the middle of the <b>INHAM</b></li>
+        <li>Massive building with a huge round window showing a face enprofile in glass and lead (see ReligionDC)</li>
+        <li>Walls with a tower on sea side and some kind of fortress in the middle of the bay</li>
         <li>Behind the ships the whole bank consists of noble houses. The ones closer to the water are smaller.</li>
     </ul>
 {% endblock %}
@@ -46,18 +46,13 @@
     </dl>
 
      <dl class="dc">
-       <dt>SpotDC: 10</dt>
-       <dd>There are guards watching out over the fishermen from food market. They wear an emblem (ReligionDC10: Waukeen emblem)</dd>
+       <dt>SpotDC:</dt>
+       <dd> >= 10 There are guards watching out over the fishermen from food market. (see ReligionDC)</dd>
+    </dl>
+
+    <dl class="dc">
+       <dt>ReligionDC:</dt>
+       <dd> >= 10 The emblem the guards are wearing and is on the building at the base of the harbor is the Waukeen emblem</dd>
     </dl>
 {% endblock %}
 
-{% block conditions %}
-    <dl class="dc">
-       <dt>BreathDC: 15</dt>
-       <dd>Can't resist to take a full</dd>
-    </dl>
-    <dl class="dc">
-       <dt>DrinkDC: 13</dt>
-       <dd>Can't resist to drink 3 pints for 1sp</dd>
-    </dl>
-{% endblock %}
