@@ -6,7 +6,7 @@
 <link href="{% static css %}" type="text/css" rel="stylesheet"/>
 </head>
 
-<body>
+<body {% if chapter %}class="chapter-{{ chapter }}"{% endif %}>
 
 <div class="content-container">
 

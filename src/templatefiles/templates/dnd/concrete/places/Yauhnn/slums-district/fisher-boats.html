@@ -1,6 +1,6 @@
 {% extends "dnd/abstract/place.html" %}
 
-{% block todo %}Translations{% endblock %}
+{% block todo %}{% endblock %}
 
 {% block locations %}
     <p>Places of interest in this area</p>
@@ -13,14 +13,14 @@
     <ul>
         <li>Behind the fish nets there are entrances to <a href="slums-market.html">slums market</a></li>
         <li>Walk away from city center to <a href="breakers-slums.html">breakers-slums</a></li>
-        <li>Go up the goods scale to <a href="../trade-district/food-market.html">food market</a></li>
+        <li>Go up the goods scale to <a href="../trade-district/food-market.html">food market</a> (Waukeen guards there, see knowledge)</li>
         <li>Walk towards city center to <a href="harbor-slums.html">harbor slums</a></li>
     </ul>
     <p>View</p>
     <ul>
         <li>The docks</li>
-        <li>Massive building with a huge round window showing a face enprofile in glass and lead (ReligionDC10: Waukeen emblem)</li>
-        <li>Walls with a tower on sea side and some kind of fortress in the middle of the <b>INHAM</b></li>
+        <li>Massive building with a huge round window showing a face enprofile in glass and lead (see ReligionDC)</li>
+        <li>Walls with a tower on sea side and some kind of fortress in the middle of the bay</li>
         <li>Behind the ships the whole bank consists of noble houses. The ones closer to the water are smaller.</li>
     </ul>
 {% endblock %}
@@ -30,7 +30,29 @@
     <ul>
         <li>Can be found at the sharks stand.</li>
         <li>A Talos devotee</li>
-        <li>Can help to get to <a href="sea-water-slums.html">sea water slums</a> and <a href="drinking-mermaid.html">the drinking mermaid</a></li>
+        <li>Can help to get to <a href="sea-water-slums.html">sea water slums</a> and <a href="the-horrid-lust+pirate-inn.html">The Horrid Lust</a></li>
     </ul>
+{% endblock %}
+
+{% block knowledges %}
+    <dl class="dc">
+        <dt>GatherInformationDC:</dt>
+        <dd> >= 10 The men drinking are complaining about the little they earn with fish</dd>
+        <dd>
+            >= 14 The men say that it is all <a href="/dnd/characters/Thekesh-Moltabar.html">Moltabar's</a> fault
+            and that they wish they worked for <a href="/dnd/characters/Otalan.html"></a>
+        </dd>
+        <dd> >= 18 The men drinking earn some money on the side at night</dd>
+    </dl>
+
+     <dl class="dc">
+       <dt>SpotDC:</dt>
+       <dd> >= 10 There are guards watching out over the fishermen from food market. (see ReligionDC)</dd>
+    </dl>
+
+    <dl class="dc">
+       <dt>ReligionDC:</dt>
+       <dd> >= 10 The emblem the guards are wearing and is on the building at the base of the harbor is the Waukeen emblem</dd>
+    </dl>
 {% endblock %}
 
