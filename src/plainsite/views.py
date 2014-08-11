@@ -16,6 +16,7 @@ def page(request, site, path, ext):
     context.update(request.session)
 
     # Render template and raise 404 if appropriate
+    print path
     template = "{}/concrete/{}.{}".format(site, path, ext)
     try:
         return render_to_response(template, context, RequestContext(request))
