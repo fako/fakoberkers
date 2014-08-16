@@ -1,3 +1,12 @@
+TODO:
+* Copy the relevant maps
+* Work out the characters
+* Place all the clues and hooks within Yauhnn
+* Prepare island and first session
+
+
+
+
 The Thekesh/Moltabar scheme
 
 The fish are smuggled past Waukeen scale, through the cave complex, to the fish market
@@ -15,8 +24,11 @@ When the guy gets caught:
  - The mayor bails him out
 
 
-Places we need:
-* Smuggle route for fish/Mithral
+
+Smuggle route for fish/Mithral:
+    * a subterranean river that leads to the natural shaft, that goes up the lab
+    * dead fish with mithral float up to the lab
+    * a long the route they meet Aboleth (hook to null psionics item)
 
 
 
@@ -51,7 +63,7 @@ There are these reasons for the adventures to stop the FTG
 
 Construct puzzles
 
-* A huge construct that patrols a chasm.
+* A huge construct that patrols a chasm. (the natural shaft!)
   It stays upright by holding on to the chasm
   destroy the chasm and you'll destroy the construct
 
