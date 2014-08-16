@@ -17,6 +17,10 @@
     <p>Landmarks</p>
     <ul>
         <li>In the middle of the area there is a big pool. Children are playing there during the day (see events)</li>
+        <li>
+            There is one shack next to big pool where children are constantly crying.
+            Inside there are children with
+        </li>
     </ul>
     <p>Neighbooring area's</p>
     <ul>
@@ -49,15 +53,33 @@
 {% endblock %}
 
 {% block knowledges %}
-    <p>Children mothers</p>
-    <ul>
-        <li> < 11 some gossip about the children</li>
-        <li>
-            >= 12 sincere worry about the future of their children.
-            all they do is work and they see schooled Locathah
-            (<a href="/dnd/characters/Thekesh-Moltabar.html">Thekesh</a>) have better lives
-        </li>
-    </ul>
+    <p>Children mothers at pool</p>
+    <dl class="dc">
+       <dt>GatherDC:</dt>
+       <dd> < 11 some gossip about the children</dd>
+       <dd> >= 12 sincere worry about the future of their children.
+            Living in poverty is hard.
+            They see how other children are suffering from the work they have to do.
+            Someone like <a href="/dnd/characters/Thekesh-Moltabar.html">Thekesh</a> was able to have a better life
+       </dd>
+       <dd> >= 15 children job is to put metal inside of rotten fish with their small fingers</dd>
+       <dd> >= 18 children work for <a href="/dnd/characters/Thekesh-Moltabar.html">Thekesh</a></dd>
+    </dl>
+    <p>Children mothers inside caring for crying children</p>
+    <dl class="dc">
+       <dt>HealDC:</dt>
+       <dd> < 10 wounds on hands
+       <dd> >= 10 the wounds are festering giving them high fever, life threatening, especially for children</dd>
+       <dd> >= 15 able to subdue the fever and relief pain somewhat</dd>
+       <dd> >= 20 typical infection seen with people working with rotten fish</dd>
+    </dl>
+    <dl class="dc">
+       <dt>GatherDC:</dt>
+       <dd> < 10 children were playing (retry allowed)</dd>
+       <dd> >= 10 children suffer injuries when working, but they badly need money</dd>
+       <dd> >= 15 their job is to put metal inside of rotten fish with their small fingers</dd>
+       <dd> >= 18 children work for <a href="/dnd/characters/Thekesh-Moltabar.html">Thekesh</a></dd>
+    </dl>
 {% endblock %}
 
 {% block items %}
