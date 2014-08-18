@@ -21,7 +21,7 @@ Children need to open fish, put mithral in and when they cut themselves on the m
 
 When the guy gets caught:
  - It becomes clear he earns most of his money with smuggling Mithral
- - The mayor bails him out
+ - The hulorn bails him out
 
 
 
