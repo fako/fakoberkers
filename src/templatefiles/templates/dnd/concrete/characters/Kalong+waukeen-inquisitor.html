@@ -1,0 +1,48 @@
+{% extends "dnd/abstract/character.html" %}
+
+{% block todo %}{% endblock %}
+
+{% block name %}Kalong{% endblock %}
+{% block summary %}
+    Cleric, Church Inquisitor for Waukeen. Wants to unravel the heresy within Waukeen church.
+{% endblock %}
+
+{% block story %}
+    <p>
+        Send out to investigate the alleged heresy from Faerun Trade Group.
+    </p>
+    <p>
+        Special: if assassination attempt succeeds will be introduced as a researcher to that murder.
+        <a href="Thekesh-Moltabar.html">Moltabar</a> will take the fall for the murder to protect other FTG members
+    </p>
+{% endblock %}
+
+{% block motivation %}
+    <p>
+        Will help to bring to justice any heresy.
+        For most making an offer to Waukeen church is enough to redeem.
+        The following that FTG is doing is heresy (ReligionDC 12):
+    </p>
+    <ul>
+        <li>Horde wealth</li>
+        <li>Leaving the slums intact (especially harbor slums)</li>
+        <li>Evasion of Waukeen taxes in mithrall trade</li>
+        <li>Working with pirates</li>
+        <li>Plans to build a monopoly</li>
+    </ul>
+
+    <p>
+        Does not want the Faerun Trade Group to disappear or otherwise impede trade in any way.
+        Conceives the following to be an unacceptable thread to FTG
+    </p>
+    <ul>
+        <li>Assassination attempt on any of its members</li>
+        <li>Attempts to take away wealth from the FTG</li>
+        <li>Disassembling Global Convoy Project</li>
+    </ul>
+
+{% endblock %}
+
+{% block stats %}
+    {% include "dnd/concrete/characters/stats/kalong.html" %}
+{% endblock %}

@@ -1,19 +1,73 @@
+TODO:
+* Copy the relevant maps
+* Work out the characters
+* Place all the clues and hooks within Yauhnn
+* Prepare island and first session
+
+
+
+
 The Thekesh/Moltabar scheme
 
-The fish are smuggled past Waukeen Waag, through the cave complex, to the fish market
+The fish are smuggled past Waukeen scale, through the cave complex, to the fish market
+At the same time he smuggles Mithral which gets sold
 Fish is sold at a low price
 Fish is bought for a low price, making it tough for fishermen to get around
 Because it is hard to get around the slum inhabitants do some illegal work on the side
 It is thought that the guards are bribed (but they are just incompetent)
 There is no toezicht on sold quantities to allow for import other than the harbor
 The only competitor left is someone who can do seasoning. This receipe is about to get nicked.
-Children are used to crawl through the small smuggle route
+Children need to open fish, put mithral in and when they cut themselves on the metal, the wounds fester
 
-Smuggling Mithral?
-
-
-Places we need:
-* Smuggle route for fish/Mithral
+When the guy gets caught:
+ - It becomes clear he earns most of his money with smuggling Mithral
+ - The hulorn bails him out
 
 
 
+Smuggle route for fish/Mithral:
+    * a subterranean river that leads to the natural shaft, that goes up the lab
+    * dead fish with mithral float up to the lab
+    * a long the route they meet Aboleth (hook to null psionics item)
+
+
+
+The Fearun Trade Group scheme
+
+Cormyr especially tries to keep the tax burden for its citizens low
+It does so by taxing international trade
+This infuriates Sembians, as well as the Waukeen church
+
+A select group of merchant in the council calling themselves the Faerun Trade Group are planning to build an installation which can teleport objects of any size anywhere
+Their plan is to take on trade everywhere in Fearun and out do competitors
+Their first objective is to bypass Cormyr taxation, by teleporting from inside Cormyr
+They have assumed they would succeed and are hording their riches for quite some time.
+Yauhnn as a result is more and more living on the promise of goods, instead of real goods.
+
+The Faerun Trade Group is paying with loans. Receivers of these loans will get interest as well as the loaned money
+Everybody who can will want to have FTG loans, because they are always good for their interest.
+The FTG is playing a pyramid game as long as the stored goods in Cormyr can't be delivered.
+The FTG is expecting to make profits, because they dodge the tax system and cut out transport costs
+They are however not taking into account what the external costs of running the installation will be
+
+There are these reasons for the adventures to stop the FTG
+1)   Cormyr will miss millions of tax revenue, it will ruin Cormyrs social tax system
+2)   The evil pollution will run unchecked if Hanuman can't perform his rituals. The evil will spread all over Faerun due to the teleport gates the installation creates
+3)   After all debts have been paid, it will be easy to out compete any rivals on any market
+4)   It will hit Olivet where it hurts
+5)   Olivet will seize power and hold on to it to earn even more money
+6)   Hoarding capital is bad, money should roll
+
+
+
+
+Construct puzzles
+
+* A huge construct that patrols a chasm. (the natural shaft!)
+  It stays upright by holding on to the chasm
+  destroy the chasm and you'll destroy the construct
+
+* Acidic lake or another hostile environment
+
+* A nice rebus: True seeing + comprh lang OR read magic onthult boven grote platte steen: (ruit)R+SL 	(diamond)[0]+E XR=L (illusionist herkent als illusory script)
+  Sluit de kluis

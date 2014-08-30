@@ -1,0 +1,35 @@
+{% extends "dnd/abstract/character.html" %}
+
+{% block todo %}Story, motive{% endblock %}
+
+{% block name %}Janala{% endblock %}
+{% block summary %}
+    Cleric, Oracle for Talos. Wants to see the prophecy come true.
+{% endblock %}
+
+{% block story %}
+    <p>
+        According to the prophecy a gnome, half-elf with eyes of gold and two humans touched by Talos will come.
+        They will destroy money and free Taloses faithful.
+        Janala is excited to be part of this.
+    </p>
+
+{% endblock %}
+
+{% block motivation %}
+    <p>
+        Wants to see the prophecy come true and be free, whatever it may mean.
+        The entire slum community is longing for freedom, feeling that they are limited by people who have money.
+    </p>
+
+    <p>
+        Will resend any signs that things will stay as they are.
+        That the FTG can continue to do what it always have done, for instance.
+        It may result in the performance of The Fury
+    </p>
+
+{% endblock %}
+
+{% block stats %}
+    {% include "dnd/concrete/characters/stats/janala.html" %}
+{% endblock %}

@@ -1,4 +1,6 @@
-{% block title %}The Horrid Lust (pirate inn){% endblock %}
+{% extends "dnd/abstract/place.html" %}
+
+{% block title %}Beach, left{% endblock %}
 {% block summary %}No summary{% endblock %}
 
 {% block events %}
@@ -26,7 +28,11 @@
 {% endblock %}
 
 {% block knowledges %}
-    <p>no knowledges</p>
+    <dl class="dc">
+       <dt>SurvivalDC:</dt>
+       <dd> >= 10 Large groups (around 10) of monstrous humanoids seem to walk on this beach with some regularity</dd>
+       <dd> >= 15 Formian workers (around 3 each time) are regularly walking on the beach.</dd>
+    </dl>
 {% endblock %}
 
 {% block items %}
@@ -34,5 +40,5 @@
 {% endblock %}
 
 {% block misc %}
-    <p>If the ranger equipment found on <a href="../../big-ant-island/beach-right.html">big ant islands</a> is worn, the ranger's friends will make trouble</p>
+    <p>no misc</p>
 {% endblock %}

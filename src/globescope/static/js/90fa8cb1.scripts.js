@@ -203,7 +203,7 @@ angular.module('globeScopeApp').factory('imageService', [
       this.timeoutPromise = $timeout(function () {
         // cancelled in finally clause of image promise
         that.deferred.reject(that);
-      }, 1000);
+      }, 3000);
       var img = new Image();
       angular.element(img).load(function () {
         if (this.height < that.height || this.width < that.width) {
