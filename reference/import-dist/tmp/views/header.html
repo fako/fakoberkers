@@ -1,0 +1,73 @@
+<div class="header-top">
+
+    <div class="contact-button header-button">
+        <button ng-click="toggleModal('contact-modal')" href="" translate>Contact</button>
+    </div>
+
+    <div class="logo-wrapper">
+        <img ng-src="{{ brand.logo }}" alt="{{ brand.name }}"/>
+    </div>
+
+    <div class="search-button header-button">
+        <button ng-click="toggleModal('navigation-modal')" href="" translate>Search</button>
+    </div>
+
+</div>
+
+<nav class="header-navigation header-modal" ng-class="search.classes()">
+
+    <form name="searchForm" method="get" class="search-bar" ng-submit="search.submit()" novalidate>
+        <input required
+               type="text"
+               name="query"
+               placeholder="{{ 'Search' | translate }}"
+               ng-model="search.query"
+               ng-keyup="search.autocomplete()"
+        />
+        <input type="submit" name="submit" value="{{ 'Search' | translate }}"/>
+    </form>
+
+    <div class="navigation-content">
+
+        <div class="categories">
+
+            <div class="category-tile" ng-repeat="category in headerCategories">
+                <p><a href="{{ category.slug }}" ng-click="goToCategory(category.slug)">{{ category.title }}</a></p>
+            </div>
+
+        </div>
+        <div class="search-results">
+            <div class="search-result"
+                ng-repeat="offer in search.results"
+                ng-include="'views/partials/offer-minimal.html'"
+            >
+        </div>
+
+    </div>
+
+</nav>
+
+<div class="header-contact header-modal">
+
+    <div class="opening-times">
+        <p>{{ brand.openingTimes }}</p>
+    </div>
+
+    <ul class="contact-details"> <!-- TODO: hrefs -->
+        <li><a href="" translate>Call us</a></li>
+        <li><a href="" translate>Email us</a></li>
+    </ul>
+
+    <div class="about-us">
+        <p translate>
+            TravelBird is the online travel agency with daily inspiring deals.
+            We select the best offers and our only goal is to give you the ultimate travel experience.
+        </p>
+    </div>
+
+</div>
+
+<div class="header-overlay" ng-click="closeModal()">
+    <p translate>Close</p>
+</div>
+

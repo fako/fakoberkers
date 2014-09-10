@@ -1,0 +1,15 @@
+<article class="minimal offer" ng-init="offer = (block) ? block : offer" ng-click="goToOffer(offer.slug)"> <!-- TODO: make it <a>? -->
+    <div class='image-wrapper'>
+        <img class='image' ng-src='{{ offer.app_images.home_v2 }}'/>
+        <div class="discount">{{ offer.discount }}</div>
+    </div>
+    <div class='text-wrapper'>
+        <div class='text'>
+            <h2 class='title'>
+                {{ offer.title }}
+            </h2>
+            <p class='price'>{{ getprice(offer.price) }}</p>
+            <p class='details-link' translate>Read more</p>
+        </div>
+    </div>
+</article>
