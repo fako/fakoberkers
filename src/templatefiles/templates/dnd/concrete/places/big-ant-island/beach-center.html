@@ -1,6 +1,8 @@
 {% extends "dnd/abstract/place.html" %}
 
 {% block todo %}
+    <p>Items, weather, formians, conditions</p>
+
     <p>Iedereen wordt wakker op het strand met de volgende condities:</p>
     <ul>
         <li>dorst, zo snel mogelijk drinken (mogelijk vergiftigd water), alcoholist in Yhaunn, mogelijk aanvallen van party members (dorst).</li>
@@ -15,15 +17,46 @@
 {% block summary %}No summary{% endblock %}
 
 {% block events %}
-    <p>no events</p>
+    <p>Start:</p>
+    <p>
+        Your last memory is that you went to sleep in a warm bed.
+        Now you wake up completely naked in a strong but warm wind.
+        You lie in fine yellow sand and can hear waves pounding hard on the shore.
+        As you turn your head you see your comrades lying not far from you.
+    </p>
+
+    <p>From here continue with handing out conditions and creating atmosphere through locations.</p>
 {% endblock %}
 
 {% block locations %}
-    <p>no locations</p>
+
+    <p>In the immediate surroundings</p>
+    <ul>
+        <li>You're in a bay in the shape of a moon.</li>
+        <li>Beyond the bay the sea stretches as far as you can see.</li>
+        <li>The "arms" of the bay are steep rocks that lead up to an even steeper landscape in the middle.</li>
+        <li>What lies beyond that huge rock you do not know.</li>
+        <li>From the beach you can get to the gargantuan rock by going through a jungle landscape.</li>
+        <li>A small waterfall drops from the top of the rock.</li>
+        <li>It looks like you awoke in paradise, but the strong wind and brutal waves tell you otherwise.</li>
+        <li>There lies a very well crafted bag on the ground.</li>
+    </ul>
+
+    <p>
+        The adventurers can move towards the following area's from here.
+        Directions are indicated when standing with their backs to the sea
+    </p>
+    <ul>
+        <li><a href="beach-right.html">Right side</a> of the beach</li>
+        <li><a href="beach-left.html">Left side</a> of the beach</li>
+        <li><a href="inland-center.html">Inland</a> towards the jungle</li>
+        <li>The wild <a href="sea.html">sea</a> lies behind you</li>
+    </ul>
 {% endblock %}
 
 {% block achievements %}
-    <p>no achievements</p>
+    <p>When finding the letter from Hanuman it should be read out to them.</p>
+    <p>Find Talos relics</p>
 {% endblock %}
 
 {% block creatures %}
@@ -31,11 +64,11 @@
 {% endblock %}
 
 {% block traps %}
-    <p>no traps</p>
+    <p>Weather ... will change in 3 days</p>
 {% endblock %}
 
 {% block conditions %}
-    <p>no conditions</p>
+    <p>Make a WillDC to breath only. Sleep is fatigued, the rest only RPG</p>
 {% endblock %}
 
 {% block knowledges %}
@@ -44,10 +77,23 @@
        <dd> >= 10 Large groups (around 10) of monstrous humanoids seem to walk on this beach with some regularity</dd>
        <dd> >= 15 Formian workers (around 3 each time) are regularly walking on the beach.</dd>
     </dl>
+    <dl class="dc">
+       <dt>KnowledgeNatureDC:</dt>
+       <dd> FORMIANS</dd>
+    </dl>
 {% endblock %}
 
 {% block items %}
-    <p>no items</p>
+    <p>On the beach lies a handy haversack with the following content</p>
+    <ul>
+        <li>A letter</li>
+    </ul>
+    <p>There are also these Talos relics in the bag</p>
+    <ul>
+        <li>Twin swords of deconstruction</li>
+        <li>Runestaff of shadow</li>
+        <li>Fur of the shadow pack</li>
+    </ul>
 {% endblock %}
 
 {% block misc %}
