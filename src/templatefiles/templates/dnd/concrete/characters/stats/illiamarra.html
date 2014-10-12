@@ -1,0 +1,43 @@
+{% extends "dnd/abstract/stats.html" %}
+
+{% block hit-dice %}101 (14) -> Drow (1) + Cleric (5) + Assassin (1) + Black Flame Zealot (7) {% endblock %}
+{% block initiative %}+3{% endblock %}
+{% block speed %}20{% endblock %}
+{% block ac %}21{% endblock %}
+{% block attacks %}+12, +10/+10/+5{% endblock %}
+{% block damage %}1d4+4 + 1d6 (18-20, 2x){% endblock %}
+{% block face-reach %}5ft.{% endblock %}
+{% block special-attacks %}Drow poison (1 dose), Sneak 3d6, Sacred Flame{% endblock %}
+{% block special-qualities %}
+    Sleep immunity, +2 spells and spell like abilities, SR 23, Light blindness,
+    Fear immunity (aka Zealous heart), Death attack (DC21), Poison use
+{% endblock %}
+{% block spell-like-abilities %}
+    Dancing lights, Faerie Fire, Darkness,
+    Cleric 8 (Trickery, Darkness), Assassin 1
+{% endblock %}
+{% block saves %}
+    <ul>
+        <li>Fort 7</li>
+        <li>Ref 11</li>
+        <li>Will 14</li>
+    </ul>
+{% endblock %}
+{% block abilities %}
+    <ul>
+        <li>Str 18 (bull's strength)</li>
+        <li>Dex 16</li>
+        <li>Con 12</li>
+        <li>Int 16</li>
+        <li>Wis 20 + 3?</li>
+        <li>Cha 16</li>
+    </ul>
+{% endblock %}
+{% block skills %}
+    Hide 8, Religion 8, Silently 8, Disguise 4,
+    Cleric 11, Zealot 56,
+    +2 listen, search, spot
+{% endblock %}
+{% block feats %}Two weapon fighting, Two weapon defence, Iron will, Kukri proficiency, Blind fight, 2{% endblock %}
+{% block grapple %}{% endblock %}
+{% block gear %}Periapt of Wisdom +6, Mithral Full Plate of Speed{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "dnd/abstract/stats.html" %}
+
+{% block hit-dice %}xx (X) -> Drow (1) + Ninja (5) + Assassin (7){% endblock %}
+{% block initiative %}+9{% endblock %}
+{% block speed %}30{% endblock %}
+{% block ac %}10{% endblock %}
+{% block attacks %}+13/+8{% endblock %}
+{% block damage %}1d6+4{% endblock %}
+{% block face-reach %}5ft.{% endblock %}
+{% block special-attacks %}Drow poison (1 dose), Sneak 7d6{% endblock %}
+{% block special-qualities %}
+    Sleep immunity, +2 spells and spell like abilities, SR 21, Light blindness,
+    Death attack (DC 20), Poison use, +3 Poison safe, Uncanny Dodge, Improved Uncanny Dodge
+{% endblock %}
+{% block spell-like-abilities %}
+    Dancing lights, Faerie Fire, Darkness,
+    Assassin 7
+{% endblock %}
+{% block saves %}
+    <ul>
+        <li>Fort 3</li>
+        <li>Ref 9</li>
+        <li>Will 3</li>
+    </ul>
+{% endblock %}
+{% block abilities %}
+    <ul>
+        <li>Str 18 (bull's strength)</li>
+        <li>Dex 20</li>
+        <li>Con 16</li>
+        <li>Int 16</li>
+        <li>Wis 18</li>
+        <li>Cha 12</li>
+    </ul>
+{% endblock %}
+{% block skills %}+2 listen, search, spot{% endblock %}
+{% block feats %}Weapon Finesse, Improved Initiative, Combat Expertice, Improved Trip{% endblock %}
+{% block grapple %}{% endblock %}
+{% block gear %}Dexternity +4{% endblock %}
