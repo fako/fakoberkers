@@ -1,0 +1,98 @@
+{% extends "dnd/abstract/base.html" %}
+
+{% block content %}
+
+    <h3>Big Ant Island</h3>
+
+    <p>
+        Due to the presents of <a href="dnd/characters/Hanuman+Talos-aspect.html">Hanuman's</a> soul,
+        without Hanuman being present to clean the evil.
+        The adventurers suffer from taint.
+        Taint thresholds can be found in HoH on page 63
+    </p>
+
+    <dl class="dc">
+       <dt>FortDC:</dt>
+       <dd> < 24 Suffer 2d4 corruption</dd>
+    </dl>
+
+    <dl class="dc">
+        <dt>WillDC:</dt>
+        <dd> < 24 Suffer 2d4 depravity</dd>
+    </dl>
+
+    <dl id="corruption">
+        <dt>Mild</dt>
+        <dd>
+            Light sensitivity
+        </dd>
+        <dt>Moderate</dt>
+        <dd>
+            <ul>
+                <li>
+                    Your fingers and toes are starting to contract. -10 speed, -2 attack, CasterDC 20 for each spell
+                </li>
+                <li>
+                    Whenever you try to speak it is hard not to make it sound like an annoying zooming sound.
+                    CasterDC20 for each spell
+                </li>
+            </ul>
+        </dd>
+        <dt>Severe</dt>
+        <dd>
+            You grow wings that give a 40ft fly speed (average)
+        </dd>
+    </dl>
+
+    <dl id="deprivation">
+        <dt>Mild</dt>
+        <dd>
+            You are more self centered than usual. You treat others friendly/indifferent.
+            Part of this is that you're having trouble to resist the urge that awoken you from death.
+            You try to relief your urge as soon as possible.
+            Everything that gets in your way annoys you.
+        </dd>
+        <dt>Moderate</dt>
+        <dd>
+            <ul>
+                <li>
+                    Food & drink: You long for raw meat or drinking blood.
+                    You won't eat anything else.
+                    Thirst after 1 day + Con hours: every hour FortDC10 + 1 for each check.
+                    Hunger after 3 days + Con hours: every hour FortDC10 + 1 for each check.
+                </li>
+            </ul>
+
+            Met eten en drinken als urge begin je nu te verlangen naar rauw vlees en bloed. Je wilt niets anders meer.
+            Dorst: na 1 dag + Con hours, elk uur FortDC10 +1 elke check
+            Honger: na 3 dag + Con hours, elk uur FortDC10 +1 elke check
+            Schade: 1d6 non-lethal + fatigued
+
+            Met slapen als urge heb je het idee dat je slaap tekort komt, dit is een self fulfilling prophecy.
+            Je bent fatigued hoeveel je ook slaapt.
+
+            Met ademen heb je het idee dat je lucht tekort komt, dit is een self fulfilling prophecy.
+            Bij 3e ronde van een combat of strainful activity ben je staggered.
+
+            Met seks als urge ben je constant distracted -2 skill checks
+
+        </dd>
+        <dt>Severe</dt>
+        <dd>
+            Met eten en drinken wil je alleen nog bloed en vlees.
+            Je wordt unfriendly/hostile tegen je kameraden totdat aan je urge is voldaan.
+
+            Met slapen als urge heb je het idee dat je slaap tekort komt, dit is een self fulfilling prophecy.
+            Je bent exhausted hoeveel je ook slaapt.
+            Elk uur WillDC 15 of moet even een uurtje liggen.
+
+            Met ademen heb je het idee dat je lucht tekort komt, dit is een self fulfilling prophecy.
+            Bij 3e ronde van een combat of strainful activity begin je te hyperventileren.
+            Suffocation: 2x Con aan rondes normaal, daarna FortDC10 +1 per check
+            Schade: unconcious (start breathing normally)
+
+            Met seks als urge ben je obsessed. Je krijgt -2 op Wis en Cha
+        </dd>
+    </dl>
+
+{% endblock %}

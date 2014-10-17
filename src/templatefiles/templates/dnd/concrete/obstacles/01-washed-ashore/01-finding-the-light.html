@@ -1,1 +1,89 @@
 {% extends "dnd/abstract/obstacle.html" %}
+
+{% block title %}Finding the light{% endblock %}
+{% block summary %}No summary{% endblock %}
+
+{% block events %}
+    <p>Day 1</p>
+    <ul>
+        <li>Awaken on the <a href="dnd/places/big-ant-island/beach-center.html">beach</a></li>
+        <li>The whole day a strong wind (see conditions)</li>
+    </ul>
+    <p>Night 1</p>
+    <ul>
+        <li>See the light from atop the mountain</li>
+        <li>Earthquake (see conditions)</li>
+    </ul>
+    <p>Day 2..X suffer from the taint on the <a href="dnd/places/big-ant-island/overview.html">big ant island</a></p>
+
+{% endblock %}
+
+{% block locations %}
+    <p>no locations</p>
+{% endblock %}
+
+{% block achievements %}
+    <p>no achievements</p>
+{% endblock %}
+
+{% block creatures %}
+    <p>no creatures</p>
+{% endblock %}
+
+{% block traps %}
+    <p>All fruits have 20% chance of being poisonous as well as water from the stream.</p>
+    <dl class="dc">
+       <dt>FortDC: 14 (food)</dt>
+       <dd>2x 1d6 from random ability</dd>
+    </dl>
+    <dl class="dc">
+       <dt>FortDC: 20 (water from stream)</dt>
+       <dd>Fatigued & -10 Will saves</dd>
+    </dl>
+{% endblock %}
+
+{% block conditions %}
+    <p>Severe wind (40 mph)</p>
+    <dl class="dc">
+       <dt>FortDC 15</dt>
+       <dd>Checked (medium) or knocked prone (small)</dd>
+    </dl>
+    <ul>
+        <li>Ranged weapons -4</li>
+    </ul>
+    <p>Earthquake</p>
+    <ul>
+        <li>...</li>
+    </ul>
+{% endblock %}
+
+{% block knowledges %}
+    <dl class="dc">
+       <dt>SurvicalDC:</dt>
+       <dd> 10 >= Vind eten en drinken (20% kans op vergif) </dd>
+       <dd> 15 >= Storm gaat binnen een dag liggen.
+
++2 Fort tegen de wind
++2 Fort tegen de wind voor een ander voor elk punt boven 15
+
+Vind eten en drinken wat niet vergiftigd is.
+Vind eten en drinken voor een ander voor elke twee punten boven 15.</dd>
+    </dl>
+
+    <dl class="dc">
+       <dt>NatureDC:</dt>
+       <dd> 10 >= Tropisch gebied, betreden niet zonder gevaar.</dd>
+       <dd> 15 >= Water afkomstig uit een tropische bron kan vervuilt raken met gif.
+
+Niet alle vruchten zijn eetbaar
+</dd>
+    </dl>
+{% endblock %}
+
+{% block items %}
+    <p>no items</p>
+{% endblock %}
+
+{% block misc %}
+    <p>no misc</p>
+{% endblock %}
