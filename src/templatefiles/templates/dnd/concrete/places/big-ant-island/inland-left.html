@@ -3,12 +3,22 @@
 {% block title %}Inland center{% endblock %}
 {% block summary %}No summary{% endblock %}
 
+{% block todo %}
+    Undergrowth: Vines, roots, and short bushes cover much of the ground in a forest. A space covered with light undergrowth costs 2 squares of movement to move into, and it provides concealment. Undergrowth increases the DC of Tumble and Move Silently checks by 2 because the leaves and branches get in the way.
+
+    Heavy undergrowth costs 4 squares of movement to move into, and it provides concealment with a 30% miss chance (instead of the usual 20%). It increases the DC of Tumble and Move Silently checks by 5. Heavy undergrowth is easy to hide in, granting a +5 circumstance bonus on Hide checks. Running and charging are impossible. Squares with undergrowth are often clustered together. Undergrowth and trees aren’t mutually exclusive; it’s common for a 5-foot square to have both a tree and undergrowth.
+
+{% endblock %}
+
 {% block events %}
     <p>no events</p>
 {% endblock %}
 
 {% block locations %}
-    <p>no locations</p>
+    <p>There are various points of interest in this area</p>
+    <ul>
+        <li>A stream of water that ends in the sea </li>
+    </ul>
 {% endblock %}
 
 {% block achievements %}
@@ -20,18 +30,40 @@
 {% endblock %}
 
 {% block traps %}
-    <p>no traps</p>
+    <p>All fruits have 20% chance of being poisonous as well as water from the stream.</p>
+    <dl class="dc">
+       <dt>FortDC: 14 (food)</dt>
+       <dd>2x 1d6 from random ability</dd>
+    </dl>
+    <dl class="dc">
+       <dt>FortDC: 20 (water from stream)</dt>
+       <dd>Fatigued & -10 Will saves</dd>
+    </dl>
 {% endblock %}
 
 {% block conditions %}
-    <p>Extreme dense growth.</p>
+    <p>
+        Extreme dense growth with some trees that seem to have been snapped in two that obstruct the way.
+    </p>
 {% endblock %}
 
 {% block knowledges %}
-   <dl class="dc">
-      <dt>NatureDC:</dt>
-      <dd> >=15 This land is very fertile due to the vulcanic soil</dd>
-   </dl>
+
+    <dl class="dc">
+        <dt>NatureDC: (never saw vulcano's so -5 penalty)</dt>
+        <dd> >= 20 This land is very fertile due to the vulcanic soil.</dd>
+        <dt>NatureDC: (never saw vulcano's so -5 penalty)</dt>
+        <dd> >= 20 Trees got snapped due to sudden ruptures in the ground.</dd>
+    </dl>
+
+    <dl class="dc">
+        <dt>SurvicalDC: (Food, penalty due to winter)</dt>
+        <dd> 15 >= Find food (20% chance on poison) </dd>
+        <dd>
+            20 >= Find food (fruits) and water (rain water) that is certainly not poisonous.
+                  Find food and water for another for every two points above 15.
+        </dd>
+    </dl>
 {% endblock %}
 
 {% block items %}

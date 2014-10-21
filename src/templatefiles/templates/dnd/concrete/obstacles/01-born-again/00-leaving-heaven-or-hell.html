@@ -1,0 +1,106 @@
+{% extends "dnd/abstract/obstacle.html" %}
+
+{% block title %}Leaving heaven or hell{% endblock %}
+{% block summary %}
+    Characters are called back to life and are free to explore the island until evening falls.
+{% endblock %}
+
+{% block todo %}Wind Fort bonus with survival?{% endblock %}
+
+{% block events %}
+    <p>
+        Those who have died are in heaven/hell for one year
+	    It is amazing/awful.
+	    After one year you are called towards the living.
+        To come back to life you need a spark, some inspiration to get back into a physical body again.
+	    You need to choose what that spark is.
+	    Is it to drink, to eat, to sleep, to breath or to have sex at least one more time?
+    </p>
+
+    <p>
+        Your last memory is that you went to sleep in a warm bed.
+        Now you wake up completely naked in a strong but warm wind.
+        You lie in fine yellow sand and can hear waves pounding hard on the shore.
+        As you turn your head you see your comrades lying not far from you.
+    </p>
+
+    <p>Day 1</p>
+    <ul>
+        <li>Awaken on the <a href="dnd/places/big-ant-island/beach-center.html">beach</a></li>
+        <li>Suffer reborn conditions</li>
+        <li>The whole day a strong wind (see conditions)</li>
+    </ul>
+{% endblock %}
+
+{% block locations %}
+    <p>Takes place on <a href="dnd/places/big-ant-island/">Big Ant Island</a></p>
+{% endblock %}
+
+{% block achievements %}
+    <p>no achievements</p>
+{% endblock %}
+
+{% block creatures %}
+    <p>no creatures</p>
+{% endblock %}
+
+{% block traps %}
+
+{% endblock %}
+
+{% block conditions %}
+    <p>Reborn conditions</p>
+    <ul>
+        <li>Breath: WillDC 15 or stand in the strong wind to breath air for about 10 minutes</li>
+        <li>Eat: Feel like you haven't eaten for three days.</li>
+        <li>Drink: Feel like you haven't drank for a day.</li>
+        <li>Sex: Wake up horny with a boner that lasts 10 minutes.</li>
+        <li>Sleep: You are fatigued even though you just woke up.</li>
+    </ul>
+
+    <p>Severe wind while being naked (40 mph) on beach especially</p>
+    <ul>
+        <li>Ranged weapons -4</li>
+        <li>Each round make a Fort check</li>
+    </ul>
+    <dl class="dc">
+       <dt>FortDC: 15 (wind)</dt>
+       <dd>Checked (medium) or knocked prone (small)</dd>
+    </dl>
+    <dl class="dc">
+       <dt>FortDC: 15 + 1 each hour (cold)</dt>
+       <dd>1d6 nonlethal damage</dd>
+    </dl>
+{% endblock %}
+
+{% block knowledges %}
+
+    <dl class="dc">
+        <dt>SurvivalDC: (Weather)</dt>
+        <dd> 10 >= Storm will calm within a day.</dd>
+        <dd> 15 >=
+           +2 Fort against the cold.
+           +2 Fort against the cold for another for every point above 15.
+        </dd>
+    </dl>
+
+    <dl class="dc">
+        <dt>NatureDC:</dt>
+        <dd> 10 >= Tropical climate during winter. Very diverse species, but some are also very dangerous. Strange that they hear no animals.</dd>
+        <dd> 15 >= Water from streams might be poisoned.
+                  Not all fruits are eatable.
+        </dd>
+    </dl>
+{% endblock %}
+
+{% block items %}
+    <p>no items</p>
+{% endblock %}
+
+{% block misc %}
+    <p>no misc</p>
+{% endblock %}
+
+{% block achievements %}
+<p>When evening falls continue with <a href="01-formian-first-contact.html">Formian first contact</a>.</p>
+{% endblock %}

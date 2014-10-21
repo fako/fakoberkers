@@ -1,31 +1,14 @@
 {% extends "dnd/abstract/place.html" %}
 
 {% block todo %}
-    <p>Items, weather, formians, conditions</p>
-
-    <p>Iedereen wordt wakker op het strand met de volgende condities:</p>
-    <ul>
-        <li>dorst, zo snel mogelijk drinken (mogelijk vergiftigd water), alcoholist in Yhaunn, mogelijk aanvallen van party members (dorst).</li>
-        <li>honger, zo snel mogelijk eten (mogelijk aanvallen van party members om bloed te drinken, musquito transformation)</li>
-        <li>slapen, exhausted</li>
-        <li>seks, asociaal gedrag van het eiland, rukken. Denise kan zeker verleiden.</li>
-        <li>Ademen, gaat vol in de wind staan om de lucht in te ademen (verder niets).</li>
-    </ul>
+    <p>Items, formians</p>
 {% endblock %}
 
 {% block title %}Beach, center{% endblock %}
 {% block summary %}No summary{% endblock %}
 
 {% block events %}
-    <p>Start:</p>
-    <p>
-        Your last memory is that you went to sleep in a warm bed.
-        Now you wake up completely naked in a strong but warm wind.
-        You lie in fine yellow sand and can hear waves pounding hard on the shore.
-        As you turn your head you see your comrades lying not far from you.
-    </p>
 
-    <p>From here continue with handing out conditions and creating atmosphere through locations.</p>
 {% endblock %}
 
 {% block locations %}
@@ -35,11 +18,12 @@
         <li>You're in a bay in the shape of a moon.</li>
         <li>Beyond the bay the sea stretches as far as you can see.</li>
         <li>The "arms" of the bay are steep rocks that lead up to an even steeper landscape in the middle.</li>
-        <li>What lies beyond that huge rock you do not know.</li>
-        <li>From the beach you can get to the gargantuan rock by going through a jungle landscape.</li>
-        <li>A small waterfall drops from the top of the rock.</li>
+        <li>What lies beyond that small mountain you do not know.</li>
+        <li>From the beach you can get to small mountain by going through a jungle landscape.</li>
+        <li>In the middle the top of the small mountain is lower than the side of it.</li>
+        <li>A small waterfall drops from the middle.</li>
         <li>It looks like you awoke in paradise, but the strong wind and brutal waves tell you otherwise.</li>
-        <li>There lies a very well crafted bag on the ground.</li>
+        <li>There lies a very well crafted bag on the ground nearby.</li>
     </ul>
 
     <p>
@@ -55,8 +39,10 @@
 {% endblock %}
 
 {% block achievements %}
-    <p>When finding the letter from Hanuman it should be read out to them.</p>
-    <p>Find Talos relics</p>
+    <ul>
+        <li>When finding the letter from Hanuman it should be read out to them.</li>
+        <li>Find Talos relics</li>
+    </ul>
 {% endblock %}
 
 {% block creatures %}
@@ -64,22 +50,28 @@
 {% endblock %}
 
 {% block traps %}
-    <p>Weather ... will change in 3 days</p>
+    <p>no traps</p>
 {% endblock %}
 
 {% block conditions %}
-    <p>Make a WillDC to breath only. Sleep is fatigued, the rest only RPG</p>
+    <p>no conditions</p>
 {% endblock %}
 
 {% block knowledges %}
     <dl class="dc">
-       <dt>SurvivalDC:</dt>
-       <dd> >= 10 Large groups (around 10) of monstrous humanoids seem to walk on this beach with some regularity</dd>
-       <dd> >= 15 Formian workers (around 3 each time) are regularly walking on the beach.</dd>
+        <dt>SurvivalDC:</dt>
+        <dd> >= 10 Large groups (around 10) of monstrous humanoids seem to walk on this beach with some regularity</dd>
+        <dd>
+            >= 20 A smaller group of monstrous humanoids (around 3 each time) that leave steps as if on six feet (like Formians) are regularly walking on the beach.
+            However they do not have feet that resemble Formians.
+        </dd>
     </dl>
     <dl class="dc">
-       <dt>KnowledgeNatureDC:</dt>
-       <dd> FORMIANS</dd>
+        <dt>KnowledgeNatureDC:</dt>
+        <dd> 10 >= Formians are monstrous humanoids that are half ant, half human, which live in big colonies led by powerful mystical queens.</dd>
+        <dd> 15 >= Details about Workers and Warriors</dd>
+        <dd> 20 >= Details about Taskmasters and Myrmarchs</dd>
+        <dd> 25 >= Details about Queens</dd>
     </dl>
 {% endblock %}
 
