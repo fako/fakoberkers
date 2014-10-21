@@ -44,39 +44,52 @@
 
 {% block conditions %}
     <p>Severe wind (40 mph)</p>
-    <dl class="dc">
-       <dt>FortDC 15</dt>
-       <dd>Checked (medium) or knocked prone (small)</dd>
-    </dl>
     <ul>
         <li>Ranged weapons -4</li>
+        <li>Each round make a Fort check</li>
     </ul>
+    <dl class="dc">
+       <dt>FortDC: 15 (wind)</dt>
+       <dd>Checked (medium) or knocked prone (small)</dd>
+    </dl>
+
     <p>Earthquake</p>
     <ul>
-        <li>...</li>
+        <li>
+            Each creature standing in the area must make a DC 15 Reflex save or fall down.
+            Fissures open in the earth, and every creature on the ground has a 25% chance to fall into one
+            (Reflex DC 20 to avoid a fissure).
+            At the end of the spell, all fissures grind shut, killing any creatures still trapped within.
+        </li>
     </ul>
 {% endblock %}
 
 {% block knowledges %}
     <dl class="dc">
-       <dt>SurvicalDC:</dt>
-       <dd> 10 >= Vind eten en drinken (20% kans op vergif) </dd>
-       <dd> 15 >= Storm gaat binnen een dag liggen.
-
-+2 Fort tegen de wind
-+2 Fort tegen de wind voor een ander voor elk punt boven 15
-
-Vind eten en drinken wat niet vergiftigd is.
-Vind eten en drinken voor een ander voor elke twee punten boven 15.</dd>
+        <dt>SurvicalDC: (Food)</dt>
+        <dd> 10 >= Find food (20% chance on poison) </dd>
+        <dd>
+            15 >= Find food (fruits) and water (rain water) that is certainly not poisonous.
+                  Find food and water for another for every two points above 15.
+        </dd>
     </dl>
 
     <dl class="dc">
-       <dt>NatureDC:</dt>
-       <dd> 10 >= Tropisch gebied, betreden niet zonder gevaar.</dd>
-       <dd> 15 >= Water afkomstig uit een tropische bron kan vervuilt raken met gif.
+        <dt>SurvivalDC: (Whether)</dt>
+        <dd> 10 >= Storm will calm within a day.</dd>
+        <dd>
+           +2 Fort against the wind.
+           +2 Fort against the wind for another for every two points above 15.
+        </dd>
 
-Niet alle vruchten zijn eetbaar
-</dd>
+    </dl>
+
+    <dl class="dc">
+        <dt>NatureDC:</dt>
+        <dd> 10 >= Tropical forest. Very diverse species, but also very dangerous.</dd>
+        <dd> 15 >= Water from streams might be poisoned.
+                  Not all fruits are eatable.
+        </dd>
     </dl>
 {% endblock %}
 
