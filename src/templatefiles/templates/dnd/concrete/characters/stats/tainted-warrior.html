@@ -5,7 +5,7 @@
 {% block speed %}40 (fly 40 average){% endblock %}
 {% block ac %}18 (t=13 ff=15){% endblock %}
 {% block attacks %}Sting +11, 2x claws +9, bite +9{% endblock %}
-{% block damage %}2d4+3 + FortDC14 1d6 Str (sting+poison), {% endblock %}
+{% block damage %}2d4+4 + FortDC14 1d6 Str (sting+poison), 1d6+2 (claws), 1d4+2 (bite){% endblock %}
 {% block face-reach %}5ft.{% endblock %}
 {% block special-attacks %}
     Improved grapple (pincers)
@@ -17,7 +17,9 @@
     Resistance to electricity 10, fire 10, and sonic 10
     Immunity to poison, petrification and cold
 {% endblock %}
-{% block spell-like-abilities %}{% endblock %}
+{% block spell-like-abilities %}
+    Hanuman soul's charge
+{% endblock %}
 {% block saves %}
     <ul>
         <li>Fort +7</li>
@@ -43,12 +45,13 @@
 {% block descriptions %}
     <h4>Descriptions</h4>
     <dl>
-        <dt>Hanuman soul's infusion (2x, level 2)</dt>
+        <dt>Hanuman soul's charge (2x, level 9, max 2)</dt>
         <dd>
             <p>
                 Take a random spell from the list below.
                 Creature can perform this spell Cha-score -10 times per day (minimum 1).
-                Ability is at a level of Cha-score -10 (minimum 1).
+                Ability is at a HD spell level.
+                Max spell is equal to Cha-score -10
             </p>
             <ol>
                 <li>Ray of frost</li>
@@ -57,15 +60,11 @@
                 <li>Shocking grasp</li>
                 <li>Ray of ice</li>
                 <li>Scorching ray</li>
-                <li>Fireball</li>
-                <li>Rainbow blast</li>
-                <li>Force missiles</li>
-                <li>Shout</li>
             </ol>
         </dd>
         <dt>Improved grapple</dt>
         <dd><p>Tainted formians can grapple with +8 bonus when they bite or claw</p></dd>
         <dt>Blood drain</dt>
-        <dd><p>When grappling tainted formians deal 1d4 Con damage at the beginning of their turn.</p></dd>
+        <dd><p>When grappling tainted formians deal 1d4 Con damage at the beginning of their turn by sucking blood.</p></dd>
     </dl>
 {% endblock %}

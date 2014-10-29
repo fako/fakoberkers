@@ -1,20 +1,32 @@
 {% extends "dnd/abstract/place.html" %}
 
-{% block todo %}Specify items further{% endblock %}
-
 {% block title %}Beach, right{% endblock %}
-{% block summary %}No summary{% endblock %}
+{% block summary %}Place to stack up on gear and find the book of annihilation.{% endblock %}
 
 {% block events %}
-     <p>During the day the strange black eyed Gorillions are grumpy</p>
+    <p>As the adventures get closer to the statue the red eyed Girallons grow restless</p>
+    <p>The Girallons attack as soon as they touch the statue, however once they don't they'll seize.</p>
 {% endblock %}
 
 {% block locations %}
-    <p>no locations</p>
+    <p>On this beach</p>
+    <ul>
+        <li>3x Girallons are sitting on the headland in the trees.</li>
+        <li>Their eyes are blood red and they seem grumpy (during the day).</li>
+        <li>A black golden statue in the liking of Hanuman in a lotus position is holding a flower.</li>
+    </ul>
+
+    <p>From here the party can head to:</p>
+    <ul>
+        <li>The <a href="inland-right.html">inland</a></li>
+        <li>The other side of the <a href="beach-center.html">beach</a></li>
+        <li>The <a href="sea.html">sea</a></li>
+        <li>Climb the <a href="headland.html">headland</a> (Girallons won't like territory invasion)</li>
+    </ul>
 {% endblock %}
 
 {% block achievements %}
-    <p>no achievements</p>
+    <p>Find the book of annihilation together with other gear in the burrow.</p>
 {% endblock %}
 
 {% block creatures %}
@@ -31,7 +43,18 @@
 
 {% block knowledges %}
     <dl class="dc">
-        <dt>SurvivalDC:</dt>
+        <dt>KnowledgeArcanaDC: (Girallon)</dt>
+        <dd> >= 10 Magical cousins of the gorilla. They are very territorial.</dd>
+        <dd> >= 15 They tear opponents apart if they get the chance. Red eyed Girallons are unique.</dd>
+    </dl>
+
+    <dl class="dc">
+        <dt>HealDC: (Body)</dt>
+        <dd> >= 10 His flesh got ripped apart by something with claws.</dd>
+    </dl>
+
+    <dl class="dc">
+        <dt>SurvivalDC: (tracks)</dt>
         <dd> >= 10 Large groups (around 10) of monstrous humanoids seem to walk on this beach with some regularity</dd>
         <dd>
             >= 20 A smaller group of monstrous humanoids (around 3 each time) that leave steps as if on six feet (like Formians) are regularly walking on the beach.
@@ -39,7 +62,7 @@
         </dd>
     </dl>
     <dl class="dc">
-        <dt>KnowledgeNatureDC:</dt>
+        <dt>KnowledgeNatureDC: (Formians)</dt>
         <dd> 10 >= Formians are monstrous humanoids that are half ant, half human, which live in big colonies led by powerful mystical queens.</dd>
         <dd> 15 >= Details about Workers and Warriors</dd>
         <dd> 20 >= Details about Taskmasters and Myrmarchs</dd>
@@ -50,8 +73,18 @@
 {% block items %}
     <p>On the beach, some belongings of a dead ranger.</p>
     <ul>
-        <li>Bow</li>
-        <li>Armor</li>
+        <li>Bow/Scimitar, +1 fire burst</li>
+        <li>Studded leather +2</li>
+        <li>1x CSW</li>
+    </ul>
+    <p>In the rock of the headland there is a burrow. Inside that burrow stands the following.</p>
+    <ul>
+        <li>A gold & black statue of a half-man half-monkey holding a flower.</li>
+        <li>A black and gold book (Book of Annihilation).</li>
+        <li>A familiar book (spell book Kadunkle).</li>
+        <li>Inside the spell book you find some scrolls.</li>
+        <li>One vial with a potion is standing next to the statue.</li>
+        <li>As well as a sealed pot.</li>
     </ul>
 {% endblock %}
 
