@@ -17,3 +17,7 @@ dt {
     font-weight: normal;
     font-style: italic;
 }
+
+body {
+    margin: 20px;
+}
