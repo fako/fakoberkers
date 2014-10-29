@@ -1,4 +1,5 @@
 {% extends "dnd/abstract/character.html" %}
+{% load staticfiles %}
 
 {% block todo %}
     <p>
@@ -7,4 +8,8 @@
         Hanuman's soul gives him powers to destroy as well as his ability to change shape.
         From his "devotee cleric" class he only gets defensive spells
     </p>
+{% endblock %}
+
+{% block image %}
+    <p><img src="{% static "pics/hanuman.jpg" %}" alt="hanuman"/></p>
 {% endblock %}
