@@ -1,11 +1,11 @@
 {% extends "dnd/abstract/stats.html" %}
 
-{% block hit-dice %}5 (1HD){% endblock %}
+{% block hit-dice %}8 (1HD){% endblock %}
 {% block initiative %}+2{% endblock %}
 {% block speed %}40 (fly 40 average){% endblock %}
-{% block ac %}10{% endblock %}
-{% block attacks %}+0{% endblock %}
-{% block damage %}0{% endblock %}
+{% block ac %}17 (t=13 ff=15){% endblock %}
+{% block attacks %}+3{% endblock %}
+{% block damage %}1d4+1{% endblock %}
 {% block face-reach %}5ft.{% endblock %}
 {% block special-attacks %}
     Improved grapple (pincers)
@@ -16,33 +16,36 @@
     Resistance to electricity 10, fire 10, and sonic 10
     Immunity to poison, petrification and cold
 {% endblock %}
-{% block spell-like-abilities %}{% endblock %}
+{% block spell-like-abilities %}
+    CSW (8 workers)
+    Make whole (3 workers)
+{% endblock %}
 {% block saves %}
     <ul>
-        <li>Fort 0</li>
-        <li>Ref 0</li>
-        <li>Will 0</li>
+        <li>Fort +3</li>
+        <li>Ref +4</li>
+        <li>Will +2</li>
     </ul>
 {% endblock %}
 {% block abilities %}
     <ul>
-        <li>Str 10</li>
-        <li>Dex 10</li>
-        <li>Con 10</li>
-        <li>Int 10</li>
+        <li>Str 13</li>
+        <li>Dex 14</li>
+        <li>Con 13</li>
+        <li>Int 6</li>
         <li>Wis 10</li>
-        <li>Cha 10</li>
+        <li>Cha 9</li>
     </ul>
 {% endblock %}
-{% block skills %}{% endblock %}
-{% block feats %}{% endblock %}
-{% block grapple %}+8{% endblock %}
+{% block skills %}Climb +10, Craft +5, Hide +6, Listen +4, Search +2, Spot +4{% endblock %}
+{% block feats %}Skill focus (craft){% endblock %}
+{% block grapple %}+6{% endblock %}
 {% block gear %}{% endblock %}
 
 {% block descriptions %}
     <h4>Descriptions</h4>
     <dl>
-        <dt>Hanuman soul's infusion</dt>
+        <dt>Hanuman soul's infusion (1x, level 1)</dt>
         <dd>
             <p>
                 Take a random spell from the list below.
