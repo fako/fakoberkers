@@ -1,16 +1,40 @@
 {% extends "dnd/abstract/place.html" %}
 
 {% block title %}Inland center{% endblock %}
-{% block summary %}No summary{% endblock %}
-
-{% block todo %}Description of environment{% endblock %}
+{% block summary %}Ambush by stirges.{% endblock %}
 
 {% block events %}
-    <p>no events</p>
+    <p>
+        As you walk through the jungle you see some trees that seem to have been snapped in two that obstruct the way.
+    </p>
+    <p>In darker area's adventurers may hear some animals ListenDC15.</p>
+    <p>
+        As you go through an area where the soil is socked and practically a mud puddle.
+        ListenDC10 to hear an annoying zooming sound.
+        As you look where it comes from SpotDC10 you see a huge mosquito like creature.
+        You realize too late it is a distraction and can't fend off the attack from behind.
+    </p>
 {% endblock %}
 
 {% block locations %}
-    <p>no locations</p>
+    <p>Jungle description:</p>
+    <ul>
+        <li>The jungle is thick, very thick and it is hard to get through.</li>
+        <li>You see a lot of colorful plants, but animals don't show themselves.</li>
+        <li>The place is full with vermin however especially mosquito's</li>
+    </ul>
+    <p>
+        It is hard to orientate. You can only choose a general direction, not a destination.
+        Again seen from the beach the directions are:
+    </p>
+    <ul>
+        <li><a href="purple-tree.html">Forward</a></li>
+        <li><a href="beach-center.html">Back</a></li>
+        <li><a href="inland-center.html">Left</a></li>
+        <li>
+            Right leads to intense dense growth and a huge rock wall that is impossible to climb with all vegetation.
+        </li>
+    </ul>
 {% endblock %}
 
 {% block achievements %}
@@ -22,26 +46,30 @@
 {% endblock %}
 
 {% block traps %}
-    <p>no traps</p>
+    <p>All fruits have 20% chance of being poisonous.</p>
+    <dl class="dc">
+       <dt>FortDC: 14 (food)</dt>
+       <dd>2x 1d6 from random ability</dd>
+    </dl>
 {% endblock %}
 
 {% block conditions %}
-    <p>
-        Extreme dense growth with some trees that seem to have been snapped in two that obstruct the way. Wind effect? No earthquake!
-    </p>
+    <p>Only possible to proceed with a slashing weapon and only 5ft a turn.</p>
 {% endblock %}
 
 {% block knowledges %}
 
     <dl class="dc">
        <dt>ListenDC:</dt>
-       <dd> 15 >= In darker area's you hear some animals that try to get away as you approach. So there is some life after all.</dd>
+       <dd>
+           15 >= In darker area's you hear some animals that try to get away as you approach.
+           So there is some life after all.
+       </dd>
     </dl>
 
     <dl class="dc">
         <dt>NatureDC: (never saw vulcano's so -5 penalty)</dt>
-        <dd> >= 20 This land is very fertile due to the vulcanic soil.</dd>
-        <dt>NatureDC: (never saw vulcano's so -5 penalty)</dt>
+        <dd> >= 15 This land is very fertile due to the vulcanic soil.</dd>
         <dd> >= 20 Trees got snapped due to sudden ruptures in the ground.</dd>
     </dl>
 
@@ -52,6 +80,12 @@
             20 >= Find food (fruits) and water (rain water) that is certainly not poisonous.
                   Find food and water for another for every two points above 15.
         </dd>
+    </dl>
+
+    <dl class="dc">
+        <dt>SurvivalDC: (weapons & armor)</dt>
+        <dd> 15 >= Create wooden weapon like club, sling or staff from dead tree.</dd>
+        <dd> 20 >= Strap tree bark to your body to provide +2 armor bonus</dd>
     </dl>
 
 {% endblock %}
