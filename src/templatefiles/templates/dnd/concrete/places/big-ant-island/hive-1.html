@@ -1,8 +1,13 @@
 {% extends "dnd/abstract/game_element.html" %}
 {% load staticfiles %}
 
-{% block title %}No Title{% endblock %}
-{% block summary %}No summary{% endblock %}
+{% block title %}Hive level 1{% endblock %}
+{% block summary %}
+    <p>
+        Level with mostly living quarters for Formians.
+        Safest to enter and look at vessel from above.
+    </p>
+{% endblock %}
 
 {% block events %}
     <p>no events</p>
@@ -32,7 +37,7 @@
 {% endblock %}
 
 {% block achievements %}
-    <p>no achievements</p>
+    <p>Behold the vessel and its light directly to <a href="../../obstacles/01-born-again/04-enlightment.html">become enlightened</a>.</p>
 {% endblock %}
 
 {% block creatures %}
@@ -74,6 +79,6 @@
 {% endblock %}
 
 {% block misc %}
-    <p><img src="{% static "pics/hive-0.png" %}" alt="hive level 0"/></p>
+    <p><img src="{% static "pics/hive-1.png" %}" alt="hive level 1"/></p>
 {% endblock %}
 
