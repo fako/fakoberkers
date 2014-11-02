@@ -10,30 +10,22 @@
 {% endblock %}
 
 {% block events %}
-    <p>no events</p>
+    <p>During the day all Formians are asleep. Except 2 patrols with 2 Myrmians</p>
+    <p>In the evening and night the Hive is at its busiest. Workers do not act as guards</p>
 {% endblock %}
 
 {% block locations %}
-    <p>Here is a list of chambers in the Hive</p>
-    <ul>
-        <li>1 = </li>
-        <li>2 =</li>
-        <li>3 =</li>
-        <li>4 =</li>
-        <li>5 =</li>
-        <li>6 =</li>
-        <li>7 =</li>
-        <li>8 = Chamber of the Vessel.</li>
-        <li>9 =</li>
-        <li>10 =</li>
-        <li>11 =</li>
-        <li>12 =</li>
-        <li>13 =</li>
-        <li>14 =</li>
-        <li>15 =</li>
-        <li>16 =</li>
-        <li>17 =</li>
-    </ul>
+    <p>
+        The hive is the home of the Formians.
+        It is made out of dirt providing smooth walls (ClimbDC 20)
+        They store mostly food (especially sweet food), but also other things that they find and can get their hands on.
+    </p>
+    <p>
+        All area's on this level are sleeping quarters for warriors and workers (they mix).
+        Taskmasters sleep with the monsters on level 0 and Myrmarchs also sleep on level 0.
+        During the night this level is abandoned except for a few workers that can't sound the alarm really.
+        Chamber 8 is the same chamber as on level 0, but 15ft higher.
+    </p>
 {% endblock %}
 
 {% block achievements %}
@@ -71,6 +63,14 @@
         <dt>ArcaneDC: (Ankhegs)</dt>
         <dd> 10 <= The ankheg is a burrowing monster with a taste for fresh meat.</dd>
         <dd> 15 >= It can grapple and spit acid.</dd>
+    </dl>
+
+    <dl class="dc">
+        <dt>KnowledgeNatureDC: (Formians)</dt>
+        <dd> 10 >= Formians are monstrous humanoids that are half ant, half human, which live in big colonies led by powerful mystical queens.</dd>
+        <dd> 15 >= Details about Workers and Warriors</dd>
+        <dd> 20 >= Details about Taskmasters and Myrmarchs</dd>
+        <dd> 25 >= Details about Queens</dd>
     </dl>
 {% endblock %}
 

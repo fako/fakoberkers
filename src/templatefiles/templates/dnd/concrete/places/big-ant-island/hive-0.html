@@ -9,29 +9,35 @@
 {% endblock %}
 
 {% block events %}
-    <p>no events</p>
+    <p>During the day all Formians are asleep. Except 2 patrols with 2 Myrmians</p>
+    <p>In the evening and night the Hive is at its busiest. Workers do not act as guards</p>
 {% endblock %}
 
 {% block locations %}
+    <p>
+        The hive is the home of the Formians.
+        It is made out of dirt providing smooth walls (ClimbDC 20)
+        They store mostly food (especially sweet food), but also other things that they find and can get their hands on.
+    </p>
     <p>Here is a list of chambers in the Hive</p>
     <ul>
-        <li>1 = </li>
-        <li>2 =</li>
-        <li>3 =</li>
-        <li>4 =</li>
-        <li>5 =</li>
-        <li>6 =</li>
-        <li>7 =</li>
-        <li>8 = Chamber of the Vessel.</li>
-        <li>9 =</li>
-        <li>10 =</li>
-        <li>11 =</li>
-        <li>12 =</li>
-        <li>13 =</li>
-        <li>14 =</li>
-        <li>15 =</li>
-        <li>16 =</li>
-        <li>17 =</li>
+        <li>1 = North entrance</li>
+        <li>2 = North entrance guard post</li>
+        <li>3 = Storage</li>
+        <li>4 = Storage</li>
+        <li>5 = 2x Taskmaster</li>
+        <li>6 = 1x Taskmaster + 1x Myrmarch</li>
+        <li>7 = 1x Taskmaster</li>
+        <li>8 = Chamber of the Vessel + taskmaster.</li>
+        <li>9 = East entrance guard post</li>
+        <li>10 = Storage</li>
+        <li>11 = Storage</li>
+        <li>12 = 2x Myrmarch</li>
+        <li>13 = West entrance guard post</li>
+        <li>14 = South entrance guard post</li>
+        <li>15 = Storage</li>
+        <li>16 = Storage</li>
+        <li>17 = 2x Taskmaster</li>
     </ul>
 {% endblock %}
 
@@ -71,10 +77,26 @@
         <dd> 10 <= The ankheg is a burrowing monster with a taste for fresh meat.</dd>
         <dd> 15 >= It can grapple and spit acid.</dd>
     </dl>
+
+    <dl class="dc">
+        <dt>KnowledgeNatureDC: (Formians)</dt>
+        <dd> 10 >= Formians are monstrous humanoids that are half ant, half human, which live in big colonies led by powerful mystical queens.</dd>
+        <dd> 15 >= Details about Workers and Warriors</dd>
+        <dd> 20 >= Details about Taskmasters and Myrmarchs</dd>
+        <dd> 25 >= Details about Queens</dd>
+    </dl>
 {% endblock %}
 
 {% block items %}
-    <p>no items</p>
+    <p>In each of the storages something can be found. Roll to determine what.</p>
+    <ol>
+        <li>2x CMW</li>
+        <li>1x Masterwork small sword</li>
+        <li>6x Peasant clothing (medium size)</li>
+        <li>1x Headband of Intellect</li>
+        <li>1x Masterwork studded leather</li>
+        <li>1x Periapt of Wisdom</li>
+    </ol>
 {% endblock %}
 
 {% block misc %}

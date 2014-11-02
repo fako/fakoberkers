@@ -5,30 +5,19 @@
 {% block summary %}A place for Myrmarchs and warriors to oversee the hive surroundings.{% endblock %}
 
 {% block events %}
-    <p>no events</p>
+    <p>Patrols and Myrmarchs are on guard 24/7 on this level.</p>
 {% endblock %}
 
 {% block locations %}
-    <p>Here is a list of chambers in the Hive</p>
-    <ul>
-        <li>1 = </li>
-        <li>2 =</li>
-        <li>3 =</li>
-        <li>4 =</li>
-        <li>5 =</li>
-        <li>6 =</li>
-        <li>7 =</li>
-        <li>8 = Chamber of the Vessel.</li>
-        <li>9 =</li>
-        <li>10 =</li>
-        <li>11 =</li>
-        <li>12 =</li>
-        <li>13 =</li>
-        <li>14 =</li>
-        <li>15 =</li>
-        <li>16 =</li>
-        <li>17 =</li>
-    </ul>
+    <p>
+        The hive is the home of the Formians.
+        It is made out of dirt providing smooth walls (ClimbDC 20)
+        They store mostly food (especially sweet food), but also other things that they find and can get their hands on.
+    </p>
+    <p>
+        Level 2 consist of 1 room of 7x7 with an opening of 3 in the middle of each wall.
+        There are 2 Myrmarchs and 2 patrols present (generally they walk the parameters of the Hive).
+    </p>
 {% endblock %}
 
 {% block achievements %}
@@ -36,13 +25,10 @@
 {% endblock %}
 
 {% block creatures %}
-    <p>The following creatures can be found in the Hive</p>
+    <p>The following creatures can be found on this level.</p>
     <ul>
-        <li><a href="../../characters/Formian+tainted-worker.html">Tainted workers</a></li>
         <li><a href="../../characters/Formian+tainted-warrior.html">Tainted warriors</a></li>
-        <li><a href="../../characters/Formian+tainted-taskmaster.html">Tainted taskmasters</a></li>
         <li><a href="../../characters/Formian+tainted-myrmarch.html">Tainted myrmarchs</a></li>
-        <li><a href="../../characters/Ankheg-vessel+swallowed-hanumans-soul.html">Ankheg vessel</a></li>
     </ul>
 {% endblock %}
 
@@ -66,6 +52,14 @@
         <dt>ArcaneDC: (Ankhegs)</dt>
         <dd> 10 <= The ankheg is a burrowing monster with a taste for fresh meat.</dd>
         <dd> 15 >= It can grapple and spit acid.</dd>
+    </dl>
+
+    <dl class="dc">
+        <dt>KnowledgeNatureDC: (Formians)</dt>
+        <dd> 10 >= Formians are monstrous humanoids that are half ant, half human, which live in big colonies led by powerful mystical queens.</dd>
+        <dd> 15 >= Details about Workers and Warriors</dd>
+        <dd> 20 >= Details about Taskmasters and Myrmarchs</dd>
+        <dd> 25 >= Details about Queens</dd>
     </dl>
 {% endblock %}
 
