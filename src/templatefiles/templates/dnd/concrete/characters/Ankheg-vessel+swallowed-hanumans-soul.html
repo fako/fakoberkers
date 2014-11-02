@@ -1,0 +1,27 @@
+{% extends "dnd/abstract/game_character.html" %}
+{% load staticfiles %}
+
+{% block name %}Formian tainted worker{% endblock %}
+{% block summary %}Inhabitant of Big Ant Island. Gives light as the daylight spell due to Hanuman's sould inside his stomach.{% endblock %}
+{% block motivation %}
+    <p>The Ankheg is an animal and handles purely on instinct. It is unaware of the powers that Hanuman's soul provides.</p>
+{% endblock %}
+{% block story %}
+    <p>
+        The theft of Hanuman's soul through teleportation was sabotaged by Talos.
+        He could only intercept the teleportation and not prevent it.
+        The new destination of the soul was inside of an Ankheg stomach on Big Ant Island ruled by a taskmaster.
+        From that moment the Ankheg started to radiate light as the daylight spell.
+        This Ankheg was brought to the Queen whom he purely out of instinct killed when she threatened him.
+        From that point on the Formian hive lived in chaos.
+        The Ankheg became worshipped as Queen by the workers.
+        The taskmaster pretends as if he can speak for the Ankheg and in practice rules the Hive.
+        After a while the corruption, deprivation and charging effects took hold on the Hive (see tainted formians).
+    </p>
+{% endblock %}
+{% block image %}
+    <p><img src="{% static "pics/ankheg.jpg" %}" alt="ankheg"/></p>
+{% endblock %}
+{% block stats %}
+    {% include "dnd/concrete/characters/stats/ankheg-vessel.html" %}
+{% endblock %}

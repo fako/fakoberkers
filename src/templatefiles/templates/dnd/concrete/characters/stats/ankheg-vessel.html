@@ -1,0 +1,59 @@
+{% extends "dnd/abstract/stats.html" %}
+
+{% block hit-dice %}144 (9HD){% endblock %}
+{% block initiative %}-1{% endblock %}
+{% block speed %}20 (fly 40 average, burrow 10){% endblock %}
+{% block ac %}19 (t=7 ff=19){% endblock %}
+{% block attacks %}+16/+11 bite{% endblock %}
+{% block damage %}3d6+13 + 1d4 acid{% endblock %}
+{% block face-reach %}15ft./10ft{% endblock %}
+{% block special-attacks %}
+    Improved grapple (pincers),
+    Blood drain,
+    Spit acid
+{% endblock %}
+{% block special-qualities %}
+    Light sensitivity, Lowlight vision (60ft), Tremersense (60ft)
+{% endblock %}
+{% block spell-like-abilities %}
+    Hanuman soul powers
+{% endblock %}
+{% block saves %}
+    <ul>
+        <li>Fort +9</li>
+        <li>Ref +6</li>
+        <li>Will +4</li>
+    </ul>
+{% endblock %}
+{% block abilities %}
+    <ul>
+        <li>Str 29</li>
+        <li>Dex 8</li>
+        <li>Con 22</li>
+        <li>Int 1</li>
+        <li>Wis 13</li>
+        <li>Cha 6</li>
+    </ul>
+{% endblock %}
+{% block skills %}Climb +8, Listen +6, Spot +3{% endblock %}
+{% block feats %}Alertness, Toughness{% endblock %}
+{% block grapple %}+34{% endblock %}
+{% block gear %}{% endblock %}
+
+{% block descriptions %}
+    <h4>Descriptions</h4>
+    <dl>
+        <dt>Hanuman soul powers</dt>
+        <dd>
+            <p>Cast any spell that Hanuman can cast.</p>
+        </dd>
+        <dt>Improved grapple</dt>
+        <dd><p>Due to taint Ankheg can grapple with +8 bonus on bite</p></dd>
+        <dt>Blood drain</dt>
+        <dd><p>
+            When grappling Ankheg deals 1d4 Con damage at the beginning of its turn by sucking blood.
+        </p></dd>
+        <dt>Spit acid</dt>
+        <dd><p>30 ft line 1x, 4d4 acid damage, ReflexDC17 (half)</p></dd>
+    </dl>
+{% endblock %}
