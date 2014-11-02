@@ -1,1 +1,64 @@
-{% extends "dnd/abstract/place.html" %}
+{% extends "dnd/abstract/game_element.html" %}
+
+{% block title %}Headlands (and around the island){% endblock %}
+{% block summary %}This is a though road that leads to nothing that can't be done easier.{% endblock %}
+
+{% block events %}
+    <p>no events</p>
+{% endblock %}
+
+{% block locations %}
+    <p></p>
+    <ul>
+        <li>Continue down the rocks past the next headland. They'd have to cross 500m (1600ft.) climbing.</li>
+        <li>Climb to <a href="vulcano-ring.html">top of the mountain</a>.</li>
+    </ul>
+{% endblock %}
+
+{% block achievements %}
+    <p>If they survive three rounds from headland to headland they end up on the beach.</p>
+{% endblock %}
+
+{% block creatures %}
+    <p>On one part if </p>
+{% endblock %}
+
+{% block traps %}
+    <p>The environment is hazardous in itself. Make following checks to proceed.</p>
+    <dl class="dc">
+        <dt>ClimbDC: (to move to next headland, slippery surface penalty +5)</dt>
+        <dd> <= 15 Fall into the sea</dd>
+        <dd> < 20 Stay put, try again</dd>
+        <dd> >= Proceed with next check (make 5 checks)</dd>
+    </dl>
+    <dl class="dc">
+        <dt>SwimDC:</dt>
+        <dd> 10 <= You go underwater, start to drown</dd>
+        <dd> 15 >= Act in calmer sea</dd>
+        <dd> 20 >= Act in </dd>
+    </dl>
+    <dl class="dc">
+        <dt>ClimDC: (recover from fall)</dt>
+        <dd> >= 20 Get to </dd>
+    </dl>
+    <dl class="dc">
+        <dt>ClimbDC: (to go up)</dt>
+        <dd> >= 25 Go up first time (slippery, vertical surface, from there 4xDC20, due to vegetation)</dd>
+    </dl>
+{% endblock %}
+
+{% block conditions %}
+    <p>no conditions</p>
+{% endblock %}
+
+{% block knowledges %}
+    <p>no knowledges</p>
+{% endblock %}
+
+{% block items %}
+    <p>no items</p>
+{% endblock %}
+
+{% block misc %}
+    <p>no misc</p>
+{% endblock %}

@@ -34,7 +34,13 @@
 {% endblock %}
 
 {% block traps %}
-    <p>no traps</p>
+    <p>It is possible to climb to whatever is behind the headland.</p>
+    <dl class="dc">
+        <dt>ClimbDC: (to move to next headland, slippery surface penalty +5)</dt>
+        <dd> <= 15 Fall into the sea</dd>
+        <dd> < 20 Stay put, try again</dd>
+        <dd> >= Proceed with next check (make 5 checks)</dd>
+    </dl>
 {% endblock %}
 
 {% block conditions %}
