@@ -1,23 +1,29 @@
 {% extends "dnd/abstract/place.html" %}
 
 {% block title %}Abandoned village{% endblock %}
-{% block summary %}No summary{% endblock %}
-
-{% block todo %}
-
-
-
-
-{% endblock %}
+{% block summary %}An old fishers village with only the last inhabitant remaining as a skeleton.{% endblock %}
 
 {% block events %}
-    <p>no events</p>
+    <p>When you enter one of the houses you immediately notice a skeleton lifeless on the ground, wearing ragged clothing.</p>
 {% endblock %}
 
 {% block locations %}
-    <p>There are various points of interest in this area</p>
+    <p>There are various points of interest in this large area with relatively little vegetation</p>
     <ul>
-        <li>A stream of water that ends in the sea </li>
+        <li>A stream of water that ends in the sea.</li>
+        <li>A few stone houses with their wooden roofs collapsed and walls with huge tears stand in a circle.</li>
+        <li>On the edge of the small village lies a boat with a whole in its bough.</li>
+        <li>In the center of the circle of houses is an old fire place.</li>
+    </ul>
+    <p>Towards other places.</p>
+    <ul>
+        <li>Follow the stream towards <a href="purple-tree.html">Purple Flower Tree</a></li>
+        <li>Go back to the <a href="beach-left.html">beach</a></li>
+        <li>Move <a href="inland-center.html">into the jungle</a></li>
+        <li>
+            Up the <a href="headland.html">headland</a> to your left.
+            This seems a very though climb (ClimbDC25) due to steepness (+5) and the thick growth (+5).
+        </li>
     </ul>
 {% endblock %}
 
@@ -37,14 +43,17 @@
     </dl>
     <dl class="dc">
        <dt>FortDC: 14 (water from stream)</dt>
-       <dd>-5 Will saves</dd>
+       <dd>-5 Will saves (1h)</dd>
     </dl>
 {% endblock %}
 
 {% block conditions %}
     <p>
-        Extreme dense growth with some trees that seem to have been snapped in two that obstruct the way.
+        Undergrowth: Vines, roots, and short bushes cover much of the ground in a forest.
+        A space covered with light undergrowth costs 2 squares of movement to move into, and it provides concealment.
+        Undergrowth increases the DC of Tumble and Move Silently checks by 2 because the leaves and branches get in the way.
     </p>
+    <p>Houses do not have a roof, but they provide shelter against the wind.</p>
 {% endblock %}
 
 {% block knowledges %}
@@ -61,13 +70,21 @@
         <dd> 15 >= Find food (20% chance on poison) </dd>
         <dd>
             20 >= Find food (fruits) and water (rain water) that is certainly not poisonous.
-                  Find food and water for another for every two points above 15.
+                  Find food and water for another for every two points above 20.
         </dd>
     </dl>
 {% endblock %}
 
 {% block items %}
-    <p>no items</p>
+    <p>Here is a list of items with the place where to find them and the search DC.</p>
+    <ul>
+        <li>Masterwork shortspear: boat, SearchDC10</li>
+        <li>
+            Locked chest with 1xCSW + 3 platinum: cracked wall of a house, SearchDC20.
+            BreakDC10 (breaks the vial), OpenDC15.
+        </li>
+        <li>Dagger: near the fireplace, SearchDC15</li>
+    </ul>
 {% endblock %}
 
 {% block misc %}
