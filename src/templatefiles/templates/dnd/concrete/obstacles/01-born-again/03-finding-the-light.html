@@ -1,0 +1,65 @@
+{% extends "dnd/abstract/obstacle.html" %}
+
+{% block title %}Finding the light{% endblock %}
+{% block summary %}For a brief moment a bright light appears on top of the hill.{% endblock %}
+
+{% block events %}
+    <p>Night 1</p>
+    <ul>
+        <li>The wind is going down.</li>
+        <li>Then all animals begin to stir as though they know that something is happening.</li>
+        <li>The ground starts to shake violently! (see conditions)</li>
+        <li>See the light from atop the small mountain through the V shape in the middle.</li>
+        <li>Light disappears again.</li>
+    </ul>
+
+{% endblock %}
+
+{% block locations %}
+    <p>no locations</p>
+{% endblock %}
+
+{% block achievements %}
+    <p>The next day they can continue to go <a href="04-towards-the-light.html">towards the light</a>.</p>
+{% endblock %}
+
+{% block creatures %}
+    <p>no creatures</p>
+{% endblock %}
+
+{% block traps %}
+    <p>no traps</p>
+{% endblock %}
+
+{% block conditions %}
+    <p>Earthquake</p>
+    <ul>
+        <li>
+            Land: Each creature standing in the area must make a DC 15 Reflex save or fall down.
+            Fissures open in the earth, and every creature on the ground has a 25% chance to fall into one
+            (Reflex DC 20 to avoid a fissure).
+            At the end of the spell, all fissures grind shut, killing any creatures still trapped within.
+        </li>
+        <li>
+            Fissures open underneath the water, draining away the water from that area and forming muddy ground.
+            Soggy marsh or swampland becomes quicksand for the duration of the spell, sucking down creatures and structures.
+            Each creature in the area must make a DC 15 Reflex save or sink down in the mud and quicksand.
+            At the end of the spell, the rest of the body of water rushes in to replace the drained water, possibly drowning those caught in the mud.
+        </li>
+    </ul>
+{% endblock %}
+
+{% block knowledges %}
+    <dl class="dc">
+        <dt>NatureDC:</dt>
+        <dd> 10 >= This island has all the signs of a life vulcano. Vurtile ground. Earthquakes that destroys trees. Small houses.</dd>
+    </dl>
+{% endblock %}
+
+{% block items %}
+    <p>no items</p>
+{% endblock %}
+
+{% block misc %}
+    <p>no misc</p>
+{% endblock %}
