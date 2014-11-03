@@ -4,14 +4,17 @@
 {% block summary %}This is a though road that leads to nothing that can't be done easier.{% endblock %}
 
 {% block events %}
-    <p>no events</p>
+    <p>Getting here due to a storm increases all DC's with 5</p>
 {% endblock %}
 
 {% block locations %}
     <p></p>
     <ul>
         <li>Continue down the rocks past the next headland. They'd have to cross 500m (1600ft.) climbing.</li>
-        <li>Climb to <a href="vulcano-ring.html">top of the mountain</a>.</li>
+        <li>
+            Climb to <a href="vulcano-ring.html">top of the mountain</a>.
+            The climb will always be a little different (you go up the headland in a different way,
+        </li>
     </ul>
 {% endblock %}
 
@@ -20,35 +23,44 @@
 {% endblock %}
 
 {% block creatures %}
-    <p>On one part if </p>
+    <p>On one part if they </p>
 {% endblock %}
 
 {% block traps %}
-    <p>The environment is hazardous in itself. Make following checks to proceed.</p>
-    <dl class="dc">
-        <dt>ClimbDC: (to move to next headland, slippery surface penalty +5)</dt>
-        <dd> <= 15 Fall into the sea</dd>
-        <dd> < 20 Stay put, try again</dd>
-        <dd> >= Proceed with next check (make 5 checks)</dd>
-    </dl>
-    <dl class="dc">
-        <dt>SwimDC:</dt>
-        <dd> 10 <= You go underwater, start to drown</dd>
-        <dd> 15 >= Act in calmer sea</dd>
-        <dd> 20 >= Act in </dd>
-    </dl>
-    <dl class="dc">
-        <dt>ClimDC: (recover from fall)</dt>
-        <dd> >= 20 Get to </dd>
-    </dl>
-    <dl class="dc">
-        <dt>ClimbDC: (to go up)</dt>
-        <dd> >= 25 Go up first time (slippery, vertical surface, from there 4xDC20, due to vegetation)</dd>
-    </dl>
+    <p>no traps</p>
+
 {% endblock %}
 
 {% block conditions %}
-    <p>no conditions</p>
+    <p>The environment is hazardous in itself. Make following checks to proceed.</p>
+    <dl class="dc">
+        <dt>ClimbDC: (to move to next headland, slippery surface penalty +5)</dt>
+        <dd> 15 <= Fall into the sea</dd>
+        <dd> 20 < Stay put, try again</dd>
+        <dd> 20 >= Proceed with next check (make 5 checks)</dd>
+    </dl>
+    <dl class="dc">
+        <dt>SwimDC: (Rough, +5 DC for stormy seas)</dt>
+        <dd> 10 < You go underwater, start to drown, proceed to <a href="sea.html">sea area</a></dd>
+        <dd> 10 >= Manage to fight the currents</dd>
+        <dd> 15 >= Act in sea</dd>
+    </dl>
+    <dl class="dc">
+        <dt>ClimDC: (recover from fall, slippery surface penalty +5)</dt>
+        <dd> 20 >= Get to grab the cliffs, hold on and stay out of the water.</dd>
+    </dl>
+    <dl class="dc">
+        <dt>ClimbDC: (Go up the first time, vertical and slippery penalty (+5)</dt>
+        <dd> 25 >= Manage to get to ground above the waves Go up first time (slippery, vertical surface, from there 4xDC20, due to vegetation)</dd>
+        <dd> 20 < Simply fail to get up.</dd>
+        <dd> 15 <= Fall, possibly in the water.</dd>
+    </dl>
+    <dl class="dc">
+        <dt>ClimbDC: (From above ground that water can reach, with overgrowth)</dt>
+        <dd> 10 <= Topple to one side or fall straight down (ReflexDC10 to hold on to vegetation).</dd>
+        <dd> 15 < Stay put, can't find a way through.</dd>
+        <dd> 20 >= Four succeeds brings you to the top.</dd>
+    </dl>
 {% endblock %}
 
 {% block knowledges %}
@@ -60,5 +72,5 @@
 {% endblock %}
 
 {% block misc %}
-    <p>no misc</p>
+    <p>Woodland stride lessens DC by 5 when there is overgrowth.</p>
 {% endblock %}

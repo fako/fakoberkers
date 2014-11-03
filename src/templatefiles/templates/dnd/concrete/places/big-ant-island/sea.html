@@ -1,1 +1,51 @@
-{% extends "dnd/abstract/place.html" %}
+{% extends "dnd/abstract/game_element.html" %}
+
+{% block title %}The sea{% endblock %}
+{% block summary %}The big blue salt dessert.{% endblock %}
+
+{% block events %}
+    <p>no events</p>
+{% endblock %}
+
+{% block locations %}
+    <p>no locations</p>
+{% endblock %}
+
+{% block achievements %}
+    <p>no achievements</p>
+{% endblock %}
+
+{% block creatures %}
+    <p>Far from the coast there might be a <a href="../../monsters/Shark+dire.html">shark</a></p>
+{% endblock %}
+
+{% block traps %}
+    <p>no traps</p>
+{% endblock %}
+
+{% block conditions %}
+    <dl class="dc">
+        <dt>SwimDC: (Rough, +5 DC for stormy seas)</dt>
+        <dd> 10 < You go underwater, start to drown.</dd>
+        <dd> 10 >= Manage to fight the currents</dd>
+        <dd> 15 >= Act in sea</dd>
+    </dl>
+{% endblock %}
+
+{% block knowledges %}
+    <p>no knowledges</p>
+{% endblock %}
+
+{% block items %}
+    <p>no items</p>
+{% endblock %}
+
+{% block misc %}
+    <p>Drowning</p>
+    <ol>
+        <li>Hold your breath 2xCon rounds</li>
+        <li>Make FortDC10 check each round. +1 DC after each check</li>
+        <li>Fall conscious 0 HP after failed check</li>
+        <li>Drop to -1 HP, dying.</li>
+    </ol>
+{% endblock %}

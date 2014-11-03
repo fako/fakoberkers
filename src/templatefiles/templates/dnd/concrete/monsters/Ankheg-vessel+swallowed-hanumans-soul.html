@@ -1,7 +1,7 @@
 {% extends "dnd/abstract/game_character.html" %}
 {% load staticfiles %}
 
-{% block name %}Formian tainted worker{% endblock %}
+{% block name %}Ankheg vessel{% endblock %}
 {% block summary %}Inhabitant of Big Ant Island. Gives light as the daylight spell due to Hanuman's sould inside his stomach.{% endblock %}
 {% block motivation %}
     <p>The Ankheg is an animal and handles purely on instinct. It is unaware of the powers that Hanuman's soul provides.</p>
@@ -23,5 +23,5 @@
     <p><img src="{% static "pics/ankheg.jpg" %}" alt="ankheg"/></p>
 {% endblock %}
 {% block stats %}
-    {% include "dnd/concrete/characters/stats/ankheg-vessel.html" %}
+    {% include "dnd/concrete/monsters/stats/ankheg-vessel.html" %}
 {% endblock %}

@@ -1,0 +1,19 @@
+{% extends "dnd/abstract/game_character.html" %}
+{% load staticfiles %}
+
+{% block name %}Girallon{% endblock %}
+{% block summary %}Visitors to Big Ant Island. Guarding the sacred artifacts of their King Hanuman.{% endblock %}
+{% block motivation %}
+    <p>Want to guard the artifacts no matter what. Even if it causes their death.</p>
+{% endblock %}
+{% block story %}
+    <p>
+        Girallons are highly territorial creatures. Hanuman persuaded them to guard his sacred statue for the time being.
+    </p>
+{% endblock %}
+{% block image %}
+    <p><img src="{% static "pics/girallon.png" %}" alt="girallon"/></p>
+{% endblock %}
+{% block stats %}
+    {% include "dnd/concrete/monsters/stats/tainted-girallon.html" %}
+{% endblock %}
