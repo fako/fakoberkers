@@ -1,12 +1,12 @@
 {% extends "dnd/abstract/stats.html" %}
 
-{% block hit-dice %}5 (1HD){% endblock %}
-{% block initiative %}+2{% endblock %}
-{% block speed %}30 (fly 40 average){% endblock %}
-{% block ac %}10{% endblock %}
-{% block attacks %}+0{% endblock %}
+{% block hit-dice %}144 (12HD){% endblock %}
+{% block initiative %}+8{% endblock %}
+{% block speed %}40 (fly 40 average){% endblock %}
+{% block ac %}28 (t=13, ff=24){% endblock %}
+{% block attacks %}+15 (sting), +13 bite or +15/+10 (javalin ranged){% endblock %}
 {% block damage %}0{% endblock %}
-{% block face-reach %}5ft.{% endblock %}
+{% block face-reach %}10ft./5ft.{% endblock %}
 {% block special-attacks %}
     Improved grapple (pincers)
     Blood drain
@@ -15,37 +15,40 @@
 {% block special-qualities %}
     Light sensitivity, Lowlight vision (60ft),
     Resistance to electricity 10, fire 10, and sonic 10
-    Immunity to poison, petrification and cold
+    Immunity to poison, petrification and cold,
+    Fast healing 2,
+    SR 25
 {% endblock %}
 {% block spell-like-abilities %}
-    Hanuman soul's charge
+    Hanuman soul's charge,
+    <a href="http://dndsrd.net/monstersEtoF.html#formian">spells</a>
 {% endblock %}
 {% block saves %}
     <ul>
-        <li>Fort 0</li>
-        <li>Ref 0</li>
-        <li>Will 0</li>
+        <li>Fort +12</li>
+        <li>Ref +12</li>
+        <li>Will +11</li>
     </ul>
 {% endblock %}
 {% block abilities %}
     <ul>
-        <li>Str 10</li>
-        <li>Dex 10</li>
-        <li>Con 10</li>
-        <li>Int 10</li>
-        <li>Wis 10</li>
-        <li>Cha 10</li>
+        <li>Str 19</li>
+        <li>Dex 18</li>
+        <li>Con 18</li>
+        <li>Int 16</li>
+        <li>Wis 16</li>
+        <li>Cha 17</li>
     </ul>
 {% endblock %}
-{% block skills %}{% endblock %}
-{% block feats %}{% endblock %}
-{% block grapple %}+8{% endblock %}
+{% block skills %}Climb +19, Concentration +18, Diplomacy +20, Hide +15, Knowledge (any one) +18, Listen +18, Move Silently +19, Search +18, Sense Motive +18, Spot +18, Survival +3 (+5 following tracks){% endblock %}
+{% block feats %}Dodge, Improved Initiative, Mobility, Multiattack, Spring Attack{% endblock %}
+{% block grapple %}+28{% endblock %}
 {% block gear %}{% endblock %}
 
 {% block descriptions %}
     <h4>Descriptions</h4>
     <dl>
-        <dt>Hanuman soul's charge</dt>
+        <dt>Hanuman soul's charge (7x, level 12, max 7)</dt>
         <dd>
             <p>
                 Take a random spell from the list below.
@@ -70,5 +73,7 @@
         <dd><p>Tainted formians can grapple with +8 bonus when they bite or claw</p></dd>
         <dt>Blood drain</dt>
         <dd><p>When grappling tainted formians deal 1d4 Con damage at the beginning of their turn by sucking blood.</p></dd>
+        <dt>Poison</dt>
+        <dd><p>Injury, Fortitude DC 20, initial and secondary damage 2d6 Dex. The save DC is Constitution-based.</p></dd>
     </dl>
 {% endblock %}

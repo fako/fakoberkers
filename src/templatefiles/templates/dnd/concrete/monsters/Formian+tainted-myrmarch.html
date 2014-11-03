@@ -2,15 +2,23 @@
 {% load staticfiles %}
 
 {% block name %}Formian tainted worker{% endblock %}
-{% block summary %}Inhabitant of Big Ant Island.{% endblock %}
-{% block motivation %}No motivation{% endblock %}
+{% block summary %}Inhabitant of Big Ant Island. Leaders of the pack after the Queen{% endblock %}
+{% block motivation %}
+    <p>Wants to do whatever is best for the Hive. Which is often more power for himself.</p>
+{% endblock %}
 {% block story %}
     <p>
-        All Formians on the island have been corrupted and deprivated by the evil that Hanuman's pure good soul attracts.
+        There is a rivally between two Myrmarchs.
+        Whoever controls the taskmaster that controls the vessel controls the Hive.
+        When the Myrmarch not in control hears a party is on the island.
+        He puts everything to work to get them to kill the taskmaster.
+    </p>
+    <p>
+        All Formians on the island have been corrupted and deprived by the evil that Hanuman's pure good soul attracts.
         The parasitic Stirges are the most common form of evil on the island.
         Therefor the Formians have taken on traits of Stirges like sucking blood and they have grown wings.
         The queen is dead so they do not have a hive mind any more. Instead it is an everybody-for-themselves,
-        with grewsome results.
+        with gruesome results.
         Next to this they are so close to the power of Hanuman's soul that part of its power tries to manifest in them.
         They gain a few of the destructive powers of Hanuman's soul.
     </p>
@@ -18,4 +26,6 @@
 {% block image %}
     <p><img src="{% static "pics/formian.jpg" %}" alt="formian"/></p>
 {% endblock %}
-{% block stats %}No stats{% endblock %}
+{% block stats %}
+    {% include "dnd/concrete/monsters/stats/tainted-myrmarch.html" %}
+{% endblock %}

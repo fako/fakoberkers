@@ -4,7 +4,7 @@
 {% block initiative %}+3{% endblock %}
 {% block speed %}30 (fly 40 average){% endblock %}
 {% block ac %}18 (t=13 ff=15){% endblock %}
-{% block attacks %}Sting +11/+6, 2x claws +9, bite +9{% endblock %}
+{% block attacks %}Sting +11, 2x claws +9, bite +9{% endblock %}
 {% block damage %}2d4+4 + FortDC14 1d6 Str (sting+poison), 1d6+2 (claws), 1d4+2 (bite){% endblock %}
 {% block face-reach %}5ft.{% endblock %}
 {% block special-attacks %}
@@ -15,7 +15,8 @@
 {% block special-qualities %}
     Light sensitivity, Lowlight vision (60ft),
     Resistance to electricity 10, fire 10, and sonic 10,
-    Immunity to poison, petrification and cold
+    Immunity to poison, petrification and cold,
+    SR 18
 {% endblock %}
 {% block spell-like-abilities %}
     Hanuman soul's charge
@@ -66,5 +67,7 @@
         <dd><p>Tainted formians can grapple with +8 bonus when they bite or claw</p></dd>
         <dt>Blood drain</dt>
         <dd><p>When grappling tainted formians deal 1d4 Con damage at the beginning of their turn by sucking blood.</p></dd>
+        <dt>Poison</dt>
+        <dd>Injury, Fortitude DC 14, initial and secondary damage 1d6 Str. The save DC is Constitution-based.</dd>
     </dl>
 {% endblock %}

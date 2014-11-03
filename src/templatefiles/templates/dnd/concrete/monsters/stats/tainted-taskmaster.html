@@ -1,11 +1,11 @@
 {% extends "dnd/abstract/stats.html" %}
 
-{% block hit-dice %}5 (1HD){% endblock %}
-{% block initiative %}+2{% endblock %}
+{% block hit-dice %}60 (6HD){% endblock %}
+{% block initiative %}+7{% endblock %}
 {% block speed %}30 (fly 40 average){% endblock %}
-{% block ac %}10{% endblock %}
-{% block attacks %}+0{% endblock %}
-{% block damage %}0{% endblock %}
+{% block ac %}19 (t=13, ff=16){% endblock %}
+{% block attacks %}Sting +10, 2 claws +8{% endblock %}
+{% block damage %}2d4+4 + poison (sting), 1d6+2 claws{% endblock %}
 {% block face-reach %}5ft.{% endblock %}
 {% block special-attacks %}
     Improved grapple (pincers)
@@ -15,37 +15,39 @@
 {% block special-qualities %}
     Light sensitivity, Lowlight vision (60ft),
     Resistance to electricity 10, fire 10, and sonic 10
-    Immunity to poison, petrification and cold
+    Immunity to poison, petrification and cold,
+    SR 21
 {% endblock %}
 {% block spell-like-abilities %}
     Hanuman soul's charge
+    Dominate monster (CL10)
 {% endblock %}
 {% block saves %}
     <ul>
-        <li>Fort 0</li>
-        <li>Ref 0</li>
-        <li>Will 0</li>
+        <li>Fort +7</li>
+        <li>Ref +8</li>
+        <li>Will +8</li>
     </ul>
 {% endblock %}
 {% block abilities %}
     <ul>
-        <li>Str 10</li>
-        <li>Dex 10</li>
-        <li>Con 10</li>
-        <li>Int 10</li>
-        <li>Wis 10</li>
-        <li>Cha 10</li>
+        <li>Str 18</li>
+        <li>Dex 16</li>
+        <li>Con 14</li>
+        <li>Int 11</li>
+        <li>Wis 16</li>
+        <li>Cha 19</li>
     </ul>
 {% endblock %}
-{% block skills %}{% endblock %}
-{% block feats %}{% endblock %}
-{% block grapple %}+8{% endblock %}
+{% block skills %}Climb +13, Diplomacy +6, Hide +12, Intimidate +13, Listen +12, Move Silently +12, Search +9, Sense Motive +12, Spot +12, Survival +3 (+5 following tracks){% endblock %}
+{% block feats %}Dodge, Improved Initiative, Multiattack{% endblock %}
+{% block grapple %}+18{% endblock %}
 {% block gear %}{% endblock %}
 
 {% block descriptions %}
     <h4>Descriptions</h4>
     <dl>
-        <dt>Hanuman soul's charge</dt>
+        <dt>Hanuman soul's charge (9x, level 6, max 9)</dt>
         <dd>
             <p>
                 Take a random spell from the list below.
@@ -69,6 +71,11 @@
         <dt>Improved grapple</dt>
         <dd><p>Tainted formians can grapple with +8 bonus when they bite or claw</p></dd>
         <dt>Blood drain</dt>
-    <dd><p>When grappling tainted formians deal 1d4 Con damage at the beginning of their turn by sucking blood.</p></dd>
+        <dd><p>When grappling tainted formians deal 1d4 Con damage at the beginning of their turn by sucking blood.</p></dd>
+        <dt>Poison</dt>
+        <dd>Injury, Fortitude DC 15, initial and secondary damage 1d6 Str. The save DC is Constitution-based.</dd>
     </dl>
+
+    <h4>Dominated Ankheg</h4>
+    {% include "dnd/concrete/monsters/stats/ankheg-tainted.html" %}
 {% endblock %}
