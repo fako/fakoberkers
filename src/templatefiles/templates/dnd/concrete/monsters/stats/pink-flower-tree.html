@@ -1,0 +1,65 @@
+{% extends "dnd/abstract/stats.html" %}
+
+{% block hit-dice %}404 (30HD){% endblock %}
+{% block initiative %}-2{% endblock %}
+{% block speed %}0ft.{% endblock %}
+{% block ac %}27 (t=12 ff=27){% endblock %}
+{% block attacks %}+26 (flower spike){% endblock %}
+{% block damage %}1d8+5{% endblock %}
+{% block face-reach %}15ft.{% endblock %}
+{% block special-attacks %}
+    Poison,
+    Flowers
+{% endblock %}
+{% block special-qualities %}
+    DR 10/slashing,
+    Plant traits,
+    Telepathy
+{% endblock %}
+{% block spell-like-abilities %}
+    Psyionics
+{% endblock %}
+{% block saves %}
+    <ul>
+        <li>Fort +32</li>
+        <li>Ref +14</li>
+        <li>Will +20</li>
+    </ul>
+{% endblock %}
+{% block abilities %}
+    <ul>
+        <li>Str 21</li>
+        <li>Dex 6</li>
+        <li>Con 29</li>
+        <li>Int 12</li>
+        <li>Wis 14</li>
+        <li>Cha 21</li>
+    </ul>
+{% endblock %}
+{% block skills %}{% endblock %}
+{% block feats %}Endurance, Die hard, Iron will, +3 (psyionic){% endblock %}
+{% block grapple %}-{% endblock %}
+{% block gear %}{% endblock %}
+
+{% block descriptions %}
+    <h4>Descriptions</h4>
+    <dl>
+        <dt>Poison</dt>
+        <dd>
+            <p>
+                The poison of the Pink Flower Tree spreads through the water and the waterfall water vapour.
+                Each round make a Fort save or hold your breath while in 40ft spread of the tree.
+                <dl class="dc">
+                    <dt>FortDC: (Pink Flower Tree poison)</dt>
+                    <dd> 20 < Initially fatigued, secondary -5 Will saves 2h, then -2 for 1h.</dd>
+                </dl>
+            </p>
+        </dd>
+        <dt>Flowers</dt>
+        <dd><p>
+            One medium can lie down on the soft inner part of each flower of the tree.
+             With psyionics the tree will attempt to make you sleep in its flowers.
+            These flowers will perform a coup the grace with the spikes once you do.
+        </p></dd>
+    </dl>
+{% endblock %}

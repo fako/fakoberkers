@@ -1,0 +1,75 @@
+{% extends "dnd/abstract/place.html" %}
+
+{% block title %}Pink Flower Tree{% endblock %}
+{% block summary %}The place where Rafana grew up.{% endblock %}
+
+{% block events %}
+    <p>There are two different ways of approaching the Pink Flower Tree.</p>
+    <ul>
+        <li>Following the stream the party gets a SpotDC15 to notice the tree before effects take place.</li>
+        <li>When coming from the jungle they suddenly behold the magnificent tree and it is too late (see traps).</li>
+    </ul>
+{% endblock %}
+
+{% block locations %}
+    <p>
+        As you enter the area you see a huge ancient tree under the waterfall.
+        Its roots curl around the rocks and go into the small pond.
+        On the roots on the rocks grow beautiful big flowers.
+        The flowers are completely open and are inviting to sit down in for a short break.
+    </p>
+
+    <p>From here there are a few places to go.</p>
+    <ul>
+        <li>Go up the 200m high waterfall (4xClimbDC 15) to <a href="vulcano-ring.html">top</a></li>
+        <li>Follow to waterfall stream to <a href="abandoned-village.html">the left</a></li>
+        <li>Go into the jungle <a href="inland-center.html">across the tree</a></li>
+        <li>Go into the jungle <a href="inland-right.html">on the right side</a></li>
+    </ul>
+{% endblock %}
+
+{% block achievements %}
+    <p>no achievements</p>
+{% endblock %}
+
+{% block creatures %}
+    <p>There are two creatures here.</p>
+    <ul>
+        <li>The <a href="../../monsters/Pink-flower-tree+Rafanas-home.html">Pink Flower Tree</a>.</li>
+        <li>A smaller pink flower tree that is less prominent, because it didn't reach adulthood.</li>
+    </ul>
+{% endblock %}
+
+{% block traps %}
+    <p>
+        The water vapor that comes from the waterfall has been poisoned by the tree.
+        Make Will saves each round or hold your breath.
+    </p>
+    <dl class="dc">
+        <dt>FortDC: (Pink Flower Tree poison)</dt>
+        <dd> 20 < Initially fatigued, secondary -5 Will saves 2h, then -2 for 1h.</dd>
+    </dl>
+{% endblock %}
+
+{% block conditions %}
+    <p>no conditions</p>
+{% endblock %}
+
+{% block knowledges %}
+   <dl class="dc">
+       <dt>NatureDC: (Pink Flower Tree)</dt>
+       <dd>10 >= Read first of story of <a href="../../monsters/Pink-flower-tree+Rafanas-home.html">the pink flower tree</a>.</dd>
+       <dd>15 >= Will use magic to lure travelers into its trap.</dd>
+       <dd>20 >= DR slashing, sentient psyionic being.</dd>
+       <dd>25 >= Read the legend part of the story of <a href="../../monsters/Pink-flower-tree+Rafanas-home.html">the pink flower tree</a>.</dd>
+       <dd>30 >= The legend is true, but the virgins don't remain virgins</dd>
+   </dl>
+{% endblock %}
+
+{% block items %}
+    <p>Inside the pond lies a ring of protection +2 from a pink tree victim. SearchDC20</p>
+{% endblock %}
+
+{% block misc %}
+    <p>no misc</p>
+{% endblock %}

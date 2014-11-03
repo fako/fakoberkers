@@ -1,0 +1,31 @@
+{% extends "dnd/abstract/game_character.html" %}
+{% load staticfiles %}
+
+{% block name %}Pink Flower Tree{% endblock %}
+{% block summary %}A preditorial tree that tries to make their victims fall asleep in its deadly flowers.{% endblock %}
+{% block motivation %}
+    <p>Wants to feed itself to survive</p>
+{% endblock %}
+{% block story %}
+    <p>
+        The Pink Flower Tree typically grows under waterfalls in tropical forest.
+        The purple roots of this tree tend to curl around the rocks.
+        From the roots on top of the cold wet rocks grow big beautiful pink flowers, that give the tree its name.
+        These flowers look like amazing places to sit or lie down on for a while.
+        The flower leaves are soft as cousins and smooth as silk.
+        However the flowers are a trap from this carnivore plant.
+    </p>
+    <p>
+        According to legends a virgin of the pink tree is a human girl that goes to the waterfall even though her parents have forbidden her to do so.
+        The girl will not be able to resist the poisons of the tree and falls asleep inside one of the flowers.
+        However as the leaves of the flower are sensing out the prey of the tree, the tree may discover beauty, innocence and playfullness inside its victim.
+        Upon this knowledge the tree may decide not to kill the girl.
+        When the girl wakes up she will feel better than ever and as she returns to the flowers often during her childhood.
+        The long rests, exercise in the forest, and a beautiful environment make the human girl ´blossom´.
+        She turns into a fey with mental abilities, for as long as she remains virgin.
+        Her mental abilities enable her to take men to her waterfall and feed the tree.
+    </p>
+{% endblock %}
+{% block stats %}
+    {% include "dnd/concrete/monsters/stats/pink-flower-tree.html" %}
+{% endblock %}
