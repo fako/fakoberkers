@@ -4,11 +4,48 @@
 {% block summary %}Area on top of the vulcano.{% endblock %}
 
 {% block events %}
-    <p></p>
+    <p>
+        Just before you climb to the top you smell something rotten.
+        Carefully you peak over the edge.
+        You see a dead Formian worker lying on the ground.
+        On closer examination it turns out that the body is sucked dry of blood and left to rot in the sun.
+        Evil has a firmer grip in this area (reroll taints)
+    </p>
+    <p>
+        Walking on either side of the water you are suddenly confronted by a Myrmarch called Hosan. He acts a bit creepy.
+        If party does not cooperate he will force them to do his work or die trying.
+    </p>
+    <ul>
+        <li>How they got here?</li>
+        <li>What are the adventurers up to?</li>
+        <li>Do you know what "the light" did to our Queen?</li>
+        <li>He can heal some wounds.</li>
+        <li>He can fix the boat.</li>
+        <li>He wants a task master dead.</li>
+        <li>
+            Why? That taskmaster is under control of Fihni and he wants another taskmaster close to the light.
+            One that he controls.
+        </li>
+        <li>His advice is to go in during the day and circumvent the patrols or enter during the night through level-1.</li>
+    </ul>
 {% endblock %}
 
 {% block locations %}
-    <p>There is a lake in the middle of the vulcano with a small </p>
+
+    <p>This area consist of a number of sub area's.</p>
+    <ul>
+        <li>There is a lake in the middle of the vulcano with a small waterfall in the east.</li>
+        <li>In the north and the south there is jungle with moderate undergrowth</li>
+        <li>In the west you see a structure that may well be the hive.</li>
+    </ul>
+    <p>From here you can go to</p>
+    <ul>
+        <li>The hive <a href="hive-0.html">level 0</a></li>
+        <li>The hive <a href="hive-1.html">level 1</a></li>
+        <li>The hive <a href="hive-2.html">level 2</a></li>
+        <li>Down the waterfall towards <a href="the-tree.html">the pink flower tree</a></li>
+        <li>Down any edge towards <a href="headland.html">headlands</a></li>
+    </ul>
 {% endblock %}
 
 {% block achievements %}
@@ -20,15 +57,36 @@
 {% endblock %}
 
 {% block traps %}
-    <p>no traps</p>
+    <p>All fruits have 20% chance of being poisonous. Water from the lake is fine.</p>
+    <dl class="dc">
+       <dt>FortDC: 14 (food)</dt>
+       <dd>2x 1d6 from random ability</dd>
+    </dl>
 {% endblock %}
 
 {% block conditions %}
-    <p>no conditions</p>
+
+    <p>
+        Undergrowth: Vines, roots, and short bushes cover much of the ground in a forest.
+        A space covered with light undergrowth costs 2 squares of movement to move into, and it provides concealment.
+        Undergrowth increases the DC of Tumble and Move Silently checks by 2 because the leaves and branches get in the way.
+    </p>
+    <p>About the water</p>
+    <dt>SwimDC:</dt>
+        <dd> 10 = Normal water</dd>
+        <dd> 20 = Close to the waterfall</dd>
+    </dl>
 {% endblock %}
 
 {% block knowledges %}
-   <p>no knowledges</p>
+    <dl class="dc">
+        <dt>SurvicalDC: (Food, penalty due to winter)</dt>
+        <dd> 15 >= Find food (20% chance on poison) </dd>
+        <dd>
+            20 >= Find food (fruits) and water (rain water) that is certainly not poisonous.
+                  Find food and water for another for every two points above 20.
+        </dd>
+    </dl>
 {% endblock %}
 
 {% block items %}
@@ -38,8 +96,3 @@
 {% block misc %}
     <p>no misc</p>
 {% endblock %}
-
-
-
-<p>Another save for taint.</p>
-<p>Meet third party member there who owns the boat. He can also fix the boat, but he wants something else ...</p>
