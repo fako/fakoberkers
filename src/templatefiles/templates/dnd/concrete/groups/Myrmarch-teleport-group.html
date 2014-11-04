@@ -1,0 +1,11 @@
+{% extends "dnd/abstract/base.html" %}
+
+{% block content %}
+    <p>Myrmarchs can teleport up to 4 warriors</p>
+
+    {% include "dnd/concrete/monsters/stats/tainted-myrmarch.html" %}
+
+    <hr/>
+
+    {% include "dnd/concrete/monsters/stats/tainted-warrior.html" %}
+{% endblock %}
