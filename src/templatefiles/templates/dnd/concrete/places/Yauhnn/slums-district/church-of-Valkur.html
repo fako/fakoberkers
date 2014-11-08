@@ -1,8 +1,29 @@
 {% extends "dnd/abstract/place.html" %}
 
+{% block locations %}
+    <p>The lighthouse/church consists of</p>
+    <ul>
+        <li>Ground floor a place for prayer (always open).</li>
+        <li>First floor a place for healing (closed at night).</li>
+        <li>Second floor. The clerics private chambers</li>
+    </ul>
+
+    <p>From here:</p>
+    <ul>
+        <li>Secret door behind alter to <a href="church-of-Talos.html">church of Talos</a></li>
+        <li>Stairs down the cliff to <a href="cave-slums.html">cave slums</a></li>
+    </ul>
+{% endblock %}
+
+{% block creatures %}
+    <p>A cleric of Valkur named <a href="../../../characters/Mehsan+Valkur-cleric.html">Mehsan</a></p>
+{% endblock %}
+
 {% block knowledges %}
-<dl class="dc">
-   <dt>KnowledgeReligionDC:</dt>
-   <dd></dd>
-</dl>
+    <dl class="dc">
+        <dt>ReligionDC: (Valkur, when appropriate at this time)</dt>
+        <dd>10 >= God of good winds. Mostly prayed to by sailors. Churches often function as lighthouses.</dd>
+        <dd>15 >= A lesser God that is not very important in the pantheon. Often thought to be a pawn of greater Gods.</dd>
+        <dd>25 >= Rumored to be aligned with Talos god of storms.</dd>
+    </dl>
 {% endblock %}
