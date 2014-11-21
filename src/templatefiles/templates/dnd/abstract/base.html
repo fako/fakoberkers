@@ -1,9 +1,9 @@
-{% load static %}
+{% load staticfiles %}
 <!DOCTYPE HTML>
 <html>
 <head>
 <link href="{% static "css/bootstrap.css" %}" type="text/css" rel="stylesheet"/>
-<link href="{% static css %}" type="text/css" rel="stylesheet"/>
+<link href="{% static "css/dnd.css" %}" type="text/css" rel="stylesheet"/>
 </head>
 
 <body {% if chapter %}class="chapter-{{ chapter }}"{% endif %}>
