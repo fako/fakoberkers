@@ -1,0 +1,20 @@
+{% extends "dnd/abstract/character.html" %}
+{% load staticfiles %}
+
+{% block name %}Sjahnsesh{% endblock %}
+{% block summary %}
+    A rather skilled ranger, but no match for the party. Willing to help as devotee to Talos.
+{% endblock %}
+
+{% block story %}No story{% endblock %}
+{% block motivation %}
+    <ul>
+        <li>Wants to help the party</li>
+        <li>Is often incapable to help</li>
+    </ul>
+{% endblock %}
+{% block image %}
+    <p><img src="{% static "pics/mehsan.jpg" %}" alt="mehsan"/></p>
+{% endblock %}
+
+{% block stats %}5th level <a href="http://dndsrd.net/cleric.html">cleric</a>{% endblock %}

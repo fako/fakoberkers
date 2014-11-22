@@ -1,0 +1,43 @@
+{% extends "dnd/abstract/obstacle.html" %}
+
+{% block title %}Finding The Temple of Talos{% endblock %}
+{% block summary %}Entering the city the adventurers need to get to a safe haven.{% endblock %}
+
+{% block events %}
+    <p>
+        As it grows darker adventurers suddenly see a slowly flickering light in the distance.
+        A lighthouse! Meaning a harbor! (ReligionDC)
+    </p>
+
+
+    <p>
+        They may decide to enter the <a href="../../places/Yauhnn/slums-district/church-of-Valkur.html">lighthouse/church</a>.
+        Which will lead to church of Talos.
+        Or <a href="../../characters/Pomin+gnome-cormyr-spy.html">Pomin</a>/Locathah may lead them there upon seeing their condition.
+        Any contact with guards in their state will lead to <a href="../../places/Yauhnn/slums-district/prison.html">prison</a>
+        and if they do not escape death sentence by Waukeen priests.
+    </p>
+
+{% endblock %}
+
+{% block locations %}
+    <p>
+        Once near the city they have to on land from <a href="../../places/Yauhnn/sea.html">the sea</a>.
+        These are their options:
+    </p>
+    <ul>
+        <li>When they were helped <a href="../../characters/Sjahnsesh+shark-hunter.html">Sjahnsesh</a> will lead them to
+        <a href="../../places/Yauhnn/slums-district/fisher-boats.html">fishers boats</a> (evade guards)</li>
+        <li>Go to bright <a href="../../places/Yauhnn/trade-district/harbor">harbor</a> with their condition.</li>
+        <li>Try to go for <a href="../../places/Yauhnn/slums-district/breakers-slums.html">darker area</a></li>
+    </ul>
+{% endblock %}
+
+{% block knowledges %}
+    <dl class="dc">
+        <dt>ReligionDC: (Valkur)</dt>
+        <dd>10 >= God of good winds. Mostly prayed to by sailors. Churches often function as lighthouses.</dd>
+        <dd>15 >= A lesser God that is not very important in the pantheon. Often thought to be a pawn of greater Gods.</dd>
+        <dd>25 >= Rumored to be aligned with Talos god of storms.</dd>
+    </dl>
+{% endblock %}

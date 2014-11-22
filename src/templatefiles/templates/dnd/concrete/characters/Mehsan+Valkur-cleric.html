@@ -1,0 +1,19 @@
+{% extends "dnd/abstract/character.html" %}
+{% load staticfiles %}
+
+{% block name %}Mehsan{% endblock %}
+{% block summary %}A simple cleric of Valkur, but sympasant of the party{% endblock %}
+
+{% block story %}No story{% endblock %}
+{% block motivation %}
+    <ul>
+        <li>Wants to help the party</li>
+        <li>Is often incapable to help</li>
+    </ul>
+{% endblock %}
+{% block image %}
+    <p><img src="{% static "pics/mehsan.jpg" %}" alt="mehsan"/></p>
+{% endblock %}
+
+{% block stats %}5th level <a href="http://dndsrd.net/cleric.html">cleric</a>{% endblock %}
+
