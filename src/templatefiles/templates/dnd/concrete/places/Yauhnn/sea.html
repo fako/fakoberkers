@@ -4,13 +4,21 @@
 {% block summary %}The big blue salt dessert.{% endblock %}
 
 {% block events %}
-    <p>no events</p>
+    <p>When entering Yauhnn through the sea for the first time the adventurers have a few options depending on their situation:</p>
+    <ul>
+        <li>When they were helped <a href="../../characters/Sjahnsesh+shark-hunter.html">Sjahnsesh</a> will lead them to
+        <a href="../../places/Yauhnn/slums-district/fisher-boats.html">fishers boats</a> (evade guards)</li>
+        <li>Go to bright <a href="../../places/Yauhnn/trade-district/harbor">harbor</a> with their condition.</li>
+        <li>Try to go for darker area (which are <a href="../../places/Yauhnn/slums-district/breakers-slums.html">breakers slums</a>)</li>
+    </ul>
 {% endblock %}
 
 {% block locations %}
     <p>When on the sea around Yauhnn. There are a few ways to get to mainland</p>
     <ul>
-        <li><a href="slums-district/breakers-slums.html">breaker slums</a> most obvious, but toughest area to get to land.</li>
+        <li>The <a href="slums-district/breakers-slums.html">breaker slums</a> is toughest area to get to land and will lead to stranding.</li>
+        <li>The <a href="trade-district/harbor/">harbor</a> is easiest, but small boats are not allowed.</li>
+        <li>The <a href="slums-district/fisher-boats.html">fisher boats</a> is easiest and safest way to get to land. Second tier of city is guarded.</li>
     </ul>
 {% endblock %}
 
@@ -19,11 +27,13 @@
 {% endblock %}
 
 {% block creatures %}
-    <p>no creatures</p>
+    <p>
+        If all goes wrong a Locathah will notice and safe the adventurer.
+        At night this will be a Locathah involved in fish scam and a beer drinker during the day at <a href="slums-district/slums-market.html">slums market</a>.</p>
 {% endblock %}
 
 {% block traps %}
-    <p>Breaker slums entry</p>
+    <p>Breaker slums entry leads to the boat breaking on the rocks. The current is especially strong around there</p>
     <dl class="dc">
         <dt>ClimbDC:</dt>
         <dd>15 >= climb on rocks from the water.</dd>
@@ -40,6 +50,14 @@
         <dd> 10 < You go underwater, start to drown.</dd>
         <dd> 10 >= Manage to fight the currents</dd>
         <dd> 15 >= Act in sea</dd>
+    </dl>
+
+    <dl class="dc">
+        <dt>SwimDC: (Breaker slums, +5 DC when storming)</dt>
+        <dd> 10 < You go underwater and start to drown</dd>
+        <dd> 15 < You are taken to sea with the currents</dd>
+        <dd> 15 >= Manage to fight the currents</dd>
+        <dd> 20 >= Act normally</dd>
     </dl>
 
     <p><a href="http://dndsrd.net/wildernessAndEnvironment.html#aquatic">Water environment</a></p>
