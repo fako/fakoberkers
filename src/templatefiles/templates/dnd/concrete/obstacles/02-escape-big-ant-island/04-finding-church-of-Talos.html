@@ -6,7 +6,7 @@
 {% block events %}
     <p>
         As it grows darker adventurers suddenly see a slowly flickering light in the distance.
-        A lighthouse! Meaning a harbor! (ReligionDC)
+        A lighthouse! Meaning a harbor! (LocalDC & ReligionDC)
     </p>
 
 
@@ -34,10 +34,17 @@
 {% endblock %}
 
 {% block knowledges %}
+
+    <dl class="dc">
+        <dt>LocalDC: (Valkur)</dt>
+        <dd>10 >= In Yauhnn the lighthouse acts as a church of Valkur (who is a servant of Talos).</dd>
+    </dl>
+
     <dl class="dc">
         <dt>ReligionDC: (Valkur)</dt>
         <dd>10 >= God of good winds. Mostly prayed to by sailors. Churches often function as lighthouses.</dd>
         <dd>15 >= A lesser God that is not very important in the pantheon. Often thought to be a pawn of greater Gods.</dd>
         <dd>25 >= Rumored to be aligned with Talos god of storms.</dd>
     </dl>
+
 {% endblock %}
