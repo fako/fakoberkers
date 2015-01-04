@@ -16,6 +16,16 @@
         These sheds also have a stunning view.
     </b></p>
 
+    <p>From here the adventurers can go to:</p>
+    <ul>
+        <li>Climb the stairs up the cliff side to <a href="church-of-Valkur.html">church of Valkur</a></li>
+        <li>
+            Work your way down the caves and through narrow alley to <a href="slums-market.html">slums market</a>
+            (FortDC12: nauseated, see BreathDC)
+        </li>
+        <li>Climb down the stairs on the cliff side to <a href="breakers-slums.html">breakers slums</a></li>
+    </ul>
+
 {% endblock %}
 
 {% block achievements %}
@@ -31,7 +41,13 @@
 {% endblock %}
 
 {% block conditions %}
-    <p>no conditions</p>
+    <p>These conditions apply once a day that they enter this area until the adventurers really go all the way.</p>
+
+    <dl class="dc">
+       <dt>BreathDC: 15</dt>
+       <dd>Can't go through passage to <a href="cave-slums.html">cave slums</a></dd>
+    </dl>
+
 {% endblock %}
 
 {% block knowledges %}
