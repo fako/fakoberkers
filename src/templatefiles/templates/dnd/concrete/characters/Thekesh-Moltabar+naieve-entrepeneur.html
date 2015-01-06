@@ -1,0 +1,40 @@
+{% extends "dnd/abstract/character.html" %}
+{% load staticfiles %}
+
+{% block name %}Thekesh/Moltabar{% endblock %}
+{% block summary %}A business man from the slums. Involved in "fish scam". Works for FTG{% endblock %}
+
+{% block story %}
+    <p>
+        Thekesh (his real name) is a self made man. He climbed the social ladder through entrepreneurship.
+        This did not go unnoticed by FTG.
+        They offered him a business outside of the slums if he would arrange an alternative route to Waukeen scales.
+        With a magic item he wears around his neck he turns into Moltabar.
+    </p>
+
+    <p>
+        The fish scam works as follows.
+        Fish got sold for a long time below market prices.
+        This price war supported by FTG made Moltabar the only fish merchant.
+        Moltabar could then press the Locathah to sell at lower prices, forcing them to search different work.
+        This work involved smuggling things past the Waukeen scales for FTG.
+        Their #1 need is mithral, which Locathah children put inside dead fishes, making wounds on their hands infect.
+        The dead fishes are brought to the underdark
+        and float to the surface into the FTG lab through a natural shaft.
+    </p>
+
+{% endblock %}
+{% block motivation %}No motivation{% endblock %}
+{% block image %}No image{% endblock %}
+
+{% block stats %}
+    <h4>Whereabouts</h4>
+    <p>During the morning he is Moltabar and is present in his shop.</p>
+    <p>During the afternoon and early evening he is asleep.</p>
+    <p>During the night he walks around in the slums. Roll random below to determine whereabouts</p>
+    <ul>
+        <li>Slums market (bar)</li>
+        <li>Breakers slums (smuggle route)</li>
+        <li>Cave slums (shacks that lead to his shop)</li>
+    </ul>
+{% endblock %}
