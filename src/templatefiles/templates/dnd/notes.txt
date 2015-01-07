@@ -5,10 +5,9 @@ TODO:
 * Hanuman's soul
 
 
-Discovering Thekesh/Moltabar
+Discovering Thekesh/Moltabar. What is the way in for these facts? Which leads are there besides Waukeen investigation? Are their prepurcosions to disabling fish market
 * Wear the magic neckless of Thekesh
 * Moltabar smells of fish
-* Add these names explicitly to the Gather checks
 
 
 
