@@ -25,6 +25,7 @@ They could also pose as fishermen to see how Moltabar is able to keep prices so 
 
 Moltabar is not interested in investors, but adventurers do see a couple of clues that he's not who he pretends to be.
 Similarly the adventurers could act as a union to negotiate better prices for the fishermen and see the same clues.
+Adventurers can speak to Thekesh for getting a job. He asks them to speak to Moltabar for getting a better paid job (smuggle)
 
 
 
@@ -57,6 +58,26 @@ but my body can't bear to do it any longer. Currently Helash son of Janolanash i
 Try to get him out. I'll lend you the device if you swear to return it. If you manage to kill Zorbash you can keep it.
 I have no need for it."
 
+(Nimry is not interested in helping Mirika, because she is a half-elf)
+
+When the adventurers do not take this quest on for some reason, then news of the death of Zorbash should persuade Nimry
+ to give the artifact any way. She then states that: "there might be other uses for it".
+
+
+
+Mirika awakes
+
+When she snaps out of insanity Mirika has two questions.
+1) Where am I?
+2) Where is my father?
+Then she tells about her last memory. How her father went missing and that she found him being in love with a woman she did not know.
+When I went to see him to ask how he was and why he did not respond to messages he couldn't remember the messages
+He also hadn't done any work. Instead he was busy with a wedding present for this woman who was going to be his wife.
+When I persuaded him to take a break and come back home ... there is nothing but a blur. It was awful.
+
+
+What will she be doing? I suppose waiting around. Begging for them to leave the device with her.
+How do the adventurers make the connection that Mirika needs to talk to her father to break his love?
 
 
 
@@ -114,6 +135,10 @@ Construct puzzles
   Sluit de kluis
 
 * Flesh golems that come in only when a symbol of stunning is triggered or dispelled
+
+* Password mouther
+
+* Teleportation maze
 
 
 Great battles
