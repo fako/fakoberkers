@@ -1,0 +1,70 @@
+{% extends "dnd/abstract/obstacle.html" %}
+
+{% block title %}The Assassination{% endblock %}
+{% block summary %}As the adventurers approach the big market an assassination takes place.{% endblock %}
+
+{% block events %}
+    <p>
+        As you walk towards the church you are startled by shouting behind you.
+        Two rough sailors are having a loud argument about money in front of a pity street merchant.
+        They draw a lot of attention and start a fist fight (roll initiative).
+    </p>
+
+    <p>Round by round:</p>
+    <ol>
+        <li>
+            A SpotDC20 will make adventurers notice somebody walking quick towards the church as soon as the first punch hits.
+            SenseMotiveDC10 indicates he is up to something.
+        </li>
+        <li>The person heads towards the elevator and becomes invisible there.</li>
+        <li>The person takes 1 rounds to climb the ropes of the elevator</li>
+        <li><a href="../../characters/Kalong+waukeen-inquisitor.html">Kalong</a> get attacked while praying</li>
+        <li>Fight lasts until pirate or inquisitor is dead. Barbarians break up the fight.</li>
+    </ol>
+{% endblock %}
+
+{% block locations %}
+    <p>
+        Happens on the square before and inside the
+        <a href="../../places/Yauhnn/trade-district/church-of-Waukeen.html">Waukeen church</a>
+    </p>
+{% endblock %}
+
+{% block achievements %}
+    <p>An inquisitor will contact the party about <a href="A0-fish-monopoly.html">the fish monopoly</a>.</p>
+{% endblock %}
+
+{% block creatures %}
+    <p>Ninja and 2 Barbarians</p>
+{% endblock %}
+
+{% block traps %}
+    <p>no traps</p>
+{% endblock %}
+
+{% block conditions %}
+    <p>no conditions</p>
+{% endblock %}
+
+{% block knowledges %}
+    <p>no knowledges</p>
+{% endblock %}
+
+{% block items %}
+    <p>no items</p>
+{% endblock %}
+
+{% block misc %}
+    <p>The aftermath when Kalong gets killed</p>
+    <ul>
+        <li>To pay respect the market is closed by <a href="../../characters/Valof+Waukeen-cleric.html">Valof</a>.</li>
+        <li>Outside (SpotDC+) a raven with scar flies away when adventurers carry the body. He drops a feather.</li>
+        <li>A new inquisitor will arrive in a few days.</li>
+    </ul>
+    <p>The aftermath when Kalong survives</p>
+    <ul>
+        <li>To prevent further pirate crimes the market is closed by <a href="../../characters/Valof+Waukeen-cleric.html">Valof</a>.</li>
+        <li>Outside (SpotDC+) a raven with scar flies away when inquisitor walks out alive with adventurers. He drops a feather.</li>
+        <li><a href="../../characters/Kalong+waukeen-inquisitor.html">Kalong</a> will ask for help the next day.</li>
+    </ul>
+{% endblock %}
