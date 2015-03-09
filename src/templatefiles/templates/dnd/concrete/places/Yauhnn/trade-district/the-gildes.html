@@ -1,16 +1,70 @@
 {% extends "dnd/abstract/place.html" %}
 
-{% block locations %}
-    <p>Good place to show more Elven hate :)</p>
+{% block title %}North side warehouses{% endblock %}
+{% block summary %}District consisting mostly of warehouses and holds most guilds{% endblock %}
 
-    <p>..... inn</p>
+{% block events %}
+    <p>no events</p>
+{% endblock %}
+
+{% block locations %}
+    <p><b>
+        This area is filled mostly with well guarded warehouses.
+        Some of them have a shop. You see mostly clothing, fabrics and wood shops.
+        The shops do not look very wealthy, but seem well maintained.
+    </b></p>
+
+    <p>Apart from the warehouses this area harbors most guilds:</p>
     <ul>
-        <li>Bard comes to play here</li>
-        <li>Drinking adventurer may get drunk.</li>
+        <li>Wood workers guild</li>
+        <li>Carpenter guild</li>
+        <li>Smiths guild</li>
+        <li>Miners guild</li>
     </ul>
-    <p>
-        If they frisk <a href="../../../characters/Mirika+insane-half-elf.html">Mirika</a> they find the keys to her room in this inn.
-    </p>
-    <p>Game houses?</p>
-    <p>Master brewery?</p>
+
+    <p>Some other venues:</p>
+    <ul>
+        <li>There is an inn where lots of artisans and merchants come together. Elves pay double there, because there are quite a few lumberjacks with bad experiences.</li>
+        <li>Illegal gamble house</li>
+    </ul>
+
+    <p>From here adventurers can:</p>
+    <ul>
+        <li>Go to <a href="big-market">big market</a></li>
+        <li>Go up the ramp to <a href="../noble-district/north-side-nobles.html">North side nobles</a></li>
+        <li>Go down the ramp to <a href="../noble-district/wannabe-nobles.html">wannebe nobles</a></li>
+    </ul>
+{% endblock %}
+
+{% block achievements %}
+    <p>no achievements</p>
+{% endblock %}
+
+{% block creatures %}
+    <p>no creatures</p>
+{% endblock %}
+
+{% block traps %}
+    <p>no traps</p>
+{% endblock %}
+
+{% block conditions %}
+    <p>no conditions</p>
+{% endblock %}
+
+{% block knowledges %}
+    <dl class="dc">
+        <dt>LocalDC:</dt>
+        <dd>15 >= <a href="../../../characters/Wehna+clothing-merchant.html">Wehna Farschrik</a> has a huge amount of clothing stores and is part of the council</dd>
+        <dd>15 >= <a href="../../../characters/Harar+wood-merchant.html">Harar Neubeek</a> has a huge amount of clothing stores and is part of the council</dd>
+        <dd></dd>
+    </dl>
+{% endblock %}
+
+{% block items %}
+    <p>no items</p>
+{% endblock %}
+
+{% block misc %}
+    <p>Both the buildings and the caves are used for storage.</p>
 {% endblock %}
