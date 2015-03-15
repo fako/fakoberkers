@@ -1,7 +1,7 @@
 {% extends "dnd/abstract/place.html" %}
 
-{% block title %}North side warehouses{% endblock %}
-{% block summary %}District consisting mostly of warehouses{% endblock %}
+{% block title %}City Center{% endblock %}
+{% block summary %}District consisting mostly of common houses and some nice places to spend coin.{% endblock %}
 {% block todo %}add achievement for frisking Mirika{% endblock %}
 
 {% block events %}
@@ -10,15 +10,14 @@
 
 {% block locations %}
     <p><b>
-        This area is filled mostly with well guarded warehouses and stables.
-        There are also loads and loads of small places to eat and drink. Some of them have great views over the sea.
+        There are also loads and loads of small places to eat and drink in this area. Some of them have great views over the sea.
     </b></p>
 
-    <p>Apart from the warehouses, stables and restaurants there are:</p>
+    <p>Main places of interest:</p>
     <ul>
         <li>The best fish restaurant in town. (owned by <a href="../../../characters/Otalan+food-and-drink-merchant.html">Otalan</a>)</li>
         <li>A master brewery (also owned by <a href="../../../characters/Otalan+food-and-drink-merchant.html">Otalan</a>)</li>
-        <li>Rangers guild (lots of rumors about Big Ant Island and Rafana)</li>
+        <li>The Rolling Coin</li>
     </ul>
 
     <p>
@@ -31,7 +30,7 @@
     <p>From here adventurers can:</p>
     <ul>
         <li>Go to <a href="big-market">big market</a></li>
-        <li>Go up the ramp to <a href="../noble-district/south-side-nobles.html">South side nobles</a></li>
+        <li>Go up the ramp to <a href="../residence-district/south-side-nobles.html">South side nobles</a></li>
         <li>Go south to <a href="food-market.html">food market</a></li>
     </ul>
 {% endblock %}
@@ -55,9 +54,7 @@
 {% block knowledges %}
     <dl class="dc">
         <dt>LocalDC:</dt>
-        <dd>15 >= <a href="../../../characters/Taduan+hulorn-animal-merchant.html">Taduan Kaler</a> owns a lot of stables and is by far biggest cattle merchant in the area.</dd>
         <dd>15 >= <a href="../../../characters/Otalan+food-and-drink-merchant.html">Otalan Hichek</a> owns most of the nightlife.</dd>
-        <dd>20 >= <a href="../../../characters/Taduan+hulorn-animal-merchant.html">Taduan</a> is the current hulorn</dd>
     </dl>
 {% endblock %}
 

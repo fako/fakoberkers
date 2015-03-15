@@ -1,1 +1,64 @@
-<p>Library is here</p>
+{% extends "dnd/abstract/place.html" %}
+
+{% block title %}The Goods{% endblock %}
+{% block summary %}This area is named after what it holds most. Goods stored for transport.{% endblock %}
+
+{% block events %}
+    <p>no events</p>
+{% endblock %}
+
+{% block locations %}
+    <p><b>
+        This area is filled mostly with well guarded warehouses.
+        Some of them have a shop. You see mostly clothing, fabrics and wood shops.
+        The shops do not look very wealthy, but seem well maintained.
+    </b></p>
+
+    <p>From here adventurers can:</p>
+    <ul>
+        <li>Go to <a href="the-gilds.html">the gildes</a></li>
+        <li>Go up the ramp to <a href="../residence-district/north-side-nobles.html">North side nobles</a></li>
+        <li>Or up the ramp to <a href="../residence-district/captain-huts.html">Captain huts</a></li>
+        <li>Go down the ramp to <a href="../residence-district/dock-nobles.html">the dock nobles</a></li>
+        <li>Or down the ramp to <a href="harbor/index.html">the harbor</a></li>
+        <li>Go into <a href="library.html">the library</a></li>
+    </ul>
+{% endblock %}
+
+{% block achievements %}
+    <p>no achievements</p>
+{% endblock %}
+
+{% block creatures %}
+    <p>no creatures</p>
+{% endblock %}
+
+{% block traps %}
+    <p>no traps</p>
+{% endblock %}
+
+{% block conditions %}
+    <p>no conditions</p>
+{% endblock %}
+
+{% block knowledges %}
+    <dl class="dc">
+        <dt>LocalDC:</dt>
+        <dd>15 >= <a href="../../../characters/Wehna+clothing-merchant.html">Wehna Farschrik</a> has a huge amount of clothing stores and is part of the council</dd>
+        <dd>15 >= <a href="../../../characters/Harar+wood-merchant.html">Harar Neubeek</a> has a huge amount of clothing stores and is part of the council</dd>
+        <dd></dd>
+    </dl>
+
+    <dl class="dc">
+        <dt>GatherDC:</dt>
+        <dd>20 >= Warehouses are getting cramped. All eyes on the council to solve this problem.</dd>
+    </dl>
+{% endblock %}
+
+{% block items %}
+    <p>no items</p>
+{% endblock %}
+
+{% block misc %}
+    <p>Both the buildings and the caves are used for storage.</p>
+{% endblock %}
