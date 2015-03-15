@@ -1,7 +1,7 @@
 {% extends "dnd/abstract/place.html" %}
 
-{% block title %}North side warehouses{% endblock %}
-{% block summary %}District consisting mostly of warehouses and holds most guilds{% endblock %}
+{% block title %}The Gildes{% endblock %}
+{% block summary %}District consisting for some part of warehouses, but is known for the gildes.{% endblock %}
 
 {% block events %}
     <p>no events</p>
@@ -9,17 +9,17 @@
 
 {% block locations %}
     <p><b>
-        This area is filled mostly with well guarded warehouses.
-        Some of them have a shop. You see mostly clothing, fabrics and wood shops.
-        The shops do not look very wealthy, but seem well maintained.
+        On the other side of the big market than the <a href="city-center.html">city center</a> and less "touristic".
+        It is a residential area, but also has some influential gilds.
     </b></p>
 
     <p>Apart from the warehouses this area harbors most guilds:</p>
     <ul>
-        <li>Wood workers guild</li>
-        <li>Carpenter guild</li>
-        <li>Smiths guild</li>
-        <li>Miners guild</li>
+        <li>Traders gild</li>
+        <li>Wood workers gild</li>
+        <li>Carpenter gild</li>
+        <li>Smiths gild</li>
+        <li>Miners gild</li>
     </ul>
 
     <p>Some other venues:</p>
@@ -31,8 +31,10 @@
     <p>From here adventurers can:</p>
     <ul>
         <li>Go to <a href="big-market">big market</a></li>
-        <li>Go up the ramp to <a href="../noble-district/north-side-nobles.html">North side nobles</a></li>
-        <li>Go down the ramp to <a href="../noble-district/wannabe-nobles.html">wannabe nobles</a></li>
+        <li>Or the other way to <a href="the-goods.html">the goods</a></li>
+        <li>Go up the ramp to <a href="../residence-district/north-side-nobles.html">North side nobles</a></li>
+        <li>Go down the ramp to <a href="../residence-district/dock-nobles.html">the dock nobles</a></li>
+        <li>Or down the ramp to <a href="harbor/index.html">the harbor</a></li>
         <li>Go into <a href="mining-entrance.html">the mining entrance</a></li>
     </ul>
 {% endblock %}
@@ -54,13 +56,6 @@
 {% endblock %}
 
 {% block knowledges %}
-    <dl class="dc">
-        <dt>LocalDC:</dt>
-        <dd>15 >= <a href="../../../characters/Wehna+clothing-merchant.html">Wehna Farschrik</a> has a huge amount of clothing stores and is part of the council</dd>
-        <dd>15 >= <a href="../../../characters/Harar+wood-merchant.html">Harar Neubeek</a> has a huge amount of clothing stores and is part of the council</dd>
-        <dd></dd>
-    </dl>
-
     <dl class="dc">
         <dt>GatherDC: (miners guild)</dt>
         <dd>
