@@ -6,6 +6,7 @@ TODO:
 * incorporate Dralen
 
 
+
 The Faerun Trade Group scheme
 
 Cormyr especially tries to keep the tax burden for its citizens low
@@ -36,25 +37,9 @@ There are these reasons for the adventures to stop the FTG
 
 Yauhnn politics
 
-There are seven merchants sitting in the council that is controlling the city of which the hulorn is president.
-For many small matters the hulorn has obsolute power
-For bigger decisions the hulorn has to have a majority in his council
-For very big decisions there has to be a 2/3 majority in the council
-
 In the past 3 (lead by Olivet) out of 7 were FTG. With the hulorn switching sides this became 4 out of 7
 This is of course not yet a 2/3 majority. However when the hulorn is found dead. Olivet will make Lokahmee pose as
 fish merchant and declare himself hulorn with 2/3 majority (FTG being 4 out of 6 at that time)
-
-Merchants:
-
-Olivet (magic)
-Hulorn (animals)
-Valof (healing)
-Dragbar (metals)
-
-Otalan (food & drink)
-Wehna (clothing)
-Harar (wood)
 
 
 
@@ -75,6 +60,7 @@ Construct puzzles
 * Password mouther
 
 * Teleportation maze
+
 
 
 Great battles
