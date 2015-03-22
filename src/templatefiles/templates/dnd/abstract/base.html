@@ -1,9 +1,13 @@
-{% load staticfiles %}
+{% load staticfiles kwacros %}
+{% kwacro title %}
+    {% block title %}{% endblock %}
+{% endkwacro %}
 <!DOCTYPE HTML>
 <html>
 <head>
 <link href="{% static "css/bootstrap.css" %}" type="text/css" rel="stylesheet"/>
 <link href="{% static "css/dnd.css" %}" type="text/css" rel="stylesheet"/>
+<title>{% usekwacro title %}</title>
 </head>
 
 <body {% if chapter %}class="chapter-{{ chapter }}"{% endif %}>
@@ -12,7 +16,7 @@
 
     <div class="row-fluid">
         <div class="span12">
-            <h2>{% block title %}{% endblock %}</h2>
+            <h2>{% usekwacro title %}</h2>
             <h4 style="color:red">{% block todo%}{% endblock %}</h4>
             <p class="summary">{% block summary %}{% endblock %}</p>
         </div>
