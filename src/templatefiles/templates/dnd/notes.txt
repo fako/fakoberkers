@@ -5,6 +5,7 @@ TODO:
 
 * Indicate restrictions and alternatives when adventurers are discovered
 * Think of assassination plan if adventurers are discovered
+* Make sure they blow their cover when giving fake money to Falok
 
 * Pomin love betrayal?
 
@@ -15,7 +16,7 @@ Cormyr especially tries to keep the tax burden for its citizens low
 It does so by taxing international trade
 This infuriates Sembians, as well as the Waukeen temple
 
-A select group of merchant in the council calling themselves the Faerun Trade Group are planning to build an installation which can teleport objects of any size anywhere
+A select group of merchant in the council calling themselves the Faerun Trade Group are planning to build a Golem which can teleport objects of any size anywhere
 Their plan is to take on trade everywhere in Fearun and out do competitors
 Their first objective is to bypass Cormyr taxation, by teleporting from inside Cormyr
 They have assumed they would succeed and are hording their riches for quite some time.
