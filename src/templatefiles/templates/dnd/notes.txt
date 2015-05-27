@@ -6,6 +6,7 @@ TODO: MUST HAVE NEXT SESSION
 * Library (Phase Spider!)
 * Poor mans gate
 * Mithral smuggling
+* Work out lawyer job or move to next chapter
 
 TODO: MUST HAVE BATTLES
 * Fight at Horrid Lust
@@ -15,6 +16,7 @@ TODO: MUST HAVE BATTLES
 TODO: GREAT NEXT SESSION
 * Work out the characters
 * Indicate restrictions and alternatives when adventurers are discovered
+* What happens if they miss the ritual?
 * Make sure they blow their cover when giving fake money to Falok
 
 
