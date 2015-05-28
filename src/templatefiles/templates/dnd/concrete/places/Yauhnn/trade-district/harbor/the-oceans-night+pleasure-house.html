@@ -1,0 +1,108 @@
+{% extends "dnd/abstract/place.html" %}
+
+{% block title %}The Ocean's Night{% endblock %}
+{% block summary %}A pleasure house with (illegal) gambling and prostitution.{% endblock %}
+
+{% block events %}
+    <p>
+        If adventurers hang around on deck they see two hooded figures go into the captain's cabin.
+        One has a figure of a goddess. (SexDC 15, or feels like he has to talk to her)
+    </p>
+    <p>
+        During the evening the girl comes by one more time to go to the toilet. Roll SexDC if they missed the first one.
+    </p>
+
+{% endblock %}
+
+{% block locations %}
+    <p>Places of interest on the map.</p>
+
+    <h4>Free access</h4>
+    <ol>
+        <li>The deck is a place of gambling. There are around 5 games going on (1d10 gp stakes).</li>
+        <li>The captain's cabin is guarded by 2 guards (inside 3 more private guards)</li>
+        <li>The entrance to below deck and is also guarded by 2</li>
+        <li>
+            The hallway below deck is a place where people can drop their coats as well as order exquisite drinks (Arms 31).
+            There is a curtain that separates the hallway from the rest of the deck, where a bard is making music (entrance = 20gp)
+        </li>
+    </ol>
+    <h4>20gp entrance</h4>
+    <ol style="list-style: upper-alpha">
+        <li>In the foyer very pretty girls flirt with men. Some want to have a good night. Some are prostitutes. (SexDC15 or want to flirt/pay)</li>
+        <li>Merchants try to make deals under relaxing circumstances in these sitting area's.</li>
+        <li>High stakes gambling happens in this area (1d100 + 50)</li>
+        <li>Toilets</li>
+        <li>This space remains closed</li>
+    </ol>
+    <h4>Paying a girl (500gp)</h4>
+    <p>Will take you to room E It's a small room for sex.</p>
+    <h4>Raising stakes at high stake tables</h4>
+    <p>
+        Allowed to go into the captains room, where they meet
+        <a href="../../../../characters/Rafana+lady-of-the-pink-tree.html">Rafana</a> and
+        <a href="../../../../characters/Taduan+hulorn-animal-merchant.html">Taduan (hulorn)</a>.
+        Game is 200gp with a Z=0.6. If they play they get the achievement.
+    </p>
+{% endblock %}
+
+{% block achievements %}
+    <h4>About the girl</h4>
+    <p>
+        Her name is Rafana Riebelfant sister of Olivet.
+        She loves animals and plants. She only recently moved to her brother's place in Yauhnn and especially enjoys the nightlife of the city.
+        Dancing excites her most, but she also likes the thrill of gambling, especially if it is not her money.
+    </p>
+    <h4>About the man</h4>
+    <p>
+        His name is Taduan Kaler. He runs a few businesses in animal life in Yauhnn and since a few years he has been elected as Hulorn of the city.
+        He's especially interested in your opinions about trade and politics and their relation. He thinks that policy should never stand in the way of trade.
+    </p>
+    <h4>Relationship</h4>
+    <dl class="dc">
+        <dt>SenseMotiveDC:</dt>
+        <dd>15 >= The hulorn and the girl are having an affair</dd>
+    </dl>
+{% endblock %}
+
+{% block creatures %}
+    <p>Guards are level 10 fighters</p>
+{% endblock %}
+
+{% block traps %}
+    <p>no traps</p>
+{% endblock %}
+
+{% block conditions %}
+    <p>no conditions</p>
+{% endblock %}
+
+{% block knowledges %}
+    <dl class="dc">
+        <dt>GatherDC: (on deck, about the girl)</dt>
+        <dd>15 >= Her eyes are as green as summer leaves.</dd>
+        <dd>18 >= She owns a perfume shop on the market and comes here often, but the man never shows his face.</dd>
+    </dl>
+    <dl class="dc">
+        <dt>GatherDC: (at high stakes about the girl)</dt>
+        <dd>15 >= The girl is Rafana, the sister of Olivet.</dd>
+        <dd>20 >= She plays in the captain's cabin.</dd>
+        <dd>23 >= She's with the hulorn and she brings him luck, he has been winning a lot lately and others lost a lot.</dd>
+        <dd>26 >= The girl and the hulorn are having an affair.</dd>
+    </dl>
+{% endblock %}
+
+{% block items %}
+    <p>no items</p>
+{% endblock %}
+
+{% block misc %}
+    <h4>Gambling:</h4>
+    <p>
+        Gambling can go well and suddenly very bad. On average during an hour of play there will be a loss or a profit X.
+        This depends highly on the stakes Y.
+        Although luck always play a big part some games allow for more tactics expressed with a value Z between 0 and 1.
+        A game has Z = (1d10 - 4) / 10.
+    </p>
+    <p>X = Y * (1d20 + (Int*Z) - 11)</p>
+{% endblock %}
