@@ -1,15 +1,12 @@
 TODO: MUST HAVE NEXT SESSION
 * City center at night (Conversation between Dralen and Morabar, trail action)
 * Visit Thekesh
-* Residence district (ocean's night hints, city center hints, olivet's appartment, mad preacher, somebody going bankrupt?, hulorn wife)
-* Library (Phase Spider!)
-* Poor mans gate
+* Residence district, poor mans gate
 * Mithral smuggling
 * Work out lawyer job or move to next chapter (test = DC15)
 * Riebelfant galley
 
-* Rob nobels -> 1d20 * 200 -> after 10.000 more risk -> +10% per 10.000
-* Make fake money (till 2000 safe) -> after 10.0000 more risk -> +10% per 10.000
+
 
 TODO: MUST HAVE BATTLES
 * Fight at Horrid Lust
