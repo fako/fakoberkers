@@ -1,4 +1,4 @@
-{% extends "dnd/abstract/place.html" %} {# TODO: update #}
+{% extends "dnd/abstract/place.html" %}
 
 {% block title %}Captain Huts{% endblock %}
 {% block summary %}The richest part of the city{% endblock %}
@@ -13,6 +13,7 @@
         However there are big differences between houses and the houses in this neighborhood clearly belong to the rich.
         Their walled gardens and balconies face the sun. The houses are larger than any other in the city
         and although the bricks are not ornamented, inside a lot art and other valuables are plain in sight.
+        The name for this area is clearly a nickname for the residencies of Yauhnn's most prominent.
     </b></p>
     <p>It is hard to distinguish one house from another and locations below can't be reached unless they know they want to go there.</p>
     <ul>
@@ -42,7 +43,10 @@
 {% endblock %}
 
 {% block knowledges %}
-   <p>no knowledges</p>
+    <dl class="dc">
+        <dt>GatherDC:</dt>
+        <dd>1 >= You learn that the super rich are very content with their own company.</dd>
+    </dl>
 {% endblock %}
 
 {% block items %}
