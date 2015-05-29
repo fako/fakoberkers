@@ -1,15 +1,39 @@
-{% extends "dnd/abstract/place.html" %} {# TODO: update #}
+{% extends "dnd/abstract/place.html" %}
 
-{% block title %}No title{% endblock %}
-{% block summary %}No summary{% endblock %}
-{% block todo %}statue of donkey, house of Wehna and Harar, FTG headquarters, accountants agency, ruined FTG investor, house of Dralen{% endblock %}
+{% block title %}North Side Nobles{% endblock %}
+{% block summary %}Place where many wealthy merchants have their houses. Some buildings are used as offices.{% endblock %}
+{% block todo %}ruined FTG investor{% endblock %}
 
 {% block events %}
-    <p>no events</p>
+
 {% endblock %}
 
 {% block locations %}
-    <p>no locations</p>
+    <p><b>
+        The residents in this area are clearly wealthy. Among many big houses you also see buildings that appear to be used as offices.
+        The buildings often hold marble signs that indicate which business is situated inside.
+        On a square there is a bronze statue of a donkey. It barks and has its tail upright and beneath its ass stands a bag with coins.
+        The inscription reads: "the golden age is coming"
+    </b></p>
+
+    <p>It is hard to distinguish one house from another and locations below can't be reached unless they know they want to go there.</p>
+    <ul>
+        <li>The house of <a href="../../../characters/Dralen+magic-shop-keeper.html">Dralen</a></li>
+        <li>The house of <a href="../../../characters/Wehna+clothing-merchant.html">Wehna (clothing merchant)</a>.</li>
+        <li>The house of <a href="../../../characters/Harar+wood-merchant.html">Harar (wood merchant)</a>.</li>
+        <li>House of <a href="../../../characters/Lapoho+head-city-guard.html">Lapoho</a> (head of the city guards)</li>
+        <li><a href="../../../groups/Faerun-trade-group.html">Faerun Trade Group</a> headquarters.</li>
+        <li>The most notable accountants agency.</li>
+    </ul>
+
+    <p>From here adventurers can go to:</p>
+    <ul>
+        <li>Down the ramps to <a href="../trade-district/the-goods.html">The goods</a></li>
+        <li>Across the walking bridges over <a href="../trade-district/big-market/index.html">the market</a> to <a href="south-side-nobles.html">south side nobles</a></li>
+        <li>Towards the richer houses in <a href="captain-huts.html">Captain huts</a></li>
+        <li>North entrance of the <a href="../trade-district/big-market/index.html">big market</a></li>
+        <li><a href="the-fort.html">The fort</a></li>
+    </ul>
 {% endblock %}
 
 {% block achievements %}
@@ -29,7 +53,10 @@
 {% endblock %}
 
 {% block knowledges %}
-   <p>no knowledges</p>
+   <dl class="dc">
+       <dt>ReligionDC:</dt>
+       <dd>18 >= A Waukeen relic consists of a donkey that shits fake gold coins</dd>
+   </dl>
 {% endblock %}
 
 {% block items %}

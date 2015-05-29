@@ -1,14 +1,23 @@
-{% extends "dnd/abstract/place.html" %} {# TODO: update #}
+{% extends "dnd/abstract/place.html" %}
 
-{% block title %}No title{% endblock %}
-{% block summary %}No summary{% endblock %}
+{% block title %}The Fort{% endblock %}
+{% block summary %}This fort is the main entrance into the city.{% endblock %}
 
 {% block events %}
     <p>no events</p>
 {% endblock %}
 
 {% block locations %}
-    <p>no locations</p>
+    <p><b>
+        The fort is a part of the wall that surrounds the city. It is an old building, but quite well maintained.
+        It still holds the cities garrison and head of the guards even though the thread from inland is minimal for the city.
+    </b></p>
+    <p>From here adventurers can go to:</p>
+    <ul>
+        <li>Outside the city</li>
+        <li><a href="north-side-nobles.html">North side nobles</a></li>
+        <li><a href="south-side-nobles.html">South side nobles</a></li>
+    </ul>
 {% endblock %}
 
 {% block achievements %}
@@ -16,7 +25,7 @@
 {% endblock %}
 
 {% block creatures %}
-    <p>no creatures</p>
+    <p>The head of the city guard called <a href="">Lapoho</a> is not an easy person to reach.</p>
 {% endblock %}
 
 {% block traps %}
