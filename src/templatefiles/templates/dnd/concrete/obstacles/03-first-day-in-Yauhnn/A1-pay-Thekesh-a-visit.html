@@ -4,7 +4,7 @@
 {% block summary %}Check the whereabout of Thekesh{% endblock %}
 
 {% block events %}
-    <p>The whereabouts of Thekesh depends on the time of the day. Here is his schedule:</p>
+    <p>The whereabouts of <a href="../../characters/Thekesh-Moltabar+naieve-entrepeneur.html">Thekesh/Moltabar</a> depends on the time of the day. Here is his schedule:</p>
     <ul>
         <li>06-12 -> Moltabar (in the shop)</li>
         <li>12-15 -> Thekesh (market, breakers, cave)</li>
@@ -12,23 +12,33 @@
         <li>18-00 -> a sleep (house of Moltabar above his store)</li>
         <li>00-06 -> Thekesh (seawater, breakers, cave, harbor)</li>
     </ul>
+
+    <p>
+        When stepping through the secret passage behind the closet. The person gets pounced by a <a href="../../monsters/Effigy-lion+guard.html">effigy lion</a>
+        and the symbol of stunning is triggered.
+    </p>
 {% endblock %}
 
 {% block locations %}
     <h4>From the outside</h4>
     <p>
         Thekesh lives in the <a href="../../places/Yauhnn/slums-district/cave-slums.html">cave slums</a>.
-        There is a terrible smell of rotting fish around his house.
+        There is a terrible smell of rotting fish around his house. It is pitch black around these caves.
     </p>
     <h4>From the inside (entrance)</h4>
     <p>
-
+        Upon entering the small 3x4 room you only see a small bed and a huge closet against the left wall.
     </p>
 
     <h4>From the inside (storage)</h4>
     <p>
         The house is completely piled with boxes. Inside the boxes are only fish. A lot of them very rotten.
         His shack is connected with a few of his neighbours through holes in the wall.
+
+    </p>
+
+    <h4>Towards the store</h4>
+    <p>
         One of the houses has a hole in the roof that leads to a big wooden closet with a key hole.
         Looking through the keyhole they see a fish shop (perhaps with Moltabar)
     </p>
@@ -43,11 +53,15 @@
 {% endblock %}
 
 {% block traps %}
-    <p>no traps</p>
+    <dl class="dc">
+        <dt>DisableDC: <a href="http://dndsrd.net/spellsS.html#symbol-of-stunning">symbol of stunning</a></dt>
+        <dd>27 <= accidentally triggered</dd>
+        <dd>32 >= disabled</dd>
+    </dl>
 {% endblock %}
 
 {% block conditions %}
-    <p>no conditions</p>
+    <p>See illusionary wall has WillDC18/16. </p>
 {% endblock %}
 
 {% block knowledges %}
@@ -60,10 +74,19 @@
         <dt>SpotDC:</dt>
         <dd>20 >= You notice that shacks beside the shack of Thekesh are permanently closed.</dd>
     </dl>
-    <h4>From the inside</h4>
+    <h4>From the inside (entrance)</h4>
     <dl class="dc">
         <dt>SearchDC:</dt>
+        <dd>0 >= The huge closed closet turns out to be empty and there is a rat's nest inside the bed.</dd>
+        <dd>30 >= You find that the surface behind the closet is somewhat irregular and you suspect that there is a door there.</dd>
+        <dd>32 >= You notice that you're standing on a symbol of stunning that isn't being triggered.</dd>
+    </dl>
+    <h4>From the inside (storage)</h4>
+    <dl class="dc">
+        <dt>SearchDC:</dt>
+        <dd>18 >= The shack after the one that is connected to Thekesh's place has a hole in the roof that leads to a narrow slit which is cut out of the rocks.</dd>
         <dd>25 >= Inside the fish valuable mithral is hidden</dd>
+        <dd>32 >= Another symbol of stunning is present in the room after the initial one (with the hole in the ceiling).</dd>
     </dl>
 {% endblock %}
 
