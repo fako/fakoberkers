@@ -1,9 +1,32 @@
-<p>Horny adventurers get -2 on Will saves</p>
+{% extends "dnd/abstract/character.html" %}
+{% load staticfiles %}
 
-<p>Legend lore:</p>
-<ul>
-    <li>She is a Lady of the Pink Tree</li>
-    <li>Has become very lonely and moved to the city</li>
-    <li>Now wants to move her tree with her</li>
-    <li>Has significant Telepath abilities</li>
-</ul>
+{% block name %}Rafana Leanek{% endblock %}
+{% block summary %}Girl from the big ant island who loves the city, but does not want to leave the tree that raised her behind.{% endblock %}
+
+{% block story %}
+    <p>An incredibly sexy girl</p>
+    <p>Legend lore:</p>
+    <ul>
+        <li>She is a Lady of the Pink Tree</li>
+        <li>Has become very lonely and moved to the city</li>
+        <li>Now wants to move her tree with her</li>
+        <li>Has significant Telepath abilities</li>
+    </ul>
+{% endblock %}
+
+{% block motivation %}
+    <ul>
+        <li>Wants to use the teleportation device to teleport her tree into the city.</li>
+        <li>Would not want to see the world destroyed by evil.</li>
+    </ul>
+{% endblock %}
+
+{% block image %}
+    <p><img src="{% static "pics/rafana.jpg" %}" alt="rafana"/></p>
+{% endblock %}
+
+{% block stats %}No stats{% endblock %}
+
+
+
