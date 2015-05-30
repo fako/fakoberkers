@@ -1,7 +1,6 @@
 TODO: MUST HAVE NEXT SESSION
 * City center at night (Conversation between Dralen and Morabar, trail action)
 * Visit Thekesh
-* Mithral smuggling
 * Riebelfant galley
 * Fight at Horrid Lust
 * The assassination (1 Ninja, 2 Barbarian characters)
@@ -16,6 +15,8 @@ TODO: GOOD NEXT SESSION
 * Make Falok investment a handout
 * What happens if they miss the ritual?
 * Work out the characters
+* Mithral smuggling
+
 
 
 

@@ -1,0 +1,14 @@
+{% extends "dnd/abstract/game_character.html" %}
+{% load staticfiles %}
+
+{% block name %}Effigy Lion{% endblock %}
+{% block summary %}Visitors to Big Ant Island. Guarding the sacred artifacts of their King Hanuman.{% endblock %}
+{% block motivation %}
+    <p>Has the assignment to kill anything that does not mutter the password.</p>
+{% endblock %}
+{% block image %}
+    <p><img src="{% static "pics/girallon.png" %}" alt="girallon"/></p>
+{% endblock %}
+{% block stats %}
+    {% include "dnd/concrete/monsters/stats/effigy-lion.html" %}
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "dnd/abstract/obstacle.html" %}
+
+{% block title %}Pay Thekesh a visit{% endblock %}
+{% block summary %}Check the whereabout of Thekesh{% endblock %}
+
+{% block events %}
+    <p>The whereabouts of Thekesh depends on the time of the day. Here is his schedule:</p>
+    <ul>
+        <li>06-12 -> Moltabar (in the shop)</li>
+        <li>12-15 -> Thekesh (market, breakers, cave)</li>
+        <li>15-18 -> Moltabar (in the shop)</li>
+        <li>18-00 -> a sleep (house of Moltabar above his store)</li>
+        <li>00-06 -> Thekesh (seawater, breakers, cave, harbor)</li>
+    </ul>
+{% endblock %}
+
+{% block locations %}
+    <h4>From the outside</h4>
+    <p>
+        Thekesh lives in the <a href="../../places/Yauhnn/slums-district/cave-slums.html">cave slums</a>.
+        There is a terrible smell of rotting fish around his house.
+    </p>
+    <h4>From the inside (entrance)</h4>
+    <p>
+
+    </p>
+
+    <h4>From the inside (storage)</h4>
+    <p>
+        The house is completely piled with boxes. Inside the boxes are only fish. A lot of them very rotten.
+        His shack is connected with a few of his neighbours through holes in the wall.
+        One of the houses has a hole in the roof that leads to a big wooden closet with a key hole.
+        Looking through the keyhole they see a fish shop (perhaps with Moltabar)
+    </p>
+{% endblock %}
+
+{% block achievements %}
+    <p>no achievements</p>
+{% endblock %}
+
+{% block creatures %}
+    <p>no creatures</p>
+{% endblock %}
+
+{% block traps %}
+    <p>no traps</p>
+{% endblock %}
+
+{% block conditions %}
+    <p>no conditions</p>
+{% endblock %}
+
+{% block knowledges %}
+    <h4>From the outside</h4>
+    <dl class="dc">
+        <dt>SearchDC:</dt>
+        <dd>15 >= You find that the shabby door is closed with an excellent lock that is </dd>
+    </dl>
+    <dl class="dc">
+        <dt>SpotDC:</dt>
+        <dd>20 >= You notice that shacks beside the shack of Thekesh are permanently closed.</dd>
+    </dl>
+    <h4>From the inside</h4>
+    <dl class="dc">
+        <dt>SearchDC:</dt>
+        <dd>25 >= Inside the fish valuable mithral is hidden</dd>
+    </dl>
+{% endblock %}
+
+{% block items %}
+    <p>no items</p>
+{% endblock %}
+
+{% block misc %}
+    <p>no misc</p>
+{% endblock %}
