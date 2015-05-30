@@ -1,21 +1,29 @@
-{% extends "dnd/abstract/place.html" %} {# TODO: update #}
+{% extends "dnd/abstract/place.html" %}
 
-{% block todo %}bad talk about the new-city, earn 750 as illusionist{% endblock %}
+{% block todo %}bad talk about the new-city{% endblock %}
 
-{% block title %}No title{% endblock %}
-{% block summary %}No summary{% endblock %}
+{% block title %}Dock Nobles{% endblock %}
+{% block summary %}A place where very poor people act as if they are very rich.{% endblock %}
 
 {% block events %}
     <p>no events</p>
 {% endblock %}
 
 {% block locations %}
-    <p>no locations</p>
+    <p><b>
+        Walking around the area you feel that something is not right.
+        When you look a little closer it is inevitable that at some point an illusion breaks and reveals the true neighborhood.
+        The houses here are poorly build. Not much different from the harbor slums on the other side of the bay.
+        The big difference is that you see the gloom of illusions hang around the houses.
+        Illusions designed to make the houses look a lot more valuable than they are.
+    </b></p>
 
-    <p>Mines lie behind this area. The air is filled with miners dust.</p>
+    <p>
+        The illusions break the most near the cliff face. Some illusion walls mean to cover up the entrances to mines there.
+        However the workers keep on moving the dug up materials into warehouses. The air is thick with mining dust.
+    </p>
+
     <p>It used to be a poor part of the city, but thanks to FTG it is blooming business.</p>
-
-    <p>About: Fake gold</p>
 
     <p>From here adventurers can go to:</p>
     <ul>
@@ -40,7 +48,14 @@
 {% endblock %}
 
 {% block knowledges %}
-   <p>no knowledges</p>
+   <dl class="dc">
+       <dt>GatherDC:</dt>
+       <dd>10 >= The illusions here are sold by an organization called <a href="../../../groups/Faerun-trade-group.html">Faerun Trade Groep</a>.</dd>
+       <dd>13 >= Elves are a bunch of low-life tree huggers, standing in the way of progress.</dd>
+       <dd>14 >= The new neighborhood just outside the city are just a bunch of wannabe's. The real Yauhnnalians are inside the city walls.</dd>
+       <dd>15 >= Red Whizard of Thay have plans to take over this part of the city.</dd>
+       <dd>20 >= Olivet is fucking his own sister.</dd>
+   </dl>
 {% endblock %}
 
 {% block items %}
@@ -48,6 +63,10 @@
 {% endblock %}
 
 {% block misc %}
-    <p>no misc</p>
+    <p>
+        When working as an illusionist in this area you have to make people believe again in some aspects of their houses that they distrust.
+        You earn 750gp a day with this work.
+    </p>
+    <p>Bonus if you fix the looks of the mines with something more creative! 10.000gp</p>
 {% endblock %}
 

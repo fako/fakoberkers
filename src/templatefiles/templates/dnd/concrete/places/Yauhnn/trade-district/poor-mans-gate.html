@@ -1,15 +1,24 @@
-{% extends "dnd/abstract/place.html" %} {# TODO: update #}
+{% extends "dnd/abstract/place.html" %}
 
 {% block title %}Poor Mans Gate{% endblock %}
 {% block summary %}Entrance to the city mostly used by farmers and the less wealthy.{% endblock %}
-{% block todo %}people trying to get people to come to the city center{% endblock %}
 
 {% block events %}
     <p>no events</p>
 {% endblock %}
 
 {% block locations %}
-    <p>no locations</p>
+    <p><b>
+        Mostly peasants use this gate to take the food they need from the market below or to sell their own wares.
+        Petty merchants try to convince people going in and out of the gate to visit the inns in the city center.
+    </b></p>
+
+    <p>From here adventurers can go:</p>
+    <ul>
+        <li>Outside away from the city or visit the new neighborhood <a href="../residence-district/outside-the-walls.html">outside the walls</a>.</li>
+        <li>Down the ramp to <a href="food-market.html">the food market</a></li>
+        <li>North towards <a href="../residence-district/south-side-nobles.html">south side nobles</a></li>
+    </ul>
 {% endblock %}
 
 {% block achievements %}
