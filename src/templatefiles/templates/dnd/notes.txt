@@ -1,12 +1,3 @@
-TODO: MUST HAVE NEXT SESSION
-* City center at night (Conversation between Dralen and Morabar, trail action)
-* Visit Thekesh
-* Riebelfant galley
-* Fight at Horrid Lust
-* The assassination (1 Ninja, 2 Barbarian characters)
-* Shady caravan
-
-
 TODO: GOOD NEXT SESSION
 * Hanuman's soul
 * Indicate restrictions and alternatives when adventurers are discovered
@@ -15,7 +6,7 @@ TODO: GOOD NEXT SESSION
 * Make Falok investment a handout
 * What happens if they miss the ritual?
 * Work out the characters
-* Mithral smuggling
+* Mithral smuggle route
 
 
 
@@ -23,32 +14,6 @@ TODO: GOOD NEXT SESSION
 Story ideas
 
 * Pomin love betrayal?
-
-The Faerun Trade Group scheme
-
-Cormyr especially tries to keep the tax burden for its citizens low
-It does so by taxing international trade
-This infuriates Sembians, as well as the Waukeen temple
-
-A select group of merchant in the council calling themselves the Faerun Trade Group are planning to build a Golem which can teleport objects of any size anywhere
-Their plan is to take on trade everywhere in Fearun and out do competitors
-Their first objective is to bypass Cormyr taxation, by teleporting from inside Cormyr
-They have assumed they would succeed and are hording their riches for quite some time.
-Yauhnn as a result is more and more living on the promise of goods, instead of real goods.
-
-The Faerun Trade Group is paying with loans. Receivers of these loans will get interest as well as the loaned money
-Everybody who can will want to have FTG loans, because they are always good for their interest.
-The FTG is playing a pyramid game as long as the stored goods in Cormyr can't be delivered.
-The FTG is expecting to make profits, because they dodge the tax system and cut out transport costs
-They are however not taking into account what the external costs of running the installation will be
-
-There are these reasons for the adventures to stop the FTG
-1)   Cormyr will miss millions of tax revenue, it will ruin Cormyrs social tax system
-2)   The evil pollution will run unchecked if Hanuman can't perform his rituals. The evil will spread all over Faerun due to the teleport gates the installation creates
-3)   After all debts have been paid, it will be easy to out compete any rivals on any market
-4)   It will hit Olivet where it hurts
-5)   Olivet will seize power and hold on to it to earn even more money
-6)   Hoarding capital is bad, money should roll
 
 
 Construct puzzles
