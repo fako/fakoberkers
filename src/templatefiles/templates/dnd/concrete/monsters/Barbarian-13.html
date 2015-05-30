@@ -1,0 +1,12 @@
+{% extends "dnd/abstract/game_character.html" %}
+{% load staticfiles %}
+
+{% block name %}Barbarian (level 15){% endblock %}
+{% block summary %}Hates the party, because they have the bow of his friend and he must be dead.{% endblock %}
+{% block motivation %}
+    <p>In his rage will only attack Alex full on.</p>
+{% endblock %}
+
+{% block stats %}
+    {% include "dnd/concrete/monsters/stats/barbarian-13.html" %}
+{% endblock %}

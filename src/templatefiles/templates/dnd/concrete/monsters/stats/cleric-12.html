@@ -1,0 +1,83 @@
+{% extends "dnd/abstract/stats.html" %}
+
+{% block hit-dice %}12HD, 100HP{% endblock %}
+{% block initiative %}+1{% endblock %}
+{% block speed %}20{% endblock %}
+{% block ac %}20/21 (t=11, ff=19){% endblock %}
+{% block attacks %}+14/+9 {% endblock %}
+{% block damage %}1d6+4{% endblock %}
+{% block face-reach %}5ft.{% endblock %}
+{% block special-attacks %}{% endblock %}
+{% block special-qualities %}{% endblock %}
+{% block spell-like-abilities %}{% endblock %}
+{% block saves %}
+    <ul>
+        <li>Fort +15</li>
+        <li>Ref +8</li>
+        <li>Will +16</li>
+    </ul>
+{% endblock %}
+{% block abilities %}
+    <ul>
+        <li>Str 16</li>
+        <li>Dex 12</li>
+        <li>Con 18</li>
+        <li>Int 8</li>
+        <li>Wis 20</li>
+        <li>Cha 8</li>
+    </ul>
+{% endblock %}
+{% block skills %}{% endblock %}
+{% block feats %}Weapon focus, Endurance, Die Hard, Dodge, Mobility{% endblock %}
+{% block grapple %}{% endblock %}
+{% block gear %}Vest of resistance +3, Necklace of Fireballs (V), Full plate +1, Wand cure serious wounds (20x), Mace +1 of paralytic burst, Periapt of Wisdom +2, Amulet of health +2 {% endblock %}
+
+{% block descriptions %}
+
+    <h4>Level 6</h4>
+    <ul>
+        <li><a href="http://dndsrd.net/spellsAtoB.html#blade-barrier">Blade barrier</a> (D)</li>
+        <li><a href="http://dndsrd.net/spellsHtoL.html#heal">Heal</a></li>
+        <li>Rejection (p172)</li>
+    </ul>
+
+    <h4>Level 5</h4>
+    <ul>
+        <li>2x <a href="http://dndsrd.net/spellsFtoG.html#flame-strike">Flame strike</a> (D)</li>
+        <li><a href="http://dndsrd.net/spellsC.html#greater-command">Command greater</a></li>
+        <li><a href="http://dndsrd.net/spellsS.html#slay-living">Slay living</a></li>
+        <li><a href="http://dndsrd.net/spellsC.html#contagion">Contagion (mass)</a> (p51)</li>
+    </ul>
+
+    <h4>Level 4</h4>
+    <ul>
+        <li>3x CCW</li>
+        <li><a href="http://dndsrd.net/spellsFtoG.html#freedom-of-movement">Freedom of movement</a></li>
+        <li><a href="http://dndsrd.net/spellsTtoZ.html#wall-of-fire">Wall of fire</a> (D)</li>
+    </ul>
+
+    <h4>Level 3</h4>
+    <ul>
+        <li><a href="http://dndsrd.net/spellsPtoR.html#prayer">Prayer</a></li>
+        <li><a href="http://dndsrd.net/spellsHtoL.html#invisibility-purge">Invisibility purge</a></li>
+        <li>2x <a href="http://dndsrd.net/spellsDtoE.html#dispel-magic"></a>Dispel magic</li>
+        <li><a href="http://dndsrd.net/spellsPtoR.html#resist-energy">Resist energy</a> (D, fire)</li>
+    </ul>
+
+    <h4>Level 2</h4>
+    <ul>
+        <li><a href="http://dndsrd.net/spellsAtoB.html#aid">Aid</a></li>
+        <li><a href="http://dndsrd.net/spellsS.html#silence">Silence</a></li>
+        <li>2x CMW</li>
+        <li><a href="http://dndsrd.net/spellsS.html#sound-burst">Sound burst</a></li>
+        <li><a href="http://dndsrd.net/spellsS.html#spiritual-weapon">Spiritual weapon</a> (D)</li>
+    </ul>
+
+    <h4>Level 1</h4>
+    <ul>
+        <li>3x CLW</li>
+        <li><a href="http://dndsrd.net/spellsAtoB.html#bane">Bane</a></li>
+        <li>2x <a href="http://dndsrd.net/spellsS.html#sanctuary">Sanctuary</a></li>
+        <li><a href="http://dndsrd.net/spellsAtoB.html#burning-hands">Burning hands</a> (D)</li>
+    </ul>
+{% endblock %}
