@@ -1,0 +1,12 @@
+{% extends "dnd/abstract/game_character.html" %}
+{% load staticfiles %}
+
+{% block name %}Ninja (level 12){% endblock %}
+{% block summary %}Luitenant of the Red Wave captain.{% endblock %}
+{% block motivation %}
+    <p>Will follow orders to the death.</p>
+{% endblock %}
+
+{% block stats %}
+    {% include "dnd/concrete/monsters/stats/ninja-12.html" %}
+{% endblock %}
