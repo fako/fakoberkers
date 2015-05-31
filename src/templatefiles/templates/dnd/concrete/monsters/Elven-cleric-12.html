@@ -1,12 +1,12 @@
 {% extends "dnd/abstract/game_character.html" %}
 {% load staticfiles %}
 
-{% block name %}Whizard (level 12){% endblock %}
+{% block name %}Cleric (level 12){% endblock %}
 {% block summary %}Hates the party, because they have the bow of his friend and he must be dead.{% endblock %}
 {% block motivation %}
-    <p>Will try to keep adventurers away as much as possible and attack from a distance.</p>
+    <p>Will try to assist his barbarian friend as much as possible as well as knock a punch left and right.</p>
 {% endblock %}
 
 {% block stats %}
-    {% include "dnd/concrete/monsters/stats/whizard-12.html" %}
+    {% include "dnd/concrete/monsters/stats/elven-cleric-12.html" %}
 {% endblock %}

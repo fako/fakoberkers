@@ -5,18 +5,22 @@
 {% block hit-dice %}100 HP (10 HD) -> Church Inquisitor(6) -> Complete Divine p.26{% endblock %}
 {% block initiative %}+2{% endblock %}
 {% block speed %}30{% endblock %}
-{% block ac %}15{% endblock %}
-{% block attacks %}+9/+4{% endblock %}
-{% block damage %}1d6+2{% endblock %}
+{% block ac %}21/22 (ff=19, t=12){% endblock %}
+{% block attacks %}+10/+5{% endblock %}
+{% block damage %}1d6+3{% endblock %}
 {% block face-reach %}5ft.{% endblock %}
-{% block special-attacks %}Force shapechange, turn undead{% endblock %}
+{% block special-attacks %}
+    Force shapechange,
+    <a href="http://dndsrd.net/specialAttacks.html#turn-or-rebuke-undead">turn undead</a>,
+    <a href="http://dndsrd.net/specialAttacks.html#disarm">disarm</a>
+{% endblock %}
 {% block special-qualities %}Immune to charms, Pierce illusions, Pierce disguise, Immune to compulsions{% endblock %}
 {% block spell-like-abilities %}{% endblock %}
 {% block saves %}
     <ul>
         <li>Fort 8</li>
         <li>Ref 5</li>
-        <li>Will 15</li>
+        <li>Will 17</li>
     </ul>
 {% endblock %}
 {% block abilities %}
@@ -25,11 +29,51 @@
         <li>Dex 14</li>
         <li>Con 14</li>
         <li>Int 10</li>
-        <li>Wis 18</li>
+        <li>Wis 22</li>
         <li>Cha 10</li>
     </ul>
 {% endblock %}
 {% block skills %}Spot (+4 disguise), Know(arcana) 4, Know(religion) 4, Spellcraft 4{% endblock %}
-{% block feats %}Iron will, 4{% endblock %}
+{% block feats %}Iron will, Dodge, Weapon focus, 2{% endblock %}
 {% block grapple %}{% endblock %}
-{% block gear %}Studded leather +2, Nunchanku +2{% endblock %}
+{% block gear %}Breastplate +4, Nunchanku +2, Periapth of wisdom +4{% endblock %}
+
+{% block descriptions %}
+
+    <h4>Level 5</h4>
+    <ul>
+        <li><a href="http://dndsrd.net/spellsFtoG.html#flame-strike">Flame strike</a></li>
+        <li><a href="http://dndsrd.net/spellsC.html#greater-command">Command greater</a></li>
+        <li><a href="http://dndsrd.net/spellsTtoZ.html#teleport">Teleport</a></li>
+    </ul>
+
+    <h4>Level 4</h4>
+    <ul>
+        <li>2x <a href="http://dndsrd.net/spellsS.html#sending">Sending</a></li>
+        <li><a href="http://dndsrd.net/spellsMtoO.html#neutralize-poison">Neutralize poison</a></li>
+        <li><a href="http://dndsrd.net/spellsFtoG.html#freedom-of-movement">Freedom of movement</a></li>
+        <li><a href="http://dndsrd.net/spellsDtoE.html#dimension-door">Dimension door</a> (D)</li>
+    </ul>
+
+    <h4>Level 3</h4>
+    <ul>
+        <li>2x<a href="http://dndsrd.net/spellsPtoR.html#prayer">Prayer</a></li>
+        <li><a href="http://dndsrd.net/spellsHtoL.html#invisibility-purge">Invisibility purge</a></li>
+        <li><a href="http://dndsrd.net/spellsDtoE.html#dispel-magic"></a>Dispel magic</li>
+        <li>Clarity of Mind (D, 46)</li>
+    </ul>
+
+    <h4>Level 2</h4>
+    <ul>
+        <li>3x<a href="http://dndsrd.net/spellsAtoB.html#aid">Aid</a></li>
+        <li><a href="http://dndsrd.net/spellsS.html#sound-burst">Sound burst</a></li>
+        <li>2x<a href="http://dndsrd.net/spellsC.html#calm-emotions">Calm emotions</a> (D)</li>
+    </ul>
+
+    <h4>Level 1</h4>
+    <ul>
+        <li>3x <a href="http://dndsrd.net/spellsAtoB.html#bless">Bless</a></li>
+        <li>2x <a href="http://dndsrd.net/spellsS.html#sanctuary">Sanctuary</a></li>
+        <li><a href="http://dndsrd.net/spellsMtoO.html#make-whole">Make whole</a> (D)</li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "dnd/abstract/game_character.html" %}
+{% load staticfiles %}
+
+{% block name %}Whizard (level 12){% endblock %}
+{% block summary %}Hates the party, because they have the bow of his friend and he must be dead.{% endblock %}
+{% block motivation %}
+    <p>Will try to keep adventurers away as much as possible and attack from a distance.</p>
+{% endblock %}
+
+{% block stats %}
+    {% include "dnd/concrete/monsters/stats/elven-whizard-12.html" %}
+{% endblock %}
